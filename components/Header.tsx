@@ -52,7 +52,7 @@ const Header: NextPage = () => {
     const _classList = [];
 
     if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
-      _classList.push("transform -translate-y-full");
+      _classList.push("transform -translate-y-full drop-shadow-none");
 
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
@@ -60,7 +60,7 @@ const Header: NextPage = () => {
   return (
     <header>
       <div
-        className={`bg-bglight top-0 drop-shadow-sm fixed transition-transform px-4 h-16 w-full flex items-center justify-between ${navClassList.join(
+        className={`bg-bglight z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 h-16 w-full flex items-center justify-between ${navClassList.join(
           " "
         )}`}
       >
