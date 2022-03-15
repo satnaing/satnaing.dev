@@ -2,16 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  font-family: "Jost", Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@layer base {
+  body {
+    @apply font-sans;
+  }
 }
-
-/* a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-} */
