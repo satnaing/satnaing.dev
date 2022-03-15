@@ -7,7 +7,13 @@ module.exports = {
     fontFamily: {
       sans: ['"Jost"', "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        bglight: "#F9FAFB",
+        marrsgreen: "#008C8C",
+        cardlight: "#EFF3F3",
+      },
+    },
   },
   plugins: [],
 };
