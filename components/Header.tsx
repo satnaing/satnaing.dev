@@ -60,7 +60,7 @@ const Header: NextPage = () => {
   return (
     <header>
       <div
-        className={`bg-bglight drop-shadow-sm fixed transition-transform px-4 h-16 w-full flex items-center justify-between ${navClassList.join(
+        className={`bg-bglight top-0 drop-shadow-sm fixed transition-transform px-4 h-16 w-full flex items-center justify-between ${navClassList.join(
           " "
         )}`}
       >
