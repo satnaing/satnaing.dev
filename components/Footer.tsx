@@ -1,7 +1,3 @@
-import Image from "next/image";
-import Github from "../public/socials/github";
-import github from "../public/socials/github.svg";
-
 const Footer: React.FC = () => {
   return (
     <footer className="pb-24 text-center">
