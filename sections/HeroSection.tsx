@@ -11,9 +11,11 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div>
-        <span className="text-marrsgreen">Hi my name is</span>
+        <span className="text-marrsgreen dark:text-carrigreen">
+          Hi my name is
+        </span>
         <h1 className="text-4xl font-semibold my-1">Sat Naing</h1>
-        <span className="text-2xl text-marrsgreen font-medium">
+        <span className="text-2xl text-marrsgreen dark:text-carrigreen font-medium">
           A Full-stack Developer
         </span>
         <div className="mt-2 my-4">
