@@ -5,8 +5,8 @@ import profilePic from "../public/satnaing.png";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="mt-16 mb-16 px-4 pb-4">
-      <div className="px-10 pt-8 py-4">
+    <section className="mt-16 py-8 px-4">
+      <div className="px-10 pb-4">
         <Image src={profilePic} width={1548} height={1733} />
       </div>
 

@@ -6,7 +6,7 @@ const AboutSection: React.FC = () => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
   return (
-    <section id="whoami" className="my-5 pt-14 pb-20 px-4">
+    <section id="whoami" className="section">
       <RoughNotationGroup show={isOnScreen}>
         <div className="text-center">
           <RoughNotation
