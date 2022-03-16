@@ -1,11 +1,24 @@
 import Image from "next/image";
+import { useRef } from "react";
+import useOnScreen from "../hooks/useOnScreen";
+import { RoughNotation } from "react-rough-notation";
 import memojiLaptop from "../public/memoji-laptop.png";
 
 const BlogSection: React.FC = () => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const isOnScreen = useOnScreen(elementRef);
   return (
-    <section id="blog" className="section mb-24">
+    <section id="blog" className="section">
       <div className="text-center">
-        <h2 className="text-2xl inline-block my-6 font-medium">Blog</h2>
+        <RoughNotation
+          type="underline"
+          color="rgb(0, 140, 140)"
+          strokeWidth={2}
+          order={1}
+          show={isOnScreen}
+        >
+          <h2 className="text-2xl inline-block my-6 font-medium">Blog</h2>
+        </RoughNotation>
       </div>
       <div>
         <div className="px-10">
@@ -18,7 +31,7 @@ const BlogSection: React.FC = () => {
             a documenting practice. In the future, I may occationally share some
             of my knowledge during my professional software developer career.
           </p>
-          <span className="block my-2">
+          <span className="block my-2" ref={elementRef}>
             Here are some of my latest blog posts
           </span>
         </div>
