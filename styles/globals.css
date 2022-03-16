@@ -14,6 +14,6 @@
 
 @layer components {
   .section {
-    @apply my-11 px-4;
+    @apply py-11 px-4;
   }
 }
