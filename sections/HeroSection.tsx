@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import LinkButton from "../components/LinkButton";
 
 import profilePic from "../public/satnaing.png";
 
@@ -22,13 +22,7 @@ const HeroSection: React.FC = () => {
           and Photoshop too. <br />
           Currently, I'm into React, NextJs, Express and PostgreSQL.
         </div>
-        <a
-          role="button"
-          className="bg-marrsgreen py-2 px-3 rounded text-bglight"
-          href="mailto:contact@satnaing.dev"
-        >
-          Contact me!
-        </a>
+        <LinkButton href="mailto:contact@satnaing.dev">Contact me!</LinkButton>
       </div>
     </section>
   );
