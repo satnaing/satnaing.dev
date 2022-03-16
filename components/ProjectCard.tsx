@@ -16,11 +16,15 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
   const { title, type, image, desc, tags, liveUrl, codeUrl } = project;
 
   return (
-    <div className="my-6">
-      <h3 className="text-marrsgreen text-lg font-medium">{title}</h3>
+    <div className="my-7">
+      <h3 className="text-marrsgreen dark:text-carrigreen text-lg font-medium">
+        {title}
+      </h3>
       <span className="font-medium">{type}</span>
-      <div className="shadow-lg bg-bglight mt-2 mb-4">{image}</div>
-      <div className="bg-cardlight p-4 rounded">{desc}</div>
+      <div className="shadow-lg bg-bglight dark:bg-gray-700 mt-2 mb-4">
+        {image}
+      </div>
+      <div className="bg-cardlight dark:bg-carddark p-4 rounded">{desc}</div>
       <div className="flex flex-wrap mt-2 mb-4 text-sm">
         {tags.map((tag) => (
           <span key={tag} className="mr-5">
@@ -32,7 +36,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         View live
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 inline-block text-white ml-1"
+          className="h-5 w-5 inline-block text-textlight dark:text-bgdark ml-1"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -50,7 +54,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         View code
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 inline-block ml-1 text-marrsgreen"
+          className="h-5 w-5 inline-block ml-1 text-marrsgreen dark:text-carrigreen"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

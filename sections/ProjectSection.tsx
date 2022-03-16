@@ -37,7 +37,7 @@ const ProjectSection: React.FC = () => {
         Other projects can be explored in my{" "}
         <a
           href="https://github.com/satnaing"
-          className="font-medium underline text-marrsgreen"
+          className="font-medium underline text-marrsgreen dark:text-carrigreen"
         >
           Github Profile
         </a>
