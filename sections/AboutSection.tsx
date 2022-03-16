@@ -29,11 +29,7 @@ const AboutSection: React.FC = () => {
         <p className="my-2">
           I have over 2 and a helf years of experience working with web
           application development_ including both frontend and backend. I'm
-          currently working as{" "}
-          <RoughNotation type="highlight" color="#BFFCFB" order="2">
-            <span className="whitespace-nowrap">a lead developer</span>
-          </RoughNotation>{" "}
-          in a Singapore company.
+          currently working as a lead developer in a Singapore company.
         </p>
         <span>Here are some technologies I've been working with recently</span>
         <div className="flex my-4" ref={elementRef}>
@@ -64,7 +60,7 @@ const AboutSection: React.FC = () => {
             type="underline"
             color="rgb(0, 140, 140)"
             strokeWidth={2}
-            order={3}
+            order={2}
           >
             <h3 className="text-xl font-medium text-marrsgreen inline-block mt-12 mb-6">
               My Education Background
