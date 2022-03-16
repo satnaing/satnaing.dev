@@ -21,9 +21,9 @@ const ProjectSection: React.FC = () => {
           order={1}
           show={isOnScreen}
         >
-          <h1 className="text-2xl inline-block my-6 font-medium">
+          <h2 className="text-2xl inline-block my-6 font-medium">
             Featured Projects
-          </h1>
+          </h2>
         </RoughNotation>
       </div>
       <span className="text-center block mb-4" ref={elementRef}>
