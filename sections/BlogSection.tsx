@@ -36,9 +36,9 @@ const BlogSection: React.FC = () => {
           </span>
         </div>
         {blogPosts.map((post) => (
-          <div className="my-2" key={post.id}>
+          <div className="my-4" key={post.id}>
             <h3 className="text-lg font-medium">{post.title}</h3>
-            <p>{post.desc}</p>
+            <p className="dark:text-gray-300">{post.desc}</p>
           </div>
         ))}
         <div className="mt-4">
