@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useScrollListener from "../hooks/useScrollListener";
@@ -43,7 +42,7 @@ const navLinks = [
   },
 ];
 
-const Header: NextPage = () => {
+const Header: React.FC = () => {
   const [navClassList, setNavClassList] = useState<any>([]);
   const scroll = useScrollListener();
 
@@ -76,7 +75,7 @@ const Header: NextPage = () => {
         </button>
       </div>
 
-      <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-bglight w-11/12 rounded drop-shadow-lg">
+      <nav className="fixed bottom-4 z-30 left-1/2 transform -translate-x-1/2 bg-bglight w-11/12 rounded drop-shadow-lg">
         <ul className="flex justify-evenly items-center py-1">
           {navLinks.map((navLink) => (
             <li key={navLink.url}>
