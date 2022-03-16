@@ -1,17 +1,22 @@
 import { useRef } from "react";
-import useOnScreen from "../hooks/useOnScreen";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { useTheme } from "next-themes";
+
+import useOnScreen from "../hooks/useOnScreen";
 
 const AboutSection: React.FC = () => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
+  const { theme } = useTheme();
   return (
     <section id="whoami" className="section">
       <RoughNotationGroup show={isOnScreen}>
         <div className="text-center">
           <RoughNotation
             type="underline"
-            color="rgb(0, 140, 140)"
+            color={`${
+              theme === "light" ? "rgb(0, 140, 140)" : "rgb(5 206 145)"
+            }`}
             strokeWidth={2}
             order={1}
           >
@@ -58,7 +63,9 @@ const AboutSection: React.FC = () => {
         <div className="text-center">
           <RoughNotation
             type="underline"
-            color="rgb(0, 140, 140)"
+            color={`${
+              theme === "light" ? "rgb(0, 140, 140)" : "rgb(5 206 145)"
+            }`}
             strokeWidth={2}
             order={2}
           >

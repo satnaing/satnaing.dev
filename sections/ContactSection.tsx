@@ -1,17 +1,20 @@
 import { useRef } from "react";
-import useOnScreen from "../hooks/useOnScreen";
 import { RoughNotation } from "react-rough-notation";
+import { useTheme } from "next-themes";
+
+import useOnScreen from "../hooks/useOnScreen";
 import LinkButton from "../components/LinkButton";
 
 const ContactSection: React.FC = () => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
+  const { theme } = useTheme();
   return (
     <section id="contact" className="section text-center">
       <div className="text-center">
         <RoughNotation
           type="underline"
-          color="rgb(0, 140, 140)"
+          color={`${theme === "light" ? "rgb(0, 140, 140)" : "rgb(5 206 145)"}`}
           strokeWidth={2}
           order={1}
           show={isOnScreen}
