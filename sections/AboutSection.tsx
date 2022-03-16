@@ -72,7 +72,7 @@ const AboutSection: React.FC = () => {
           </RoughNotation>
         </div>
         {educationInfo.map((edu) => (
-          <div className="mb-4">
+          <div className="mb-4" key={edu.id}>
             <h4 className="text-marrsgreen text-lg font-medium">{edu.title}</h4>
             <span className="text-slate-500 italic">{edu.subTitle}</span>
             <ul
@@ -80,7 +80,7 @@ const AboutSection: React.FC = () => {
               className="marker:text-marrsgreen list-disc pl-6 space-y-1 mt-1"
             >
               {edu.list.map((li) => (
-                <li>{li}</li>
+                <li key={li}>{li}</li>
               ))}
             </ul>
           </div>
@@ -92,6 +92,7 @@ const AboutSection: React.FC = () => {
 
 const educationInfo = [
   {
+    id: 1,
     title: "B.Sc (Hons) in Computing",
     subTitle: "Edinburgh Napier University | 2018 ~ 2019",
     list: [
@@ -101,6 +102,7 @@ const educationInfo = [
     ],
   },
   {
+    id: 2,
     title: "HND in Computing & System Development",
     subTitle: "Info Myanmar University | 2016 - 2018",
     list: [
@@ -109,11 +111,13 @@ const educationInfo = [
     ],
   },
   {
+    id: 3,
     title: "IELTS",
     subTitle: "British Council Myanmar | 2017",
     list: ["Got overall band score 6.5 and at least 6 in each skill"],
   },
   {
+    id: 4,
     title: "Myanmar Matriculation Exam",
     subTitle: "B.E.H.S (2) Thingangyun | 2015",
     list: ["Passed with 3 Distinctions"],
