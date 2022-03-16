@@ -11,3 +11,9 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  .section {
+    @apply py-11 px-4;
+  }
+}
