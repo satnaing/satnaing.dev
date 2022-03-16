@@ -35,7 +35,7 @@ const AboutSection: React.FC = () => {
         <div className="flex my-4" ref={elementRef}>
           <ul
             role="list"
-            className="marker:text-marrsgreen list-disc pl-5 space-y-3"
+            className="marker:text-marrsgreen dark:marker:text-carrigreen list-disc pl-5 space-y-3"
           >
             <li>JavaScript</li>
             <li>TypeScript</li>
@@ -45,7 +45,7 @@ const AboutSection: React.FC = () => {
           </ul>
           <ul
             role="list"
-            className="marker:text-marrsgreen list-disc pl-20 space-y-3"
+            className="marker:text-marrsgreen dark:marker:text-carrigreen list-disc pl-20 space-y-3"
           >
             <li>PHP</li>
             <li>CodeIgniter</li>
@@ -62,18 +62,22 @@ const AboutSection: React.FC = () => {
             strokeWidth={2}
             order={2}
           >
-            <h3 className="text-xl font-medium text-marrsgreen inline-block mt-12 mb-6">
+            <h3 className="text-xl font-medium text-marrsgreen dark:text-carrigreen inline-block mt-12 mb-6">
               My Education Background
             </h3>
           </RoughNotation>
         </div>
         {educationInfo.map((edu) => (
           <div className="mb-4" key={edu.id}>
-            <h4 className="text-marrsgreen text-lg font-medium">{edu.title}</h4>
-            <span className="text-slate-500 italic">{edu.subTitle}</span>
+            <h4 className="text-marrsgreen dark:text-carrigreen text-lg font-medium">
+              {edu.title}
+            </h4>
+            <span className="text-slate-500 dark:text-slate-200 italic">
+              {edu.subTitle}
+            </span>
             <ul
               role="list"
-              className="marker:text-marrsgreen list-disc pl-6 space-y-1 mt-1"
+              className="marker:text-marrsgreen dark:marker:text-carrigreen list-disc pl-6 space-y-1 mt-1"
             >
               {edu.list.map((li) => (
                 <li key={li}>{li}</li>
