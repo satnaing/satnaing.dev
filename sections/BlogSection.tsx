@@ -11,7 +11,6 @@ const BlogSection: React.FC = () => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
-  console.log(isOnScreen);
   return (
     <section id="blog" className="section">
       <div className="text-center">
