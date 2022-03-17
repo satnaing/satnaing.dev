@@ -11,6 +11,7 @@ const BlogSection: React.FC = () => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
+  console.log(isOnScreen);
   return (
     <section id="blog" className="section">
       <div className="text-center">
@@ -29,7 +30,7 @@ const BlogSection: React.FC = () => {
           <div className="text-center px-10 md:px-16 lg:px-32">
             <Image src={memojiLaptop} width={421} height={421} />
           </div>
-          <div className="mb-4">
+          <div className="mb-4" ref={elementRef}>
             <p>
               At first, I didn't have any intention to make a blog. But then, I
               decided to write blog posts for what I've done and what I'm doing
@@ -37,7 +38,7 @@ const BlogSection: React.FC = () => {
               some of my knowledge during my professional software developer
               career.
             </p>
-            <span className="block my-2 md:hidden" ref={elementRef}>
+            <span className="block my-2 md:hidden">
               Here are some of my latest blog posts
             </span>
           </div>
