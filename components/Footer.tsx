@@ -1,8 +1,8 @@
 const Footer: React.FC = () => {
   return (
-    <footer className="pb-24 text-center">
+    <footer className="pb-24 md:pb-4 text-center">
       <div className="flex justify-center space-x-12 mb-4">
-        <a href="#" title="github" className="transform scale-150">
+        <a href="#" title="github" className="transform scale-150 md:scale-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -17,7 +17,11 @@ const Footer: React.FC = () => {
           </svg>
         </a>
 
-        <a href="#" title="codepen" className="transform scale-150">
+        <a
+          href="#"
+          title="codepen"
+          className="transform scale-150 md:scale-100"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -28,7 +32,11 @@ const Footer: React.FC = () => {
           </svg>
         </a>
 
-        <a href="#" title="facebook" className="transform scale-150">
+        <a
+          href="#"
+          title="facebook"
+          className="transform scale-150 md:scale-100"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -39,7 +47,11 @@ const Footer: React.FC = () => {
           </svg>
         </a>
 
-        <a href="#" title="instagram" className="transform scale-150">
+        <a
+          href="#"
+          title="instagram"
+          className="transform scale-150 md:scale-100"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
