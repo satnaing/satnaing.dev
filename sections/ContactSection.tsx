@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
   return (
-    <section id="contact" className="section text-center">
+    <section id="contact" className="section min-h-0 text-center">
       <div className="text-center">
         <RoughNotation
           type="underline"
@@ -23,10 +23,10 @@ const ContactSection: React.FC = () => {
         </RoughNotation>
       </div>
       <div className="mt-8 mb-20">
-        <h3 className="font-medium text-lg" ref={elementRef}>
-          Let's be awesome thgether!
+        <h3 className="font-medium text-lg mb-2 md:text-3xl" ref={elementRef}>
+          Let's be awesome together!
         </h3>
-        <p className="mb-6">
+        <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
           As a dev, I do love coding and always looking for new challenges.
           Thus, if you have some opportunities/challenges or just want to build
           awesome things together, don't hesitate to contact me! My inbox is
