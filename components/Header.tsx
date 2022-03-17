@@ -81,7 +81,7 @@ const Header: React.FC = () => {
   return (
     <header className="md:flex">
       <div
-        className={`bg-bglight dark:bg-bgdark z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 md:px-8 h-16 w-full ${navClassList.join(
+        className={`bg-bglight dark:bg-bgdark z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
           " "
         )}`}
       >
