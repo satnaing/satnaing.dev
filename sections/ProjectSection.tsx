@@ -23,17 +23,15 @@ const ProjectSection: React.FC = () => {
           order={1}
           show={isOnScreen}
         >
-          <h2 className="text-2xl inline-block my-6 font-medium">
-            Featured Projects
-          </h2>
+          <h2 className="section-heading">Featured Projects</h2>
         </RoughNotation>
       </div>
       <span className="text-center block mb-4" ref={elementRef}>
         “Talk is cheap. Show me the code”? I got you. <br />
         Here are some of my projects you shouldn't misss
       </span>
-      {projects.map((project) => (
-        <ProjectCard key={project.title} project={project} />
+      {projects.map((project, index) => (
+        <ProjectCard key={project.title} index={index} project={project} />
       ))}
       <div className="text-center">
         Other projects can be explored in my{" "}
