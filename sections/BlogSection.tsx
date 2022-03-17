@@ -21,48 +21,53 @@ const BlogSection: React.FC = () => {
           order={1}
           show={isOnScreen}
         >
-          <h2 className="text-2xl inline-block my-6 font-medium">Blog</h2>
+          <h2 className="section-heading">Blog</h2>
         </RoughNotation>
       </div>
-      <div>
-        <div className="px-10">
-          <Image src={memojiLaptop} width={421} height={421} />
-        </div>
-        <div className="mb-4">
-          <p>
-            At first, I didn't have any intention to make a blog. But then, I
-            decided to write blog posts for what I've done and what I'm doing as
-            a documenting practice. In the future, I may occationally share some
-            of my knowledge during my professional software developer career.
-          </p>
-          <span className="block my-2" ref={elementRef}>
-            Here are some of my latest blog posts
-          </span>
-        </div>
-        {blogPosts.map((post) => (
-          <div className="my-4" key={post.id}>
-            <h3 className="text-lg font-medium">{post.title}</h3>
-            <p className="dark:text-gray-300">{post.desc}</p>
+      <div className="md:flex md:gap-x-8">
+        <div className="md:basis-1/2 md:flex md:justify-end md:flex-col-reverse">
+          <div className="text-center px-10 md:px-16 lg:px-32">
+            <Image src={memojiLaptop} width={421} height={421} />
           </div>
-        ))}
-        <div className="mt-4">
-          <a href="#">
-            Read all posts{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 inline-block"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
+          <div className="mb-4">
+            <p>
+              At first, I didn't have any intention to make a blog. But then, I
+              decided to write blog posts for what I've done and what I'm doing
+              as a documenting practice. In the future, I may occationally share
+              some of my knowledge during my professional software developer
+              career.
+            </p>
+            <span className="block my-2 md:hidden" ref={elementRef}>
+              Here are some of my latest blog posts
+            </span>
+          </div>
+        </div>
+        <div className="md:basis-1/2">
+          {blogPosts.map((post) => (
+            <div className="my-4 md:mt-0 md:mb-8" key={post.id}>
+              <h3 className="text-lg font-medium">{post.title}</h3>
+              <p className="dark:text-gray-300">{post.desc}</p>
+            </div>
+          ))}
+          <div className="mt-4">
+            <a href="#">
+              Read all posts{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 inline-block"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
