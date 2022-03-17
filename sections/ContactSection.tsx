@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
   return (
-    <section id="contact" className="section min-h-0 text-center">
+    <section id="contact" className="section min-h-[80vh] text-center">
       <div className="text-center">
         <RoughNotation
           type="underline"
