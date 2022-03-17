@@ -1,12 +1,22 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header";
+import HeroSection from "../sections/HeroSection";
+import AboutSection from "../sections/AboutSection";
+import ProjectSection from "../sections/ProjectSection";
+import BlogSection from "../sections/BlogSection";
+import ContactSection from "../sections/ContactSection";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
-    <div className="h-[1800px]">
+    <div className="bg-bglight dark:bg-bgdark">
       <Header />
+      <HeroSection />
+      <AboutSection />
+      <ProjectSection />
+      <BlogSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
