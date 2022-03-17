@@ -20,12 +20,10 @@ const AboutSection: React.FC = () => {
             strokeWidth={2}
             order={1}
           >
-            <h2 className="text-2xl inline-block my-6 font-medium">
-              Who am I?
-            </h2>
+            <h2 className="section-heading">Who am I?</h2>
           </RoughNotation>
         </div>
-        <div className="md:flex sm:space-x-8">
+        <div className="md:flex md:space-x-8">
           <div className="basis-1/2 xl:basis-3/5">
             <p className="my-2">
               Hello, my name's Sat Naing. I've graduated from Edinburgh Napier
