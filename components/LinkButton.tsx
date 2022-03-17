@@ -19,7 +19,7 @@ const LinkButton: React.FC<Props> = ({
         outline
           ? "border border-marrsgreen dark:border-carrigreen text-marrsgreen dark:text-carrigreen"
           : "bg-marrsgreen dark:bg-carrigreen text-bglight dark:text-bgdark"
-      } py-2 px-3 rounded lg:text-xl ${className}`}
+      } py-2 px-3 rounded lg:text-xl ${className} outline-marrsgreen dark:outline-carrigreen focus:outline-double outline-offset-2`}
       href={href}
       target={`${targetBlank ? "_blank" : "_self"}`}
     >
