@@ -26,10 +26,16 @@ const AboutSection: React.FC = () => {
         <div className="md:flex md:space-x-8">
           <div className="basis-1/2 xl:basis-3/5">
             <p className="my-2">
-              Hello, my name's Sat Naing. I've graduated from Edinburgh Napier
-              University, majoring in Bachelor of Science (Hons) in Computing. I
-              studied at Info Myanmar University specializing in Software
-              Engineering.
+              Hello, my name's Sat Naing. I've graduated from{" "}
+              <a href="https://www.napier.ac.uk/" className="link">
+                Edinburgh Napier University
+              </a>
+              , majoring in Bachelor of Science (Hons) in Computing. I studied
+              at{" "}
+              <a href="https://imu.edu.mm/" className="link">
+                Info Myanmar University
+              </a>{" "}
+              specializing in Software Engineering.
             </p>
             <p className="my-2">
               I have over 2 and a helf years of experience working with web
