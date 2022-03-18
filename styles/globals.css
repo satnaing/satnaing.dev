@@ -23,6 +23,6 @@
     @apply outline-marrsgreen dark:outline-carrigreen;
   }
   .link {
-    @apply outline-marrsgreen dark:outline-carrigreen text-marrsdark hover:text-marrsgreen dark:text-carrilight hover:hover:text-carrigreen;
+    @apply outline-marrsgreen dark:outline-carrigreen text-marrsdark hover:text-marrsgreen dark:text-carrilight dark:hover:text-carrigreen;
   }
 }
