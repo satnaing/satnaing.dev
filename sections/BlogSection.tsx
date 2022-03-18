@@ -6,6 +6,8 @@ import { RoughNotation } from "react-rough-notation";
 import useOnScreen from "../hooks/useOnScreen";
 
 import memojiLaptop from "../public/memoji-laptop.png";
+import Link from "next/link";
+import BlogCard from "../components/BlogCard";
 
 const BlogSection: React.FC = () => {
   const elementRef = useRef<HTMLDivElement>(null);
@@ -49,31 +51,28 @@ const BlogSection: React.FC = () => {
         </div>
         <div className="md:basis-1/2">
           {blogPosts.map((post) => (
-            <div className="my-4 md:mt-0 md:mb-8" key={post.id}>
-              <a href={post.link} className="link">
-                <h3 className="text-lg font-medium">{post.title}</h3>
-              </a>
-              <p className="dark:text-gray-300">{post.desc}</p>
-            </div>
+            <BlogCard post={post} key={post.id} />
           ))}
           <div className="mt-4">
-            <a href="#" className="link">
-              Read all posts{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline-block"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </a>
+            <Link href="/blog">
+              <a className="link">
+                Read all posts{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 inline-block"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+            </Link>
           </div>
         </div>
       </div>
