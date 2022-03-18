@@ -70,7 +70,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           <div className="basis-1/2 xl:basis-2/5">
-            <div className="text-center md:hidden">
+            <div className="text-center md:sr-only">
               <RoughNotation
                 type="underline"
                 color={`${
@@ -84,7 +84,6 @@ const AboutSection: React.FC = () => {
                 </h3>
               </RoughNotation>
             </div>
-            <h3 className="md:sr-only">My Education Background</h3>
             {educationInfo.map((edu) => (
               <div className="mb-4" key={edu.id}>
                 <h4 className="text-marrsgreen dark:text-carrigreen text-lg font-medium">
