@@ -34,12 +34,12 @@ const ProjectSection: React.FC = () => {
         <ProjectCard key={project.title} index={index} project={project} />
       ))}
       <div className="text-center">
-        Other projects can be explored in my{" "}
+        Other projects can be explored in{" "}
         <a
           href="https://github.com/satnaing"
-          className="font-medium underline text-marrsgreen dark:text-carrigreen"
+          className="font-medium underline link-outline text-marrsgreen dark:text-carrigreen whitespace-nowrap"
         >
-          Github Profile
+          my github profile
         </a>
       </div>
     </section>
