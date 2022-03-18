@@ -17,7 +17,10 @@ const Document = () => {
           property="og:description"
           content="Sat Naing is a passionate fullstack developer who love coding both front-end and back-end using amazing technologies."
         />
-        <meta property="og:image" content="/satnaing-dev-og.png" />
+        <meta
+          property="og:image"
+          content="https://satnaing.vercel.app/satnaing-dev-og.png"
+        />
         <meta property="og:url" content="https://satnaing.vercel.app/" />
         <meta property="og:site_name" content="Sat Naing" />
         <meta name="twitter:card" content="summary_large_image" />
