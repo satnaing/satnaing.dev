@@ -12,11 +12,11 @@ import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
-    <>
+    <div className="bg-bglight dark:bg-bgdark">
       <Head>
         <title>Sat Naing</title>
       </Head>
-      <div className="bg-bglight dark:bg-bgdark">
+      <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
         <SkipToMain />
         <Header />
         <SocialLinks />
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         </main>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
