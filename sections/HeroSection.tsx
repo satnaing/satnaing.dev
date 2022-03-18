@@ -7,7 +7,12 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse">
       <div className="px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3">
-        <Image src={profilePic} width={1548} height={1733} />
+        <Image
+          src={profilePic}
+          width={1548}
+          height={1733}
+          alt="Sat Naing profile picture"
+        />
       </div>
 
       <div className="lg:basis-2/3">

@@ -27,7 +27,12 @@ const BlogSection: React.FC = () => {
       <div className="md:flex md:gap-x-8">
         <div className="md:basis-1/2 md:flex md:justify-end md:flex-col-reverse">
           <div className="text-center px-10 md:px-16 lg:px-32">
-            <Image src={memojiLaptop} width={421} height={421} />
+            <Image
+              src={memojiLaptop}
+              width={421}
+              height={421}
+              alt="Sat Naing with Laptop memoji"
+            />
           </div>
           <div className="mb-4" ref={elementRef}>
             <p>

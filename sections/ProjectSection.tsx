@@ -50,7 +50,14 @@ const projects = [
   {
     title: "Haru Fashion",
     type: "Frontend",
-    image: <Image src={haruFashion} width={1440} height={685} />,
+    image: (
+      <Image
+        src={haruFashion}
+        width={1440}
+        height={685}
+        alt="Haru Fashion App"
+      />
+    ),
     desc: "An ecommerce web application where users can browse various products, add to wishlist, add to cart, and make purchase. Available in English and Burmese languages.",
     tags: ["NextJS", "TypeScript", "TailwindCSS", "ContextAPI"],
     liveUrl: "https://haru-fashion.vercel.app/",
@@ -59,7 +66,7 @@ const projects = [
   {
     title: "Haru API",
     type: "Backend",
-    image: <Image src={haruFashion} width={1440} height={685} />,
+    image: <Image src={haruFashion} width={1440} height={685} alt="Haru API" />,
     desc: "A RESTful API developed for Haru fashion ecommerce project. Include CRUD operations, authentication, authorization, forgot/reset password and full-text search.",
     tags: ["ExpressJS", "TypeScript", "PostgreSQL", "Prisma"],
     liveUrl: "https://satnaing.github.io/haru-api/",
@@ -68,8 +75,15 @@ const projects = [
   {
     title: "Tip Calculator",
     type: "Frontend",
-    image: <Image src={tipCalculator} width={1440} height={685} />,
-    desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user’s amount to pay. This app is written in Scss and React with TypeScript.",
+    image: (
+      <Image
+        src={tipCalculator}
+        width={1440}
+        height={685}
+        alt="Tip Calculator"
+      />
+    ),
+    desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user's amount to pay. This app is written in Scss and React with TypeScript.",
     tags: ["React", "TypeScript", "Scss"],
     liveUrl: "https://splitter-sn.netlify.app/",
     codeUrl: "https://github.com/satnaing/tip-calculator",
