@@ -45,12 +45,14 @@ const BlogSection: React.FC = () => {
         <div className="md:basis-1/2">
           {blogPosts.map((post) => (
             <div className="my-4 md:mt-0 md:mb-8" key={post.id}>
-              <h3 className="text-lg font-medium">{post.title}</h3>
+              <a href={post.link} className="link">
+                <h3 className="text-lg font-medium">{post.title}</h3>
+              </a>
               <p className="dark:text-gray-300">{post.desc}</p>
             </div>
           ))}
           <div className="mt-4">
-            <a href="#">
+            <a href="#" className="link">
               Read all posts{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,16 +80,19 @@ const blogPosts = [
   {
     id: 1,
     title: "Rust in the future of JavaScript Ecosystem",
+    link: "#somelink",
     desc: "Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?",
   },
   {
     id: 2,
     title: "Creating a Monorepo with Lerna & Yarn Workspaces",
+    link: "#somelink",
     desc: "In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.",
   },
   {
     id: 3,
     title: "From Firebase/Redis to MySQL with PlanetScale",
+    link: "#somelink",
     desc: "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
   },
 ];
