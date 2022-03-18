@@ -19,7 +19,10 @@ const SocialLinks: React.FC = () => {
 
       <div className="hidden fixed right-10 bottom-0 md:flex flex-col w-6 h-52 items-center justify-between">
         <div className="rotate-90 text-lg tracking-widest">
-          <a href="mailto:contact@satnaing.dev" className="link-outline">
+          <a
+            href="mailto:contact@satnaing.dev"
+            className="link-outline hover:text-marrsgreen dark:hover:text-carrigreen"
+          >
             contact@satnaing.dev
           </a>
         </div>
