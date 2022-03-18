@@ -84,6 +84,7 @@ const AboutSection: React.FC = () => {
                 </h3>
               </RoughNotation>
             </div>
+            <h3 className="md:sr-only">My Education Background</h3>
             {educationInfo.map((edu) => (
               <div className="mb-4" key={edu.id}>
                 <h4 className="text-marrsgreen dark:text-carrigreen text-lg font-medium">
