@@ -57,3 +57,5 @@ fields:
       format: markdown
   label: excerpt
   description: Just a summary of the post
+pages:
+- pages/blog/posts/just-a-title.mdx
