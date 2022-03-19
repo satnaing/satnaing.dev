@@ -1,4 +1,20 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: Title to show in the html title and post
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+  description: Description to show in the open graph and head meta
