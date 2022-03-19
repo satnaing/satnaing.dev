@@ -57,5 +57,3 @@ fields:
       format: markdown
   label: excerpt
   description: Just a summary of the post
-pages:
-- pages/blog/posts/ဘာလုပ်ရင်ကောင်းမလဲ.mdx
