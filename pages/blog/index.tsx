@@ -1,24 +1,17 @@
 import type { NextPage } from "next";
-import Header from "../../components/Header";
-import HeroSection from "../../sections/HeroSection";
-import AboutSection from "../../sections/AboutSection";
-import ProjectSection from "../../sections/ProjectSection";
-import BlogSection from "../../sections/BlogSection";
-import ContactSection from "../../sections/ContactSection";
-import Footer from "../../components/Footer";
-import SkipToMain from "../../components/SkipToMain";
-import SocialLinks from "../../components/SocialLinks";
-import Head from "next/head";
-import BlogHeader from "../../components/BlogHeader";
-import BlogHeroSection from "../../sections/BlogHeroSection";
-import BlogCard from "../../components/BlogCard";
+
+import AppHead from "@/components/AppHead";
+import BlogHeroSection from "@/sections/BlogHeroSection";
+import SkipToMain from "@/components/SkipToMain";
+import SocialLinks from "@/components/SocialLinks";
+import BlogHeader from "@/components/BlogHeader";
+import BlogCard from "@/components/BlogCard";
+import Footer from "@/components/Footer";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Sat Naing&apos;s Blog</title>
-      </Head>
+      <AppHead meta={{ title: "Blog", description: "my blog desc" }} />
       <div className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
