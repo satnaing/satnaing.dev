@@ -5,27 +5,6 @@ const Document = () => {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        <meta name="author" content="Sat Naing" />
-        <meta
-          name="description"
-          content="Sat Naing is a passionate fullstack developer who love coding both front-end and back-end using amazing technologies."
-        />
-        <meta property="og:title" content="Sat Naing" />
-        <meta
-          property="og:description"
-          content="Sat Naing is a passionate fullstack developer who love coding both front-end and back-end using amazing technologies."
-        />
-        <meta
-          property="og:image"
-          content="https://satnaing.vercel.app/satnaing-dev-og.png"
-        />
-        <meta property="og:url" content="https://satnaing.vercel.app/" />
-        <meta property="og:site_name" content="Sat Naing" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:image:alt"
-          content="Sat Naing's portfolio website"
-        />
 
         {/* Favicons */}
         <link
