@@ -1,8 +1,3 @@
-import Image from "next/image";
-import LinkButton from "../components/LinkButton";
-
-import profilePic from "../public/satnaing.png";
-
 const BlogHeroSection: React.FC = () => {
   return (
     <section className="mt-16 py-8 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
