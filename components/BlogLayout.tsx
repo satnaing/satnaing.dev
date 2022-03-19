@@ -37,6 +37,8 @@ const components = {
 interface MdxMeta extends Meta {
   title: string;
   datetime: string;
+  excerpt: string;
+  slug: string;
 }
 
 type Props = {
