@@ -18,5 +18,44 @@ fields:
       format: markdown
   label: Description
   description: Description to show in the open graph and head meta
+- name: datetime
+  type: datetime
+  label: Datetime
+  config:
+    required: false
+    date_format: DD-MM-YYY
+    time_format: 
+    display_utc: false
+  description: Post published datetime
+  default: now
+- name: author
+  type: text
+  config:
+    required: false
+  label: Author
+  description: Author of the post
+  default: Sat Naing
+- name: image
+  type: text
+  config:
+    required: false
+  label: Image
+  description: Image for OG card. Served via cloudinary
+- name: imageAlt
+  type: text
+  config:
+    required: false
+  label: Image alt
+  description: 'Image alt for og. '
+- name: excerpt
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: excerpt
+  description: Just a summary of the post
 pages:
 - pages/blog/posts/ဘာလုပ်ရင်ကောင်းမလဲ.mdx
