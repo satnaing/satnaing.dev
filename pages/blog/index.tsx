@@ -1,4 +1,7 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
+
+import { articlesWithMetadata } from "utils/articlesWithMetadata";
+import { MdxMeta } from "@/components/BlogLayout";
 
 import AppHead from "@/components/AppHead";
 import BlogHeroSection from "@/sections/BlogHeroSection";
@@ -8,7 +11,11 @@ import BlogHeader from "@/components/BlogHeader";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 
-const Home: NextPage = () => {
+type Props = {
+  posts: MdxMeta[];
+};
+
+const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
       <AppHead
@@ -24,8 +31,8 @@ const Home: NextPage = () => {
             <BlogHeroSection />
             <div className="py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
               <h2 className="text-2xl font-medium">Featured Posts</h2>
-              {blogPosts.map((post) => (
-                <BlogCard post={post} key={post.id} />
+              {posts.map((post) => (
+                <BlogCard post={post} key={post.slug} />
               ))}
             </div>
           </main>
@@ -34,6 +41,16 @@ const Home: NextPage = () => {
       </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const posts: MdxMeta[] = await articlesWithMetadata();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 const blogPosts = [
