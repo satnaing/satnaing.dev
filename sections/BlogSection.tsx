@@ -51,7 +51,7 @@ const BlogSection: React.FC = () => {
         </div>
         <div className="md:basis-1/2">
           {blogPosts.map((post) => (
-            <BlogCard post={post} key={post.id} />
+            <BlogCard post={post} key={post.slug} />
           ))}
           <div className="mt-4">
             <Link href="/blog">
@@ -82,22 +82,25 @@ const BlogSection: React.FC = () => {
 
 const blogPosts = [
   {
-    id: 1,
+    slug: "Rust",
     title: "Rust in the future of JavaScript Ecosystem",
-    link: "#somelink",
-    desc: "Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?",
+    datetime: "3/19/2022, 9:09:46 PM",
+    excerpt:
+      "Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?",
   },
   {
-    id: 2,
+    slug: "Monorepo",
     title: "Creating a Monorepo with Lerna & Yarn Workspaces",
-    link: "#somelink",
-    desc: "In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.",
+    datetime: "3/19/2022, 9:09:46 PM",
+    excerpt:
+      "In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.",
   },
   {
-    id: 3,
+    slug: "Firebase",
     title: "From Firebase/Redis to MySQL with PlanetScale",
-    link: "#somelink",
-    desc: "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
+    datetime: "3/19/2022, 9:09:46 PM",
+    excerpt:
+      "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
   },
 ];
 
