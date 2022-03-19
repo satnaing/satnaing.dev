@@ -18,3 +18,5 @@ fields:
       format: markdown
   label: Description
   description: Description to show in the open graph and head meta
+pages:
+- pages/blog/posts/ဘာလုပ်ရင်ကောင်းမလဲ.mdx
