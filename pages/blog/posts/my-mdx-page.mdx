@@ -1,0 +1,36 @@
+import BlogLayout from "../../../components/BlogLayout";
+
+export const meta = {
+  title: "My MDX Page",
+  description: "My first mdx page testing",
+  author: "Sat Naing",
+  datetime: "Sat 19 Mar, 2020 | 4:40PM",
+};
+
+## This is h2
+
+### This is h3
+
+---
+
+#### This is h4
+
+##### This is h5
+
+###### This is h6
+
+```js
+backtick.fences("for blocks");
+```
+
+This is a list in markdown:
+
+- One
+- Two
+- Three
+
+Checkout my React component:
+
+export default ({ children }) => (
+  <BlogLayout meta={meta}>{children}</BlogLayout>
+);

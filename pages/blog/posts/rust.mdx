@@ -1,0 +1,32 @@
+import BlogLayout from "@/components/BlogLayout";
+
+export const meta = {
+  title: "Rust Is The Future of JavaScript Infrastructure",
+  description: "My first mdx page testing",
+  author: "Sat Naing",
+  datetime: "Sat 19 Mar, 2020 | 4:40PM",
+};
+
+Rust is a fast, reliable, and memory-efficient programming language. It's been voted the most loved programming language six years in a row (survey). Created by Mozilla, it's now used at Facebook, Apple, Amazon, Microsoft, and Google for systems infrastructure, encryption, virtualization, and more low-level programming.
+
+Why is Rust now being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?
+
+> Note: This post is also available in Chinese, Portuguese, and Arabic.
+
+## What is Rust
+
+Rust helps developers write fast software that's memory-efficient. It's a modern replacement for languages like C++ or C with a focus on code safety and concise syntax.
+
+Rust is quite different than JavaScript. JavaScript tries to find variables or objects not in use and automatically clears them from memory. This is called Garbage Collection. The language abstracts the developer from thinking about manual memory management.
+
+With Rust, developers have more control over memory allocation, without it being as painful as C++.
+
+> Rust uses a relatively unique memory management approach that incorporates the idea of memory “ownership”. Basically, Rust keeps track of who can read and write to memory. It knows when the program is using memory and immediately frees the memory once it is no longer needed. It enforces memory rules at compile time, making it virtually impossible to have runtime memory bugs. You do not need to manually keep track of memory. The compiler takes care of it. - Discord
+
+## Adoption
+
+On top of the companies mentioned above, Rust is also being used for popular open-source libraries like:
+
+export default ({ children }) => (
+  <BlogLayout meta={meta}>{children}</BlogLayout>
+);
