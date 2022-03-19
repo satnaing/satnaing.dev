@@ -15,7 +15,6 @@ const meta = {
     "Sat Naing is a passionate fullstack developer who love coding both front-end and back-end using amazing technologies.",
   author: "Sat Naing",
   type: "website",
-  url: "https://satnaing.vercel.app",
   siteName: "Sat Naing",
   imageAlt: "Sat Naing portfolio website",
 };
@@ -23,7 +22,11 @@ const meta = {
 const Home: NextPage = () => {
   return (
     <>
-      <AppHead title="Sat Naing - A Full-stack Developer" meta={meta} />
+      <AppHead
+        title="Sat Naing - A Full-stack Developer"
+        url="https://satnaing.vercel.app"
+        meta={meta}
+      />
       <div className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
