@@ -57,5 +57,10 @@ fields:
       format: markdown
   label: excerpt
   description: Just a summary of the post
+- name: imageTest
+  type: file
+  config:
+    maxSize: 64
+  label: Image Test
 pages:
 - pages/blog/posts/just-a-title.mdx
