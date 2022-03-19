@@ -1,7 +1,6 @@
 import Head from "next/head";
 
-export type Meta = {
-  title?: string;
+export interface Meta {
   description: string;
   author?: string;
   siteName?: string;
@@ -9,7 +8,7 @@ export type Meta = {
   imageAlt?: string;
   type?: string;
   url?: string;
-};
+}
 
 type Props = {
   title: string;
