@@ -7,15 +7,19 @@ export interface Meta {
   image?: string;
   imageAlt?: string;
   type?: string;
-  url?: string;
 }
 
 type Props = {
   title: string;
   meta: Meta;
+  url?: string;
 };
 
-const AppHead: React.FC<Props> = ({ title, meta }) => {
+const AppHead: React.FC<Props> = ({
+  title,
+  url = "https://satnaing.vercel.app/blog",
+  meta,
+}) => {
   const {
     author = "Sat Naing",
     description,
@@ -23,7 +27,6 @@ const AppHead: React.FC<Props> = ({ title, meta }) => {
     image = "https://satnaing.vercel.app/satnaing-dev-og.png",
     imageAlt = "Sat Naing's Blog",
     type = "article",
-    url = "https://satnaing.vercel.app/blog",
   } = meta;
   return (
     <Head>
