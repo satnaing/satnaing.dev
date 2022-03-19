@@ -11,7 +11,10 @@ import Footer from "@/components/Footer";
 const Home: NextPage = () => {
   return (
     <>
-      <AppHead meta={{ title: "Blog", description: "my blog desc" }} />
+      <AppHead
+        title="Blog - Sat Naing"
+        meta={{ description: "my blog desc" }}
+      />
       <div className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />

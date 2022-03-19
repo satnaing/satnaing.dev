@@ -11,7 +11,6 @@ import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
 
 const meta = {
-  title: "Sat Naing - A Full-stack Developer",
   description:
     "Sat Naing is a passionate fullstack developer who love coding both front-end and back-end using amazing technologies.",
   author: "Sat Naing",
@@ -24,7 +23,7 @@ const meta = {
 const Home: NextPage = () => {
   return (
     <>
-      <AppHead meta={meta} />
+      <AppHead title="Sat Naing - A Full-stack Developer" meta={meta} />
       <div className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />

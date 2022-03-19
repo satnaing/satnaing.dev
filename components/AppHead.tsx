@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export type Meta = {
-  title: string;
+  title?: string;
   description: string;
   author?: string;
   siteName?: string;
@@ -12,13 +12,13 @@ export type Meta = {
 };
 
 type Props = {
+  title: string;
   meta: Meta;
 };
 
-const AppHead: React.FC<Props> = ({ meta }) => {
+const AppHead: React.FC<Props> = ({ title, meta }) => {
   const {
     author = "Sat Naing",
-    title,
     description,
     siteName = "Sat Naing's Blog",
     image = "https://satnaing.vercel.app/satnaing-dev-og.png",
