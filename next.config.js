@@ -2,7 +2,7 @@
 
 module.exports = {
   // Append the default value with md extensions
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "html"],
   reactStrictMode: true,
   images: {
     domains: ["res.cloudinary.com"],
