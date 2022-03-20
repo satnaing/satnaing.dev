@@ -46,7 +46,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
 
     if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
+      items[field] = JSON.stringify(data[field]);
     }
   });
 
