@@ -1,0 +1,99 @@
+---
+label: Blog Article
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Title for post and site
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+  description: Description of the post (required for site desc and og desc)
+- name: excerpt
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Excerpt
+  description: Summary of the post
+- name: category
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - How do I
+    - Random
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Category
+  description: Category of the post
+- name: datetime
+  type: datetime
+  label: Datetime
+  description: Datetime purblished for the post
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+  description: Slug for the post. If not specified, file name will be used as slug
+- name: featured
+  type: boolean
+  label: Featured Post
+  description: Set the post as featured post
+  default: false
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+  description: Tags for the post
+- name: author
+  type: select
+  default: Sat Naing
+  config:
+    required: true
+    options:
+    - Sat Naing
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Author
+  description: Author of the post
+- name: type
+  type: select
+  default: article
+  config:
+    required: true
+    options:
+    - article
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Type
+  description: Type of the post for OG

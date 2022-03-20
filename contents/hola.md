@@ -1,23 +1,19 @@
 ---
-title: "Hola"
-description: "This is just an OG description"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-datetime: "2020-06-16T05:35:07.322Z"
+title: Hola
+description: This is just an OG description
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
+  fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities
+  morbi tempus.
+datetime: 2020-06-16T05:35:07.322Z
 featured: false
-category:
-  name: ""
-  slug: ""
-# tags:
-#   - "JavaScript"
-#   - "NextJS"
-author:
-  name: Tim Neutkens
-  picture: "/assets/blog/authors/tim.jpeg"
+category: Random
+author: Sat Naing
 ogImage:
   url: "/assets/blog/hello-world/cover.jpg"
 type: article
----
 
+---
 ## This is just a testing
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
