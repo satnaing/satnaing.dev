@@ -34,7 +34,7 @@ fields:
     config:
       required: false
       options:
-        - How do I
+        - How Do I
         - Random
       source:
         type: simple
