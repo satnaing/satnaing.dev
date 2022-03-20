@@ -2,9 +2,6 @@
 title: "Hari Fashion ecommerce ကိုဘယ်လိုရေးခဲ့လဲ"
 description: "Haru Fashion e-commerce application တစ်ခုကိုကျွန်တော် ဘယ်လိုရေးခဲ့သလဲ"
 excerpt: "ကျွန်တော်ရေးခဲ့တဲ့ Haru Fashion ဆိုတဲ့ e-commerce အကြောင်း၊ အသုံးပြုခဲ့တဲ့ technologies တွေရယ်၊ ရေးခဲ့စဥ်မှာကြုံခဲ့ရတဲ့ အတွေ့အကြုံတွေအကြောင်း"
-coverImage:
-  url: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
-  alt: "Haru Fashion"
 datetime: 2022-03-20T05:35:07.322Z
 slug: "how-i-made-haru"
 featured: true
@@ -15,9 +12,14 @@ tags:
   - "ContextAPI"
   - "TailwindCSS"
 author: Sat Naing
-ogImage:
-  url: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
-  alt: "Haru Fashion"
+
+coverImage: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
+coverImageAlt: "Haru Fashion"
+coverImageWidth: "1200"
+coverImageHeight: "700"
+
+ogImage: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
+ogImageAlt: "Haru Fashion"
 type: article
 ---
 
