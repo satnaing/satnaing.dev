@@ -65,6 +65,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                     src={post.coverImage}
                     alt={post.coverImageAlt || "Picture"}
                     layout="responsive"
+                    priority
                     width={post.coverImageWidth || 1200}
                     height={post.coverImageHeight || 700}
                   />
