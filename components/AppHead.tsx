@@ -4,7 +4,10 @@ export interface Meta {
   description: string;
   author?: string;
   siteName?: string;
-  ogImage?: { url: string; alt: string };
+  coverImage?: string;
+  coverImageAlt?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
   type?: string;
 }
 
@@ -23,14 +26,30 @@ const AppHead: React.FC<Props> = ({
     author = "Sat Naing",
     description,
     siteName = "Sat Naing's Blog",
+    coverImage,
+    coverImageAlt,
     ogImage,
+    ogImageAlt,
     type = "article",
   } = meta;
 
-  const appOgImage = ogImage
-    ? ogImage.url
-    : "https://satnaing.vercel.app/satnaing-dev-og.png";
-  const appOgImageAlt = ogImage ? ogImage.alt : "Sat Naing's Blog";
+  let appOgImage = "";
+  let appOgImageAlt = "";
+  if (ogImage) {
+    appOgImage = ogImage;
+  } else if (!ogImage && coverImage) {
+    appOgImage = coverImage;
+  } else {
+    appOgImage = "https://satnaing.vercel.app/satnaing-dev-og.png";
+  }
+
+  if (ogImageAlt) {
+    appOgImageAlt = ogImageAlt;
+  } else if (!ogImageAlt && coverImageAlt) {
+    appOgImageAlt = coverImageAlt;
+  } else {
+    appOgImageAlt = "Sat Naing's Blog";
+  }
 
   return (
     <Head>
