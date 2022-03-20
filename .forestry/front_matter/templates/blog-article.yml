@@ -1,9 +1,0 @@
----
-label: Blog Article
-hide_body: true
-fields:
-- name: description
-  type: text
-  config:
-    required: false
-  label: Description
