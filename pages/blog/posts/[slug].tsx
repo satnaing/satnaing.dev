@@ -63,10 +63,10 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                 <div className="bg-cardlight dark:bg-carddark">
                   <Image
                     src={post.coverImage}
-                    alt={post.coverImageAlt}
+                    alt={post.coverImageAlt || "Picture"}
                     layout="responsive"
-                    width={post.coverImageWidth}
-                    height={post.coverImageHeight}
+                    width={post.coverImageWidth || 1200}
+                    height={post.coverImageHeight || 700}
                   />
                 </div>
               )}
