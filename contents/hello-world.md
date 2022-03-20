@@ -5,7 +5,7 @@ excerpt: "ကျွန်တော်ရေးခဲ့တဲ့ Haru Fashion �
 coverImage:
   url: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
   alt: "Haru Fashion"
-datetime: "2022-03-20T05:35:07.322Z"
+datetime: 2022-03-20T05:35:07.322Z
 slug: "how-i-made-haru"
 featured: true
 category: "How Do I"
