@@ -1,6 +1,5 @@
 const formatDatetime = (datetime: string) => {
-  // const DATE_CONSTANT = "3/19/2022, 9:09:46 PM";
-  const myDatetime = new Date(datetime);
+  const myDatetime = new Date(JSON.parse(datetime));
   const formattedDatetime =
     myDatetime.toLocaleDateString([], {
       year: "numeric",
