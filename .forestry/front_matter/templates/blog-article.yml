@@ -30,12 +30,11 @@ fields:
   description: Summary of the post
 - name: category
   type: select
-  default: Uncategorized
+  default: ''
   config:
     required: false
     options:
     - How do I
-    - Uncategorized
     source:
       type: simple
       section: 
