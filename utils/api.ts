@@ -47,7 +47,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
     if (typeof data[field] !== "undefined") {
       if (field === "datetime") {
-        items[field] = JSON.stringify(data[field]);
+        items[field] = '"' + data[field] + '"';
       } else {
         items[field] = data[field];
       }

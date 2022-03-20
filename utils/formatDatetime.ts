@@ -1,5 +1,5 @@
 const formatDatetime = (datetime: string) => {
-  const myDatetime = new Date(JSON.parse(datetime));
+  const myDatetime = new Date(datetime);
   const formattedDatetime =
     myDatetime.toLocaleDateString([], {
       year: "numeric",
