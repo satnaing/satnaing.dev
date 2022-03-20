@@ -8,9 +8,7 @@ coverImage:
 datetime: "2022-03-20T05:35:07.322Z"
 slug: "how-i-made-haru"
 featured: true
-category:
-  name: "How do I"
-  slug: "how-do-i"
+category: "How Do I"
 tags:
   - "JavaScript"
   - "NextJS"
