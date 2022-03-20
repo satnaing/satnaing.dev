@@ -97,3 +97,8 @@ fields:
       path: 
   label: Type
   description: Type of the post for OG
+- name: test_cover
+  type: file
+  config:
+    maxSize: 64
+  label: Test Cover
