@@ -12,7 +12,7 @@ author: Sat Naing
 ogImage:
   url: "/assets/blog/hello-world/cover.jpg"
 type: article
-coverImage: "/v1647791837/SatNaing/tip-calculator_mkdj8a.png"
+coverImage: ''
 
 ---
 ## This is just a testing
