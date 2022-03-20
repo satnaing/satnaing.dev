@@ -1,17 +1,16 @@
+import Image from "next/image";
+import { GetStaticPaths, GetStaticProps } from "next";
 import BlogHeader from "@/components/blog/BlogHeader";
-import Footer from "@/components/Footer";
 import SkipToMain from "@/components/SkipToMain";
 import SocialLinks from "@/components/SocialLinks";
 import AppHead, { Meta } from "@/components/AppHead";
-import { useRouter } from "next/router";
+import Footer from "@/components/Footer";
 import markdownToHtml from "utils/markdownToHtml";
 import { getAllPosts, getPostBySlug } from "utils/api";
 import PostBody from "@/components/blog/PostBody";
-import formatDatetime from "utils/formatDatetime";
-import Image from "next/image";
-import { GetStaticPaths, GetStaticProps } from "next";
-import HeadCategory from "@/components/blog/HeadCategory";
 import Tag from "@/components/blog/Tag";
+import formatDatetime from "utils/formatDatetime";
+import HeadCategory from "@/components/blog/HeadCategory";
 
 export interface MdxMeta extends Meta {
   title: string;
@@ -22,6 +21,7 @@ export interface MdxMeta extends Meta {
   tags?: string[];
   content: string;
   coverImage?: { url: string; alt: string };
+  featured: boolean;
 }
 
 type Props = {
@@ -29,13 +29,11 @@ type Props = {
 };
 
 const BlogLayout: React.FC<Props> = ({ post }) => {
-  const { pathname } = useRouter();
-  const appPath = post.slug ? `/blog/posts/${post.slug}` : pathname;
   return (
     <>
       <AppHead
         title={`${post.title} - Sat Naing`}
-        url={`https://satnaing.vercel.app/${appPath}`}
+        url={`https://satnaing.vercel.app//blog/posts/${post.slug}`}
         meta={post}
       />
       <div className="bg-bglight dark:bg-bgdark">

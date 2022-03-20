@@ -3,6 +3,7 @@ title: "Hola"
 description: "This is just an OG description"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
 datetime: "2020-06-16T05:35:07.322Z"
+featured: false
 category:
   name: ""
   slug: ""
