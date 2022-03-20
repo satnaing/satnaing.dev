@@ -20,7 +20,8 @@ export interface MdxMeta extends Meta {
   category: string;
   tags?: string[];
   content: string;
-  coverImage?: { url: string; alt: string };
+  coverImageWidth?: string;
+  coverImageHeight?: string;
   featured: boolean;
 }
 
@@ -61,10 +62,11 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
               {post.coverImage && (
                 <div className="bg-cardlight dark:bg-carddark">
                   <Image
-                    src={post.coverImage.url}
-                    alt={post.coverImage.alt}
-                    width={1200}
-                    height={700}
+                    src={post.coverImage}
+                    alt={post.coverImageAlt}
+                    layout="responsive"
+                    width={post.coverImageWidth}
+                    height={post.coverImageHeight}
                   />
                 </div>
               )}
