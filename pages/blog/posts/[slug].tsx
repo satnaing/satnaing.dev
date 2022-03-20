@@ -82,6 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params!.slug as string, [
     "title",
     "datetime",
+    "description",
     "slug",
     "author",
     "content",
