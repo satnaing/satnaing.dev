@@ -30,11 +30,12 @@ type Props = {
 
 const BlogLayout: React.FC<Props> = ({ post }) => {
   const { pathname } = useRouter();
+  const appPath = post.slug ? pathname : `/blog/posts/${post.slug}`;
   return (
     <>
       <AppHead
         title={`${post.title} - Sat Naing`}
-        url={`https://satnaing.vercel.app/${pathname}`}
+        url={`https://satnaing.vercel.app/${appPath}`}
         meta={post}
       />
       <div className="bg-bglight dark:bg-bgdark">
