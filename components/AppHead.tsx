@@ -4,8 +4,7 @@ export interface Meta {
   description: string;
   author?: string;
   siteName?: string;
-  image?: string;
-  imageAlt?: string;
+  ogImage?: { url: string; alt: string };
   type?: string;
 }
 
@@ -24,10 +23,15 @@ const AppHead: React.FC<Props> = ({
     author = "Sat Naing",
     description,
     siteName = "Sat Naing's Blog",
-    image = "https://satnaing.vercel.app/satnaing-dev-og.png",
-    imageAlt = "Sat Naing's Blog",
+    ogImage,
     type = "article",
   } = meta;
+
+  const appOgImage = ogImage
+    ? ogImage.url
+    : "https://satnaing.vercel.app/satnaing-dev-og.png";
+  const appOgImageaLT = ogImage ? ogImage.alt : "Sat Naing's Blog";
+
   return (
     <Head>
       <title>{title}</title>
@@ -35,11 +39,11 @@ const AppHead: React.FC<Props> = ({
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={appOgImage} />
+      <meta name="twitter:image:alt" content={appOgImageaLT} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteName} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image:alt" content={imageAlt} />
       <meta property="og:type" content={type} />
     </Head>
   );
