@@ -11,6 +11,7 @@ const HeroSection: React.FC = () => {
           src={profilePic}
           width={1548}
           height={1733}
+          priority
           alt="Sat Naing profile picture"
         />
       </div>
