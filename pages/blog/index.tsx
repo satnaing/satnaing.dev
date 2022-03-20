@@ -1,6 +1,4 @@
 import type { GetStaticProps, NextPage } from "next";
-
-import { articlesWithMetadata } from "utils/articlesWithMetadata";
 import { MdxMeta } from "@/components/BlogLayout";
 
 import AppHead from "@/components/AppHead";
@@ -10,6 +8,7 @@ import SocialLinks from "@/components/SocialLinks";
 import BlogHeader from "@/components/BlogHeader";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
+import { getAllPosts } from "utils/api";
 
 type Props = {
   posts: MdxMeta[];
@@ -29,8 +28,8 @@ const Home: NextPage<Props> = ({ posts }) => {
           <SocialLinks />
           <main id="main" className="mb-20">
             <BlogHeroSection />
-            <div className="py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
-              <h2 className="text-2xl font-medium">Featured Posts</h2>
+            <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+              <h2 className="text-2xl font-medium mb-2">Featured Posts</h2>
               {posts.map((post) => (
                 <BlogCard post={post} key={post.slug} />
               ))}
@@ -43,8 +42,8 @@ const Home: NextPage<Props> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const posts: MdxMeta[] = await articlesWithMetadata();
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = getAllPosts(["slug", "title", "excerpt", "datetime"]);
 
   return {
     props: {
@@ -52,26 +51,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   };
 };
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "Rust in the future of JavaScript Ecosystem",
-    link: "#somelink",
-    desc: "Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?",
-  },
-  {
-    id: 2,
-    title: "Creating a Monorepo with Lerna & Yarn Workspaces",
-    link: "#somelink",
-    desc: "In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.",
-  },
-  {
-    id: 3,
-    title: "From Firebase/Redis to MySQL with PlanetScale",
-    link: "#somelink",
-    desc: "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
-  },
-];
 
 export default Home;
