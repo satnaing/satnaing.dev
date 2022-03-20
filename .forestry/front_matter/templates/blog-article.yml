@@ -28,3 +28,13 @@ fields:
       format: markdown
   label: Excerpt
   description: Summary of the post
+- name: datetime
+  type: datetime
+  label: Datetime
+  description: Datetime purblished for the post
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
