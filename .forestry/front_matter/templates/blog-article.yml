@@ -14,6 +14,7 @@ fields:
     required: false
   label: Cover Image Alt Text
   description: Alt text for cover image
+  default: Picture
 - name: coverImageWidth
   type: text
   config:
