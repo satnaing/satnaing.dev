@@ -12,7 +12,7 @@ sections:
   new_doc_ext: md
   templates:
   - blog-article
-upload_dir: https://res.cloudinary.com/noezectz/image/upload
+upload_dir: SatNaing
 public_path: ''
 front_matter_path: ''
 use_front_matter_path: false
