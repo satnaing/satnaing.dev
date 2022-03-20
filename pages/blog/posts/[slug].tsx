@@ -17,7 +17,7 @@ export interface MdxMeta extends Meta {
   datetime: string;
   excerpt: string;
   slug: string;
-  category: { name?: string; slug?: string };
+  category: string;
   tags?: string[];
   content: string;
   coverImage?: { url: string; alt: string };
