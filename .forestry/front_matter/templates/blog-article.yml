@@ -38,3 +38,14 @@ fields:
     time_format: 
     display_utc: false
   default: now
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+  description: Slug for the post. If not specified, file name will be used as slug
+- name: featured
+  type: boolean
+  label: Featured Post
+  description: Set the post as featured post
+  default: false
