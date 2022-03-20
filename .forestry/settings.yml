@@ -12,8 +12,8 @@ sections:
   new_doc_ext: md
   templates:
   - blog-article
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: SatNaing
+public_path: ''
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
