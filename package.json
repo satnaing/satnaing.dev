@@ -9,15 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.1.0",
-    "@next/mdx": "^12.1.0",
+    "gray-matter": "^4.0.3",
     "next": "12.1.0",
     "next-themes": "^0.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-rough-notation": "^1.0.2"
+    "react-rough-notation": "^1.0.2",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "@types/node": "17.0.21",
     "@types/react": "17.0.40",
     "autoprefixer": "^10.4.2",
