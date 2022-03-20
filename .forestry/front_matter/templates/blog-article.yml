@@ -28,6 +28,21 @@ fields:
       format: markdown
   label: Excerpt
   description: Summary of the post
+- name: category
+  type: select
+  default: Uncategorized
+  config:
+    required: false
+    options:
+    - How do I
+    - Uncategorized
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Category
+  description: Category of the post
 - name: datetime
   type: datetime
   label: Datetime
