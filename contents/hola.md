@@ -1,8 +1,7 @@
 ---
 title: Hola
 description: This is just an OG description
-excerpt:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
   fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities
   morbi tempus.
@@ -11,16 +10,14 @@ featured: false
 category: Random
 author: Sat Naing
 type: article
-
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1647791837/SatNaing/tip-calculator_mkdj8a.png
-coverImageAlt: "tip calculator"
-coverImageWidth: "2724"
-coverImageHeight: "1528"
-
+coverImageAlt: tip calculator
+coverImageWidth: "2725"
+coverImageHeight: "1529"
 ogImage: "/assets/blog/hello-world/cover.jpg"
-ogImageAlt: "something"
----
+ogImageAlt: something
 
+---
 ## This is just a testing
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
