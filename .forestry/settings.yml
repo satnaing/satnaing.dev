@@ -12,8 +12,8 @@ sections:
   new_doc_ext: md
   templates:
   - blog-article
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing
+public_path: https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
