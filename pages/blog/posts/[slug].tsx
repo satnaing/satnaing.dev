@@ -1,4 +1,4 @@
-import BlogHeader from "@/components/BlogHeader";
+import BlogHeader from "@/components/blog/BlogHeader";
 import Footer from "@/components/Footer";
 import SkipToMain from "@/components/SkipToMain";
 import SocialLinks from "@/components/SocialLinks";
