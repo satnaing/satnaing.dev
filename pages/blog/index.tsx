@@ -1,11 +1,11 @@
 import type { GetStaticProps, NextPage } from "next";
-import { MdxMeta } from "@/components/BlogLayout";
+import { MdxMeta } from "./posts/[slug]";
 
 import AppHead from "@/components/AppHead";
 import BlogHeroSection from "@/sections/BlogHeroSection";
 import SkipToMain from "@/components/SkipToMain";
 import SocialLinks from "@/components/SocialLinks";
-import BlogHeader from "@/components/BlogHeader";
+import BlogHeader from "@/components/blog/BlogHeader";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
