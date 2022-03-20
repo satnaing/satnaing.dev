@@ -5,13 +5,14 @@ excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
   fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities
   morbi tempus.
-datetime: 2020-06-17T05:35:07+00:00
+datetime: 2020-06-17T05:35:07.000+00:00
 featured: false
 category: Random
 author: Sat Naing
 ogImage:
   url: "/assets/blog/hello-world/cover.jpg"
 type: article
+coverImage: "/v1647791837/SatNaing/tip-calculator_mkdj8a.png"
 
 ---
 ## This is just a testing
