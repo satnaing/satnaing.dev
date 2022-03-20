@@ -30,7 +30,7 @@ type Props = {
 
 const BlogLayout: React.FC<Props> = ({ post }) => {
   const { pathname } = useRouter();
-  const appPath = post.slug ? pathname : `/blog/posts/${post.slug}`;
+  const appPath = post.slug ? `/blog/posts/${post.slug}` : pathname;
   return (
     <>
       <AppHead
