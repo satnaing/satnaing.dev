@@ -14,7 +14,7 @@ type Props = {
   posts: MdxMeta[];
 };
 
-const Home: NextPage<Props> = ({ posts }) => {
+const Blog: NextPage<Props> = ({ posts }) => {
   return (
     <>
       <AppHead
@@ -30,6 +30,14 @@ const Home: NextPage<Props> = ({ posts }) => {
             <BlogHeroSection />
             <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
               <h2 className="text-2xl font-medium mb-2">Featured Posts</h2>
+              {posts.map(
+                (post) =>
+                  post.featured && <BlogCard post={post} key={post.slug} />
+              )}
+            </div>
+            <hr className="mx-4 sm:mx-20 md:mx-auto max-w-xl lg:max-w-2xl my-6" />
+            <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+              <h2 className="text-2xl font-medium mb-2">All Posts</h2>
               {posts.map((post) => (
                 <BlogCard post={post} key={post.slug} />
               ))}
@@ -43,7 +51,13 @@ const Home: NextPage<Props> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(["slug", "title", "excerpt", "datetime"]);
+  const posts = getAllPosts([
+    "slug",
+    "title",
+    "excerpt",
+    "datetime",
+    "featured",
+  ]);
 
   return {
     props: {
@@ -52,4 +66,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default Blog;
