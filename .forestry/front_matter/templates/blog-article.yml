@@ -8,6 +8,24 @@ fields:
     maxSize: 64
   label: Cover Image
   description: Cover image for the post
+- name: coverImageAlt
+  type: text
+  config:
+    required: false
+  label: Cover Image Alt Text
+  description: Alt text for cover image
+- name: coverImageWidth
+  type: text
+  config:
+    required: false
+  label: Cover Image Width
+  default: '1200'
+- name: coverImageHeight
+  type: text
+  config:
+    required: false
+  label: Cover Image Height
+  default: '700'
 - name: title
   type: text
   config:
