@@ -37,12 +37,11 @@ const BlogHeader: React.FC = () => {
               <ul className="flex">
                 {navLinks.map((navLink) => (
                   <li key={navLink.url}>
-                    <a
-                      href={navLink.url}
-                      className="text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline"
-                    >
-                      {navLink.text}
-                    </a>
+                    <Link href={navLink.url}>
+                      <a className="text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline">
+                        {navLink.text}
+                      </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
