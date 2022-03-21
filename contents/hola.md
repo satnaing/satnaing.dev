@@ -13,7 +13,7 @@ type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1647791837/SatNaing/tip-calculator_mkdj8a.png
 coverImageAlt: tip calculator
 coverImageWidth: "2725"
-coverImageHeight: "700"
+coverImageHeight: "1529"
 ogImage: "/assets/blog/hello-world/cover.jpg"
 ogImageAlt: something
 
