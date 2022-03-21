@@ -58,6 +58,21 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
+export function getCategorySlugs(category: string) {
+  const files = fs.readdirSync(postsDirectory);
+
+  let slugs: string[] = [];
+
+  for (let file of files) {
+    const fullPath = join(postsDirectory, file);
+    const { data } = matter(fs.readFileSync(fullPath, "utf8"));
+    if (slugify(data.category) !== category) continue;
+    slugs.push(data.slug ? data.slug : file.replace(/\.md$/, ""));
+  }
+
+  return slugs;
+}
+
 export function getAllPosts(fields: string[] = [], category?: string) {
   const slugs = category ? getCategorySlugs(category) : getPostSlugs();
   const posts = slugs
@@ -72,7 +87,7 @@ export function getAllPosts(fields: string[] = [], category?: string) {
   return posts;
 }
 
-export function getCategorySlugs(category: string) {
+export function getTagSlugs(tag: string) {
   const files = fs.readdirSync(postsDirectory);
 
   let slugs: string[] = [];
@@ -80,9 +95,27 @@ export function getCategorySlugs(category: string) {
   for (let file of files) {
     const fullPath = join(postsDirectory, file);
     const { data } = matter(fs.readFileSync(fullPath, "utf8"));
-    if (slugify(data.category) !== category) continue;
+
+    if (!data.tags) continue;
+
+    if (!data.tags.includes(tag)) continue;
+
     slugs.push(data.slug ? data.slug : file.replace(/\.md$/, ""));
   }
 
   return slugs;
+}
+
+export function getAllTagPosts(fields: string[] = [], tag?: string) {
+  const slugs = getTagSlugs(tag as string);
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    // sort posts by date in descending order
+    .sort((post1, post2) =>
+      new Date(post1.datetime as string).getTime() >
+      new Date(post2.datetime as string).getTime()
+        ? -1
+        : 1
+    );
+  return posts;
 }
