@@ -1,4 +1,5 @@
 import Link from "next/link";
+import slugify from "utils/slugify";
 
 type Props = {
   category: string;
@@ -15,13 +16,5 @@ const HeadCategory: React.FC<Props> = ({ category }) => {
     </span>
   );
 };
-
-const slugify = (str: string) =>
-  str
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 
 export default HeadCategory;

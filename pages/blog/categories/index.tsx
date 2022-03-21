@@ -9,6 +9,7 @@ import BlogCardBox from "@/components/BlogCardBox";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
 import { MdxMeta } from "../posts/[slug]";
+import slugify from "utils/slugify";
 
 type Props = {
   posts: MdxMeta[];
@@ -36,7 +37,7 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
                 key={category}
                 className="px-4 sm:px-8 md:px-20 mt-4 mb-6 max-w-4xl mx-auto"
               >
-                <Link href={`/blog/categories/${category}`}>
+                <Link href={`/blog/categories/${slugify(category)}`}>
                   <a className="inline-block">
                     <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
                       {category}
