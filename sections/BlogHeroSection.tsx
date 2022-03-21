@@ -1,12 +1,10 @@
 import { useSearch } from "context/search";
-import React, { useState } from "react";
+import React from "react";
 
 const BlogHeroSection: React.FC = () => {
   const { searchText, onSearch } = useSearch();
-  const [searchStr, setSearchStr] = useState("");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchStr(e.target.value);
     onSearch!(e.target.value);
   };
 
