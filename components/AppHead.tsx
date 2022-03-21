@@ -19,7 +19,7 @@ type Props = {
 
 const AppHead: React.FC<Props> = ({
   title,
-  url = "https://satnaing.vercel.app/blog",
+  url = "https://www.satnaing.dev/blog",
   meta,
 }) => {
   let author = "Sat Naing";
@@ -43,7 +43,7 @@ const AppHead: React.FC<Props> = ({
     ogImageAlt = meta.ogImageAlt && meta.ogImageAlt;
   }
 
-  let appOgImage = "https://satnaing.vercel.app/satnaing-blog-og.png";
+  let appOgImage = "https://www.satnaing.dev/satnaing-blog-og.png";
   let appOgImageAlt = "Sat Naing's Blog";
 
   if (ogImage) {

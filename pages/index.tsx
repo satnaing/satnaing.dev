@@ -15,7 +15,7 @@ const meta = {
     "Sat Naing is an independent full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
   author: "Sat Naing",
   type: "website",
-  ogImage: "https://satnaing.vercel.app/satnaing-dev-og.png",
+  ogImage: "https://www.satnaing.dev/satnaing-dev-og.png",
   siteName: "Sat Naing",
   imageAlt: "Sat Naing portfolio website",
 };
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
     <>
       <AppHead
         title="Sat Naing - A Full-stack Developer"
-        url="https://satnaing.vercel.app"
+        url="https://www.satnaing.dev"
         meta={meta}
       />
       <div className="bg-bglight dark:bg-bgdark">
