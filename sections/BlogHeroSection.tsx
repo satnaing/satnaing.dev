@@ -19,11 +19,10 @@ const BlogHeroSection: React.FC = () => {
           Hello, everyone! Welcome to my personal blog.
         </p>
         <p>
-          PaperMod is a simple but fast and responsive theme with useful
-          feature-set that enhances UX.
+          In this blog, I will be writing about my projects (what I do/how I
+          did), my personal experiences, and some random stuffs.
         </p>
-        <p>Do give a 🌟 on Github !</p>
-        <p>PaperMod is based on theme Paper.</p>
+        <p>You can follow me on my social media and github account.</p>
       </div>
       <label htmlFor="search" className="sr-only">
         Search
