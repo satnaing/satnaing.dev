@@ -15,6 +15,7 @@ const meta = {
     "Sat Naing is an independent full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
   author: "Sat Naing",
   type: "website",
+  ogImage: "https://satnaing.vercel.app/satnaing-dev-og.png",
   siteName: "Sat Naing",
   imageAlt: "Sat Naing portfolio website",
 };

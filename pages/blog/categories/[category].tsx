@@ -18,10 +18,7 @@ type Props = {
 const Blog: NextPage<Props> = ({ posts, category }) => {
   return (
     <>
-      <AppHead
-        title="Blog - Sat Naing"
-        meta={{ description: "my blog desc" }}
-      />
+      <AppHead title="Blog - Sat Naing" />
       <div className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />

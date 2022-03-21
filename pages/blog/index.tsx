@@ -19,14 +19,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
   const { searchText } = useSearch();
   return (
     <>
-      <AppHead
-        title="Blog - Sat Naing"
-        meta={{
-          ogImage: "https://satnaing.vercel.app/satnaing-blog-og.png",
-          description:
-            "Articles about programming, coding, technologies, software engineering, my personal projects and my experiences.",
-        }}
-      />
+      <AppHead title="Blog - Sat Naing" />
       <div className="bg-bglight dark:bg-bgdark min-h-screen">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
