@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export interface Meta {
-  description: string;
+  description?: string;
   author?: string;
   siteName?: string;
   coverImage?: string;
@@ -13,7 +13,7 @@ export interface Meta {
 
 type Props = {
   title: string;
-  meta: Meta;
+  meta?: Meta;
   url?: string;
 };
 
@@ -22,33 +22,40 @@ const AppHead: React.FC<Props> = ({
   url = "https://satnaing.vercel.app/blog",
   meta,
 }) => {
-  const {
-    author = "Sat Naing",
-    description,
-    siteName = "Sat Naing's Blog",
-    coverImage,
-    coverImageAlt,
-    ogImage,
-    ogImageAlt,
-    type = "article",
-  } = meta;
+  let author = "Sat Naing";
+  let description =
+    "Articles about programming, coding, technologies, software engineering, my personal projects and my experiences.";
+  let siteName = "Sat Naing's Blog";
+  let type = "article";
+  let coverImage: string | undefined;
+  let coverImageAlt: string | undefined;
+  let ogImage: string | undefined;
+  let ogImageAlt: string | undefined;
 
-  let appOgImage = "";
-  let appOgImageAlt = "";
+  if (meta) {
+    author = meta.author ? meta.author : author;
+    description = meta.description ? meta.description : description;
+    siteName = meta.siteName ? meta.siteName : siteName;
+    type = meta.type ? meta.type : type;
+    coverImage = meta.coverImage && meta.coverImage;
+    coverImageAlt = meta.coverImageAlt && meta.coverImageAlt;
+    ogImage = meta.ogImage && meta.ogImage;
+    ogImageAlt = meta.ogImageAlt && meta.ogImageAlt;
+  }
+
+  let appOgImage = "https://satnaing.vercel.app/satnaing-blog-og.png";
+  let appOgImageAlt = "Sat Naing's Blog";
+
   if (ogImage) {
     appOgImage = ogImage;
   } else if (!ogImage && coverImage) {
     appOgImage = coverImage;
-  } else {
-    appOgImage = "https://satnaing.vercel.app/satnaing-dev-og.png";
   }
 
   if (ogImageAlt) {
     appOgImageAlt = ogImageAlt;
   } else if (!ogImageAlt && coverImageAlt) {
     appOgImageAlt = coverImageAlt;
-  } else {
-    appOgImageAlt = "Sat Naing's Blog";
   }
 
   return (
