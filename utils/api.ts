@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import slugify from "./slugify";
 
 const postsDirectory = join(process.cwd(), "contents");
 
@@ -57,8 +58,8 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
+export function getAllPosts(fields: string[] = [], category?: string) {
+  const slugs = category ? getCategorySlugs(category) : getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
@@ -68,4 +69,19 @@ export function getAllPosts(fields: string[] = []) {
         : 1
     );
   return posts;
+}
+
+export function getCategorySlugs(category: string) {
+  const files = fs.readdirSync(postsDirectory);
+
+  let slugs: string[] = [];
+
+  for (let file of files) {
+    const fullPath = join(postsDirectory, file);
+    const { data } = matter(fs.readFileSync(fullPath, "utf8"));
+    if (slugify(data.category) !== category) continue;
+    slugs.push(data.slug ? data.slug : file.replace(/\.md$/, ""));
+  }
+
+  return slugs;
 }
