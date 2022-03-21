@@ -6,4 +6,7 @@ const slugify = (str: string) =>
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
+export const unslugify = (str: string) =>
+  str.toLowerCase().trim().replace(/[-]+/g, " ");
+
 export default slugify;
