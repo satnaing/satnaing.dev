@@ -29,7 +29,7 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
           <BlogHeader />
           <SocialLinks />
           <main id="main" className="mb-20 min-h-[70vh]">
-            <div className="mt-16 py-2 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+            <div className="mt-16 pt-8 pb-2 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
               <h1 className="text-3xl lg:text-4xl font-bold">Categories</h1>
             </div>
             {categories.map((category) => (
