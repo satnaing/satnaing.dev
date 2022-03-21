@@ -25,4 +25,10 @@
   .link {
     @apply outline-marrsgreen dark:outline-carrigreen text-marrsdark hover:text-marrsgreen dark:text-carrilight dark:hover:text-carrigreen;
   }
+  .blog-main {
+    @apply mb-20 mt-16 min-h-[70vh];
+  }
+  .blog-section {
+    @apply py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto;
+  }
 }

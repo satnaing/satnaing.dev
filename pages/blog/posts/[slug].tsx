@@ -42,8 +42,8 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
           <SkipToMain />
           <BlogHeader />
           <SocialLinks />
-          <main id="main" className="mb-20 mt-16 min-h-[70vh]">
-            <article className="py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+          <main id="main" className="blog-main">
+            <article className="blog-section">
               <h1 className="font-semibold md:font-bold text-3xl md:text-4xl">
                 {post.title}
               </h1>

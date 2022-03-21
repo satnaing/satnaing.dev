@@ -25,17 +25,14 @@ const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
           <SkipToMain />
           <BlogHeader />
           <SocialLinks />
-          <main id="main" className="mb-20 min-h-[65vh] md:min-h-[70vh]">
-            <div className="mt-16 pt-8 pb-2 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
-              <h1 className="text-3xl lg:text-4xl font-bold">Tags</h1>
-            </div>
-            {tags && (
-              <div className="pt-4 pb-2 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
-                {tags.map((tag: string) => (
+          <main id="main" className="blog-main">
+            <section className="blog-section">
+              <h1 className="text-3xl lg:text-4xl font-bold mb-4">Tags</h1>
+              {tags &&
+                tags.map((tag: string) => (
                   <Tag tag={tag} size="lg" count={tagCounts[tag]} key={tag} />
                 ))}
-              </div>
-            )}
+            </section>
           </main>
           <Footer />
         </div>

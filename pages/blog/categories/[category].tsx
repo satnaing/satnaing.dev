@@ -27,18 +27,16 @@ const Blog: NextPage<Props> = ({ posts, category }) => {
           <SkipToMain />
           <BlogHeader />
           <SocialLinks />
-          <main id="main" className="mb-20 min-h-[70vh]">
-            <div className="mt-16 pt-8 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+          <main id="main" className="blog-main">
+            <section className="blog-section">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium md:font-bold mb-0 md:mb-8 pl-2 md:pl-4 border-l-8 border-marrsgreen dark:border-carrigreen">
                 Category:{" "}
                 <span className="capitalize">{unslugify(category)}</span>
               </h1>
-            </div>
-            <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
               {posts.map((post) => (
                 <BlogCard post={post} key={post.slug} />
               ))}
-            </div>
+            </section>
           </main>
           <Footer />
         </div>

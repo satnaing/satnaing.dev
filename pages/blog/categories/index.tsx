@@ -28,31 +28,30 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
           <SkipToMain />
           <BlogHeader />
           <SocialLinks />
-          <main id="main" className="mb-20 min-h-[70vh]">
-            <div className="mt-16 pt-8 pb-2 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
-              <h1 className="text-3xl lg:text-4xl font-bold">Categories</h1>
-            </div>
-            {categories.map((category) => (
-              <div
-                key={category}
-                className="px-4 sm:px-8 md:px-20 mt-4 mb-6 max-w-4xl mx-auto"
-              >
-                <Link href={`/blog/categories/${slugify(category)}`}>
-                  <a className="inline-block">
-                    <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
-                      {category}
-                    </h2>
-                  </a>
-                </Link>
-                <div className="flex space-x-4 overflow-x-auto snap-x touch-auto">
-                  {posts.map(
-                    (post, index) =>
-                      post.category === category &&
-                      index < 6 && <BlogCardBox post={post} key={post.slug} />
-                  )}
+          <main id="main" className="blog-main">
+            <section className="blog-section">
+              <h1 className="text-3xl lg:text-4xl font-bold mb-4">
+                Categories
+              </h1>
+              {categories.map((category) => (
+                <div key={category} className="my-4">
+                  <Link href={`/blog/categories/${slugify(category)}`}>
+                    <a className="inline-block">
+                      <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
+                        {category}
+                      </h2>
+                    </a>
+                  </Link>
+                  <div className="flex space-x-4 overflow-x-auto snap-x touch-auto">
+                    {posts.map(
+                      (post, index) =>
+                        post.category === category &&
+                        index < 6 && <BlogCardBox post={post} key={post.slug} />
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </section>
           </main>
           <Footer />
         </div>
