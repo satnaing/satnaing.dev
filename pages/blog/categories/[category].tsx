@@ -71,7 +71,7 @@ export const getStaticPaths: GetStaticPaths = () => {
     paths: categories.map((category) => {
       return {
         params: {
-          category: slugify(category),
+          category: slugify(category as string),
         },
       };
     }),

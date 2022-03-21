@@ -32,7 +32,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const { data, content } = matter(fileContents);
 
   type Items = {
-    [key: string]: string;
+    [key: string]: string | string[];
   };
 
   const items: Items = {};
@@ -64,7 +64,8 @@ export function getAllPosts(fields: string[] = [], category?: string) {
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) =>
-      new Date(post1.datetime).getTime() > new Date(post2.datetime).getTime()
+      new Date(post1.datetime as string).getTime() >
+      new Date(post2.datetime as string).getTime()
         ? -1
         : 1
     );

@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "tags",
     "type",
   ]);
-  const content = await markdownToHtml(post.content || "");
+  const content = await markdownToHtml((post.content as string) || "");
 
   return {
     props: {
