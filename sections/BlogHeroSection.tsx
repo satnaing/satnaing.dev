@@ -1,6 +1,17 @@
+import { useSearch } from "context/search";
+import React, { useState } from "react";
+
 const BlogHeroSection: React.FC = () => {
+  const { searchText, onSearch } = useSearch();
+  const [searchStr, setSearchStr] = useState("");
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchStr(e.target.value);
+    onSearch!(e.target.value);
+  };
+
   return (
-    <section className="mt-16 py-8 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+    <section className="mt-16 py-4 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
       <div className="mt-10">
         <h1 className="text-4xl lg:text-5xl font-bold">
           Sat Naing's{" "}
@@ -24,6 +35,9 @@ const BlogHeroSection: React.FC = () => {
           id="search"
           type="search"
           placeholder="Search posts"
+          autoComplete="off"
+          value={searchText}
+          onChange={handleSearch}
           className="basis-11/12 bg-cardlight dark:bg-carddark focus-visible:outline-none"
         />
         <div className="basis-1/12 flex justify-center items-center">
