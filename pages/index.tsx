@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 const meta = {
   description:
-    "Sat Naing is a passionate fullstack developer who love coding both front-end and back-end using amazing technologies.",
+    "Sat Naing is an independent full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
   author: "Sat Naing",
   type: "website",
   siteName: "Sat Naing",
