@@ -8,10 +8,12 @@ type Props = {
 const HeadCategory: React.FC<Props> = ({ category }) => {
   const slug = slugify(category);
   return (
-    <span className="mt-2 mb-2 inline-block px-2 border-l-4 border-marrsgreen">
+    <span className="mt-2 mb-2 inline-block px-2 border-l-4 border-marrsgreen dark:border-carrigreen">
       Category:{" "}
       <Link href={slug ? `/blog/categories/${slug}` : "uncategorized"}>
-        <a>{category ? category : "uncategorized"}</a>
+        <a className="hover:text-marrsgreen dark:hover:text-carrigreen font-medium">
+          {category ? category : "uncategorized"}
+        </a>
       </Link>
     </span>
   );
