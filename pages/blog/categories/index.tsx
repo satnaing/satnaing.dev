@@ -1,16 +1,14 @@
 import type { GetStaticProps, NextPage } from "next";
-import { MdxMeta } from "../posts/[slug]";
+import Link from "next/link";
 
 import AppHead from "@/components/AppHead";
-import BlogHeroSection from "@/sections/BlogHeroSection";
 import SkipToMain from "@/components/SkipToMain";
 import SocialLinks from "@/components/SocialLinks";
 import BlogHeader from "@/components/blog/BlogHeader";
-import BlogCard from "@/components/BlogCard";
+import BlogCardBox from "@/components/BlogCardBox";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
-import BlogCardBox from "@/components/BlogCardBox";
-import Link from "next/link";
+import { MdxMeta } from "../posts/[slug]";
 
 type Props = {
   posts: MdxMeta[];
@@ -38,7 +36,7 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
                 key={category}
                 className="px-4 sm:px-8 md:px-20 mt-4 mb-6 max-w-4xl mx-auto"
               >
-                <Link href="/blog/categories/how-do-i">
+                <Link href={`/blog/categories/${category}`}>
                   <a className="inline-block">
                     <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
                       {category}
