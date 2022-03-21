@@ -21,7 +21,11 @@ const Blog: NextPage<Props> = ({ posts }) => {
     <>
       <AppHead
         title="Blog - Sat Naing"
-        meta={{ description: "my blog desc" }}
+        meta={{
+          ogImage: "https://satnaing.vercel.app/satnaing-blog-og.png",
+          description:
+            "Articles about programming, coding, technologies, software engineering, my personal projects and my experiences.",
+        }}
       />
       <div className="bg-bglight dark:bg-bgdark min-h-screen">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
