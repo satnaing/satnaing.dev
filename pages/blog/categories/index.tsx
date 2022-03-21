@@ -44,7 +44,7 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
                     </h2>
                   </a>
                 </Link>
-                <div className="flex space-x-4 overflow-x-auto snap-x touch-pan-x">
+                <div className="flex space-x-4 overflow-x-auto snap-x touch-auto">
                   {posts.map(
                     (post, index) =>
                       post.category === category &&
