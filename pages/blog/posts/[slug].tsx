@@ -92,6 +92,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "ogImage",
     "ogImageAlt",
     "coverImage",
+    "coverImageWidth",
+    "coverImageHeight",
     "category",
     "tags",
     "type",
