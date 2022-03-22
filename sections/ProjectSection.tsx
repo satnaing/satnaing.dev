@@ -6,7 +6,9 @@ import { useTheme } from "next-themes";
 import useOnScreen from "../hooks/useOnScreen";
 import ProjectCard from "../components/ProjectCard";
 
+import satnaingBlog from "../public/projects/satnaing-blog.png";
 import haruFashion from "../public/projects/haru-fashion.png";
+import haruApi from "../public/projects/haru-api.png";
 import tipCalculator from "../public/projects/tip-calculator.png";
 
 const ProjectSection: React.FC = () => {
@@ -48,6 +50,23 @@ const ProjectSection: React.FC = () => {
 
 const projects = [
   {
+    title: "Sat Naing's Blog",
+    type: "Frontend",
+    image: (
+      <Image
+        src={satnaingBlog}
+        width={1264}
+        height={685}
+        alt="Sat Naing's Blog"
+        className="transition-transform duration-500 hover:scale-110"
+      />
+    ),
+    desc: "My personal blog where I can write down my thoughts and experiences. Contents are written in markdown format. Git based Headless CMS called Forestry is used as a CMS.",
+    tags: ["Forestry", "TailwindCSS", "TypeScript", "NextJS"],
+    liveUrl: "https://satnaing.dev/blog/",
+    codeUrl: "https://github.com/satnaing/my-portfolio",
+  },
+  {
     title: "Haru Fashion",
     type: "Frontend",
     image: (
@@ -56,6 +75,7 @@ const projects = [
         width={1440}
         height={685}
         alt="Haru Fashion App"
+        className="transition-transform duration-500 hover:scale-110"
       />
     ),
     desc: "An ecommerce web application where users can browse various products, add to wishlist, add to cart, and make purchase. Available in English and Burmese languages.",
@@ -66,7 +86,15 @@ const projects = [
   {
     title: "Haru API",
     type: "Backend",
-    image: <Image src={haruFashion} width={1440} height={685} alt="Haru API" />,
+    image: (
+      <Image
+        src={haruApi}
+        width={2300}
+        height={1431}
+        alt="Haru API"
+        className="transition-transform duration-500 hover:scale-110"
+      />
+    ),
     desc: "A RESTful API developed for Haru fashion ecommerce project. Include CRUD operations, authentication, authorization, forgot/reset password and full-text search.",
     tags: ["ExpressJS", "TypeScript", "PostgreSQL", "Prisma"],
     liveUrl: "https://satnaing.github.io/haru-api/",
@@ -81,6 +109,7 @@ const projects = [
         width={1440}
         height={685}
         alt="Tip Calculator"
+        className="transition-transform duration-500 hover:scale-110"
       />
     ),
     desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user's amount to pay. This app is written in Scss and React with TypeScript.",
