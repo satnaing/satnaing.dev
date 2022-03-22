@@ -40,7 +40,7 @@ const AboutSection: React.FC = () => {
             <p className="my-2">
               I have over 2 and a helf years of experience working with web
               application development_ including both frontend and backend. I'm
-              currently working as a lead developer in a Singapore company.
+              currently working as a lead developer at a Singapore company.
             </p>
             <span>
               Here are some technologies I've been working with recently
