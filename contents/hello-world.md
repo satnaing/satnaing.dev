@@ -1,28 +1,27 @@
 ---
-title: "Hari Fashion ecommerce ကိုဘယ်လိုရေးခဲ့လဲ"
-description: "Haru Fashion e-commerce application တစ်ခုကိုကျွန်တော် ဘယ်လိုရေးခဲ့သလဲ"
-excerpt: "ကျွန်တော်ရေးခဲ့တဲ့ Haru Fashion ဆိုတဲ့ e-commerce အကြောင်း၊ အသုံးပြုခဲ့တဲ့ technologies တွေရယ်၊ ရေးခဲ့စဥ်မှာကြုံခဲ့ရတဲ့ အတွေ့အကြုံတွေအကြောင်း"
-datetime: 2022-03-20T05:35:07.322Z
-slug: "how-i-made-haru"
+title: Haru Fashion ecommerce ကိုဘယ်လိုရေးခဲ့လဲ
+description: Haru Fashion e-commerce application တစ်ခုကိုကျွန်တော် ဘယ်လိုရေးခဲ့သလဲ
+excerpt: ကျွန်တော်ရေးခဲ့တဲ့ Haru Fashion ဆိုတဲ့ e-commerce အကြောင်း၊ အသုံးပြုခဲ့တဲ့
+  technologies တွေရယ်၊ ရေးခဲ့စဥ်မှာကြုံခဲ့ရတဲ့ အတွေ့အကြုံတွေအကြောင်း
+datetime: 2022-03-20T05:35:07.322+00:00
+slug: how-i-made-haru
 featured: true
-category: "How Do I"
+category: How Do I
 tags:
-  - "JavaScript"
-  - "NextJS"
-  - "ContextAPI"
-  - "TailwindCSS"
+- JavaScript
+- NextJS
+- ContextAPI
+- TailwindCSS
 author: Sat Naing
-
-coverImage: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
-coverImageAlt: "Haru Fashion"
+coverImage: https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png
+coverImageAlt: Haru Fashion
 coverImageWidth: "1200"
 coverImageHeight: "700"
-
-ogImage: "https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png"
-ogImageAlt: "Haru Fashion"
+ogImage: https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png
+ogImageAlt: Haru Fashion
 type: article
----
 
+---
 ကျွန်တော် Haru Fashion ဆိုတဲ့ e-commerce application ကိုဘယ်လိုရေးခဲ့လဲဆိုတာကို ဒီ post မှာ ရေးသွားမှာဖြစ်ပါတယ်။
 
 ## Tech Stack
