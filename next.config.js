@@ -18,6 +18,9 @@ module.exports = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 // const nextConfig = {
