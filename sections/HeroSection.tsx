@@ -38,7 +38,9 @@ const HeroSection: React.FC = () => {
           I usually craft front-end with React, NextJS; and I build back-end
           especially using PHP, NodeJS & Express.
         </div>
-        <LinkButton href="mailto:contact@satnaing.dev">Contact me!</LinkButton>
+        <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
+          Contact me!
+        </LinkButton>
       </div>
       <a
         href="#whoami"
