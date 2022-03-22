@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="lg:basis-2/3">
-        <span className="text-marrsgreen dark:text-carrigreen">
+        <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
           Hi my name is
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
@@ -27,10 +27,16 @@ const HeroSection: React.FC = () => {
           A Full-stack Developer
         </span>
         <div className="mt-2 my-4 md:mb-8">
-          I craft things for user-interface (front-end) and I build things for
-          api & backend stuffs. <br /> Sometimes, I make UI/UX design in Figma
-          and Photoshop too. <br />
-          Currently, I'm into React, NextJs, Express and PostgreSQL.
+          <p>
+            I'm an independent full-stack developer based in Yangon, Myanmar.
+          </p>
+          <p>
+            I am passionate about writing codes and developing web applications
+            to solve <span className="whitespace-nowrap">real-life</span>{" "}
+            challenges.
+          </p>
+          I usually craft front-end with React, NextJS; and I build back-end
+          especially using PHP, NodeJS & Express.
         </div>
         <LinkButton href="mailto:contact@satnaing.dev">Contact me!</LinkButton>
       </div>
