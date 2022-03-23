@@ -38,7 +38,7 @@ const AboutSection: React.FC = () => {
               specializing in Software Engineering.
             </p>
             <p className="my-2">
-              I have over 2 and a helf years of experience working with web
+              I have over 2 and a half years of experience working with web
               application development_ including both frontend and backend. I'm
               currently working as a lead developer at a Singapore company.
             </p>
