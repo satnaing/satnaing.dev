@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sat Naing Portfolio & Blog
 
-## Getting Started
+![satnaing-portfolio-and-blog](https://user-images.githubusercontent.com/53733092/159954649-c5b0a5ba-427a-41d1-a9dc-b573f9adf05b.png)
+![ts](https://badgen.net/badge/Built%20With/TypeScript/blue) ![vercel](https://img.shields.io/github/deployments/satnaing/my-portfolio/production?label=vercel&logo=vercel&logoColor=white)
 
-First, run the development server:
+My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind CSS is used for styling and blog contents are written in Markdown format. Light & Dark themes supported.
+
+## Features
+
+- Responsive Design 📱💻
+- Light & Dark themes ☀️🌙
+- Fully Accessiable ♿️
+- Categories, Tags 🏷
+- Search Box 👀
+- SEO Friendly 🔎
+- Markdown Content 📰
+
+## Tech Stack
+
+**Frontend** - NextJS, React, TypeScript  
+**Styling** - Tailwind CSS  
+**Design & Prototype** - Figma  
+**State Management** - ContextAPI  
+**Backend** - [Forestry Headless CMS](https://forestry.io/)  
+**Deployment** Vercel
+
+## Lighthouse Score
+
+<p align="center">
+<img width="760" alt="satnaing-dev-lighthouse-score" src="https://user-images.githubusercontent.com/53733092/159957822-7082e459-11e9-4616-8f1e-49d0881f7cbb.png">
+</p>
+
+## Running Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/satnaing/my-portfolio.git
+```
+
+Go to the project directory
+
+```bash
+cd my-portfolio
+```
+
+Remove remote origin
+
+```bash
+git remote remove origin
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Inspiration and Credits
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Here are some inspiration and credits for the design of my portfolio. However I can guarantee that I wrote 100% of the code. These credits are just for ideas and design for my portfolio and blog website. I'll try my website to be as unique as possible in the future.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Lee Robinson Website](https://leerob.io/)
+- [Papermod Hugo Theme](https://adityatelange.github.io/hugo-PaperMod/)
+- [Brittany Chiang Website](https://brittanychiang.com/)
+- [Max Böck Website](https://mxb.dev/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Author
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [@satnaing](https://satnaing.dev)
