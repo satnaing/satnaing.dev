@@ -9,7 +9,7 @@ My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind
 
 - Responsive Design 📱💻
 - Light & Dark themes ☀️🌙
-- Fully Accessiable ♿️
+- Fully Accessible ♿️
 - Categories, Tags 🏷
 - Search Box 👀
 - SEO Friendly 🔎
