@@ -52,8 +52,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
               </div>
               <HeadCategory category={post.category} />
               {post.tags && (
-                <div className="mt-2 mb-6">
-                  <span className="mb-2 mr-2 inline-block">Tags: </span>
+                <div className="my-2">
                   {post.tags.map((tag: string) => (
                     <Tag tag={tag} key={tag} />
                   ))}
