@@ -34,7 +34,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
     <>
       <AppHead
         title={`${post.title} - Sat Naing`}
-        url={`https://www.satnaing.dev/blog/posts/${post.slug}`}
+        url={`${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`}
         meta={post}
       />
       <div className="bg-bglight dark:bg-bgdark">
