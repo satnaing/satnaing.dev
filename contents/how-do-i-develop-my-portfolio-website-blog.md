@@ -28,7 +28,7 @@ I've been always thinking about launching my own website with my custom domain n
 
 So, "what about blog?" you may ask. Yeah, blog also has been in my  project list for some time. I always wanted to make a blog project using some of the latest technologies. However, I've been busy with my works and other projects so that blog project has never been started.
 
-Then, one day, when I browse the internet and watching YouTube, one YouTuber (he is also a developer of course) suggested that devs should make a blog project in order to have their own platform to write down experiences and projects. After watching that clip, I decided to make a blog and my own portfolio as soon as possible. Plus, I have decent experiences and confidence to develop this project.
+In these days, I tend to develop my own projects with the focus in good quality rather than quantity. After the project is done, I usually put a proper readme file in the github repo. But github repo readme is only suitable for technical aspects (this is just my thought). I want to write down my experiences and challenges. Thus, I decided to make my own blog. Plus, at this point, I have decent experiences and confidence to develop this project.
 
 ## Tech Stack
 
@@ -82,3 +82,13 @@ All blog contents can be searched by search box. Moreover, contents can be filte
 This website got very good performance and lighthouse score thanks to proper development and best practices. Here's the lighthouse score for this website.
 
 ![satnaing.dev Lighthouse score](https://user-images.githubusercontent.com/53733092/159957822-7082e459-11e9-4616-8f1e-49d0881f7cbb.png "satnaing.dev Lighthouse score")
+
+## Outro
+
+In conclusion, this project gives me a lot of experience and confidence about developing blog site (SSG). Now, I have gained git-based CMS knowledge and how it interacts with NextJS. I've also learned about SEO, dynamic sitemap generation and indexing Google procedures. I will make more cool projects in the future. So, stay tuned! ✌🏻
+
+**Project Links**
+
+* Website: [https://satnaing.dev/](https://satnaing.dev/ "https://satnaing.dev/")
+* Blog: [https://satnaing.dev/blog](https://satnaing.dev/blog "https://satnaing.dev/blog")
+* Repo: [https://github.com/satnaing/my-portfolio](https://github.com/satnaing/my-portfolio "https://github.com/satnaing/my-portfolio")
