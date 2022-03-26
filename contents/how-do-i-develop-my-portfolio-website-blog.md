@@ -61,6 +61,10 @@ Moreover, this website will be displayed well when shared to social media due to
 
 ![Card layout when shared to Facebook](https://res.cloudinary.com/noezectz/image/upload/v1648231679/SatNaing/satnaing-dev-on-facebook_zyth0m.png "Card layout when shared to Facebook")
 
+### Dynamic Sitemap
+
+Sitemap plays an important part in SEO. Because of this, every single page of this site should be included in sitemap.xml. I made an auto generated sitemap in my website whenever I create a new content or tags or categories.
+
 ### Light & Dark Themes
 
 Due to dark theme trend in recent years, many websites include dark theme out of the box nowadays. Certainly, my website also supports light & dark themes.
