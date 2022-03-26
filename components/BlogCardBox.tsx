@@ -57,7 +57,7 @@ const BlogCardBox: React.FC<Props> = ({
       </div>
       <p
         className={`dark:text-gray-300 ${
-          fullWH ? "text-base sm:text-sm" : "text-sm"
+          fullWH ? "text-base sm:text-sm" : "text-sm w-60"
         } overflow-hidden`}
       >
         {excerpt}
