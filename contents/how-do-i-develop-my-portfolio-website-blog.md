@@ -22,6 +22,8 @@ featured: true
 category: How Do I
 
 ---
+My experience about developing my first portfolio website and a blog using NextJS and a headless CMS.
+
 ## Motivation
 
 I've been always thinking about launching my own website with my custom domain name (**satnaing.dev**) since my college student life. But that never happened until this project. I've done several projects and works about web application development but I didn't make an effort to do this.
@@ -37,6 +39,8 @@ For the front-end, I wanted to use React. But React alone is not good enough for
 For styling, I use TailwindCSS. This is because I love developer experience that Tailwind gives and it has a lot of flexibilities compared to other component UI libraries like MUI or React Bootstrap.
 
 All contents of this project reside within the GitHub repository. All my blog posts (including this one) are written in Markdown file format since I'm very used to with this. But to write Markdown along with its frontmatter effortlessly, I use Forestry headless CMS. It is a git-based CMS that can serve Markdown and other contents. Because of this, I can write my contents either using Markdown or wysiwyg editor. Besides, writing frontmatters with this is a breeze.
+
+Images and assets are uploaded and stored in Cloudinary. I connect Cloudinary via Forestry and manage them directly in the dashboard.
 
 In conclusion, these are the tech stack I've used for this project.
 
