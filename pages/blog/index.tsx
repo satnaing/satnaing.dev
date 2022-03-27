@@ -42,9 +42,9 @@ const Blog: NextPage<Props> = ({ posts }) => {
             <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
               <h2 className="text-2xl font-medium mb-2">
                 {searchText === "" && postLanguage === "All" && "All Posts"}
+                {searchText !== "" && <div>Search result(s)</div>}
                 {postLanguage !== "All" &&
                   `Posts written in '${postLanguage}' language`}
-                {searchText !== "" && `Search result(s)`}
               </h2>
               {posts
                 .filter(({ title }) =>
