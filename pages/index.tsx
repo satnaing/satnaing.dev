@@ -1,4 +1,5 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
+
 import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
 import Header from "@/components/Header";
@@ -10,6 +11,13 @@ import BlogSection from "@/sections/BlogSection";
 import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
 
+import { getAllPosts } from "utils/api";
+import { MdxMeta } from "../pages/blog/posts/[slug]";
+
+type Props = {
+  blogPosts: MdxMeta[];
+};
+
 const meta = {
   description:
     "Sat Naing is an independent full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
@@ -20,7 +28,7 @@ const meta = {
   imageAlt: "Sat Naing portfolio website",
 };
 
-const Home: NextPage = () => {
+const Home: NextPage<Props> = ({ blogPosts }) => {
   return (
     <>
       <AppHead
@@ -37,7 +45,7 @@ const Home: NextPage = () => {
             <HeroSection />
             <AboutSection />
             <ProjectSection />
-            <BlogSection />
+            <BlogSection posts={blogPosts} />
             <ContactSection />
           </main>
           <Footer />
@@ -45,6 +53,22 @@ const Home: NextPage = () => {
       </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const blogPosts = getAllPosts([
+    "slug",
+    "title",
+    "excerpt",
+    "datetime",
+    "featured",
+  ]);
+
+  return {
+    props: {
+      blogPosts,
+    },
+  };
 };
 
 export default Home;

@@ -1,16 +1,17 @@
-import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { useTheme } from "next-themes";
 import { RoughNotation } from "react-rough-notation";
 
-import useOnScreen from "../hooks/useOnScreen";
-
-import memojiLaptop from "../public/memoji-laptop.png";
-import Link from "next/link";
-import BlogCard from "../components/BlogCard";
 import BlogCardBox from "@/components/BlogCardBox";
+import useOnScreen from "../hooks/useOnScreen";
+import { MdxMeta } from "../pages/blog/posts/[slug]";
 
-const BlogSection: React.FC = () => {
+type Props = {
+  posts: MdxMeta[];
+};
+
+const BlogSection: React.FC<Props> = ({ posts }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
@@ -34,7 +35,7 @@ const BlogSection: React.FC = () => {
       </div>
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:grid-rows-2 lg:grid-rows-1 gap-4 md:gap-6 justify-items-center mb-6">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <BlogCardBox
               post={post}
               className={`${index > 3 ? "hidden lg:block" : ""}`}
@@ -46,7 +47,7 @@ const BlogSection: React.FC = () => {
         <div className="mt-4 text-center">
           <Link href="/blog">
             <a className="link">
-              Read all posts{" "}
+              Read all blog posts{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 inline-block"
@@ -68,50 +69,5 @@ const BlogSection: React.FC = () => {
     </section>
   );
 };
-
-const blogPosts = [
-  {
-    slug: "Rust",
-    title: "Rust in the future of JavaScript Ecosystem",
-    datetime: "3/19/2022, 9:09:46 PM",
-    excerpt:
-      "Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?",
-  },
-  {
-    slug: "Monorepo",
-    title: "Creating a Monorepo with Lerna & Yarn Workspaces",
-    datetime: "3/19/2022, 9:09:46 PM",
-    excerpt:
-      "In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.",
-  },
-  {
-    slug: "Firebase",
-    title: "From Firebase/Redis to MySQL with PlanetScale",
-    datetime: "3/19/2022, 9:09:46 PM",
-    excerpt:
-      "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
-  },
-  {
-    slug: "Firebase 2",
-    title: "From Firebase/Redis to MySQL with PlanetScale",
-    datetime: "3/19/2022, 9:09:46 PM",
-    excerpt:
-      "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
-  },
-  {
-    slug: "Firebase 3",
-    title: "From Firebase/Redis to MySQL with PlanetScale",
-    datetime: "3/19/2022, 9:09:46 PM",
-    excerpt:
-      "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
-  },
-  {
-    slug: "Firebase 4",
-    title: "From Firebase/Redis to MySQL with PlanetScale",
-    datetime: "3/19/2022, 9:09:46 PM",
-    excerpt:
-      "Learn how I migrated my Next.js website to use MySQL with PlanetScale, resulting in 10x faster response times for my APIs.",
-  },
-];
 
 export default BlogSection;
