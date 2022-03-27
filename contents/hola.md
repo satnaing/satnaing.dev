@@ -1,7 +1,8 @@
 ---
-title: ဒါကတော့ Testing အတွက် လျှောက်ရေးထားတာ ဖြစ်ပါတယ်
+title: This is just a testing
 description: This is just an OG description
-excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+excerpt:
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
   fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities
   morbi tempus.
@@ -16,8 +17,9 @@ coverImageWidth: "2725"
 coverImageHeight: "1400"
 ogImage: "/assets/blog/hello-world/cover.jpg"
 ogImageAlt: something
-
+language: "English"
 ---
+
 ## This is just a testing
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
