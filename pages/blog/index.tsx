@@ -9,14 +9,14 @@ import BlogHeader from "@/components/blog/BlogHeader";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
-import { useSearch } from "context/search";
+import { useFilter } from "context/filter";
 
 type Props = {
   posts: MdxMeta[];
 };
 
 const Blog: NextPage<Props> = ({ posts }) => {
-  const { searchText } = useSearch();
+  const { searchText, postLanguage } = useFilter();
   return (
     <>
       <AppHead title="Blog - Sat Naing" />
@@ -27,7 +27,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
           <SocialLinks />
           <main id="main" className="mb-20">
             <BlogHeroSection />
-            {searchText === "" && (
+            {searchText === "" && postLanguage === "All" && (
               <>
                 <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
                   <h2 className="text-2xl font-medium mb-2">Featured Posts</h2>
@@ -40,12 +40,20 @@ const Blog: NextPage<Props> = ({ posts }) => {
               </>
             )}
             <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
-              <h2 className="text-2xl font-medium mb-2">All Posts</h2>
+              <h2 className="text-2xl font-medium mb-2">
+                {searchText === "" && postLanguage === "All" && "All Posts"}
+                {postLanguage !== "All" &&
+                  `Posts written in '${postLanguage}' language`}
+                {searchText !== "" && `Search result(s)`}
+              </h2>
               {posts
-                .filter(
-                  ({ title }) =>
-                    title.toLowerCase().includes(searchText.toLowerCase()) //.toLowerCase()
+                .filter(({ title }) =>
+                  title.toLowerCase().includes(searchText.toLowerCase())
                 )
+                .filter(({ language }) => {
+                  if (postLanguage === "All") return true;
+                  return language === postLanguage;
+                })
                 .map((post) => (
                   <BlogCard post={post} key={post.slug} />
                 ))}
@@ -65,6 +73,7 @@ export const getStaticProps: GetStaticProps = async () => {
     "excerpt",
     "datetime",
     "featured",
+    "language",
   ]);
 
   return {
