@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Script from "next/script";
 import { GetStaticPaths, GetStaticProps } from "next";
 import BlogHeader from "@/components/blog/BlogHeader";
 import SkipToMain from "@/components/SkipToMain";
@@ -31,8 +32,17 @@ type Props = {
 };
 
 const BlogLayout: React.FC<Props> = ({ post }) => {
+  const postUrl = `${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`;
   return (
     <>
+      <div id="fb-root"></div>
+      <Script
+        async
+        defer
+        crossOrigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=3098460656840262&autoLogAppEvents=1"
+        nonce="BwXXZ73U"
+      />
       <AppHead
         title={`${post.title} - Sat Naing`}
         url={`${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`}
@@ -72,6 +82,23 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                 </div>
               )}
               <PostBody content={post.content} />
+              <div
+                className="fb-share-button mt-8"
+                data-href={postUrl}
+                data-layout="button"
+                data-size="large"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    postUrl
+                  )}&amp;src=sdkpreparse`}
+                  className="fb-xfbml-parse-ignore"
+                >
+                  Share
+                </a>
+              </div>
             </article>
           </main>
           <Footer />
