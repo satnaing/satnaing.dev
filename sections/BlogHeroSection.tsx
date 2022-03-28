@@ -89,7 +89,7 @@ const BlogHeroSection: React.FC = () => {
         <select
           name="language"
           id="language"
-          className="px-2 py-1 focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen"
+          className="px-2 py-1 bg-cardlight dark:bg-carddark focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen"
           defaultValue={postLanguage}
           onChange={(e) => onLanguageChange!(e.target.value as LanguageType)}
         >
