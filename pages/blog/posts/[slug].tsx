@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Script from "next/script";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useTheme } from "next-themes";
+
 import BlogHeader from "@/components/blog/BlogHeader";
 import SkipToMain from "@/components/SkipToMain";
 import SocialLinks from "@/components/SocialLinks";
@@ -32,6 +34,7 @@ type Props = {
 };
 
 const BlogLayout: React.FC<Props> = ({ post }) => {
+  const { theme } = useTheme();
   const postUrl = `${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`;
   return (
     <>
@@ -85,19 +88,20 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
               )}
               <PostBody content={post.content} />
 
-              <hr />
+              {/* <hr /> */}
 
               {/* Facebook Comment Plugin */}
-              <div
+              {/* <div
                 className="fb-comments my-4"
+                data-colorscheme="dark"
                 data-href={postUrl}
                 data-width="100%"
                 data-numposts="5"
-              ></div>
+              ></div> */}
 
               {/* Facebook Share Button */}
               <div
-                className="fb-share-button"
+                className="fb-share-button my-4"
                 data-href={postUrl}
                 data-layout="button"
                 data-size="large"
