@@ -35,6 +35,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
   const postUrl = `${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`;
   return (
     <>
+      {/* Facebook Plugin for comment & share */}
       <div id="fb-root"></div>
       <Script
         async
@@ -43,6 +44,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
         src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=3098460656840262&autoLogAppEvents=1"
         nonce="BwXXZ73U"
       />
+
       <AppHead
         title={`${post.title} - Sat Naing`}
         url={`${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`}
@@ -82,8 +84,20 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                 </div>
               )}
               <PostBody content={post.content} />
+
+              <hr />
+
+              {/* Facebook Comment Plugin */}
               <div
-                className="fb-share-button mt-8"
+                className="fb-comments my-4"
+                data-href={postUrl}
+                data-width="100%"
+                data-numposts="5"
+              ></div>
+
+              {/* Facebook Share Button */}
+              <div
+                className="fb-share-button"
                 data-href={postUrl}
                 data-layout="button"
                 data-size="large"
