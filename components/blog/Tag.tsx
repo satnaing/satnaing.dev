@@ -16,7 +16,7 @@ const Tag: React.FC<Props> = ({ tag, variants, size = "sm", count }) => {
           size === "lg"
             ? "py-2 px-3 text-base mr-4 my-2"
             : "py-1 px-2 text-xs mr-2 my-1"
-        } bg-gray-300 dark:bg-carddark rounded inline-block shadow hover:shadow-md`}
+        } bg-gray-300 dark:bg-carddark rounded inline-block shadow hover:shadow-md cursor-pointer`}
         variants={variants}
       >
         <svg
