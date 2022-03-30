@@ -1,3 +1,7 @@
+import { useRef } from "react";
+import { motion } from "framer-motion";
+
+import useOnScreen from "hooks/useOnScreen";
 import LinkButton from "./LinkButton";
 
 type Props = {
@@ -14,11 +18,38 @@ type Props = {
 };
 
 const ProjectCard: React.FC<Props> = ({ index, project }) => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const isOnScreen = useOnScreen(elementRef);
+
   const right = index % 2 === 0 ? true : false;
   const { title, type, image, desc, tags, liveUrl, codeUrl } = project;
 
+  const descVariants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+    top: {
+      x: right ? 100 : -100,
+      opacity: 0,
+    },
+  };
+
+  const item = {
+    hidden: { x: right ? 100 : -100, opacity: 0 },
+    show: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
+
   return (
-    <div className="my-10 md:mb-20 md:grid md:gap-x-8 md:grid-cols-2 md:grid-rows-4">
+    <motion.div
+      ref={elementRef}
+      // variants={item}
+      initial="top"
+      animate={`${isOnScreen && "visible"}`}
+      variants={descVariants}
+      transition={{ delay: 0.5, duration: 0.75 }}
+      className="my-10 md:mb-20 md:grid md:gap-x-8 md:grid-cols-2 md:grid-rows-4"
+    >
       <div
         className={`heading md:row-span-1 ${
           right ? "md:text-right md:col-start-2" : "md:col-start-1"
@@ -94,7 +125,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
           </LinkButton>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
@@ -12,11 +13,26 @@ import haruApi from "../public/projects/haru-api.png";
 import tipCalculator from "../public/projects/tip-calculator.png";
 
 const ProjectSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isSecOnScreen = useOnScreen(sectionRef);
+
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
+
+  const descVariants = {
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+    top: {
+      y: -50,
+      opacity: 0,
+    },
+  };
+
   return (
-    <section id="projects" className="section">
+    <section ref={sectionRef} id="projects" className="section">
       <div className="text-center">
         <RoughNotation
           type="underline"
@@ -28,10 +44,17 @@ const ProjectSection: React.FC = () => {
           <h2 className="section-heading">Featured Projects</h2>
         </RoughNotation>
       </div>
-      <span className="text-center block mb-4" ref={elementRef}>
+      <motion.span
+        className="text-center block mb-4"
+        ref={elementRef}
+        initial="top"
+        animate={`${isSecOnScreen && "visible"}`}
+        variants={descVariants}
+        transition={{ duration: 0.75 }}
+      >
         “Talk is cheap. Show me the code”? I got you. <br />
         Here are some of my projects you shouldn't misss
-      </span>
+      </motion.span>
       {projects.map((project, index) => (
         <ProjectCard key={project.title} index={index} project={project} />
       ))}
