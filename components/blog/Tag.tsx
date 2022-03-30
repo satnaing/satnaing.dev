@@ -1,20 +1,23 @@
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 
 type Props = {
   tag: string;
+  variants?: Variants;
   size?: "sm" | "lg";
   count?: number;
 };
 
-const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
+const Tag: React.FC<Props> = ({ tag, variants, size = "sm", count }) => {
   return (
     <Link href={`/blog/tags/${tag}`} key={tag}>
-      <a
+      <motion.a
         className={`link-outline group whitespace-nowrap dark:fill-bglight hover:bg-marrsgreen hover:text-bglight hover:fill-bglight dark:hover:bg-carrigreen dark:hover:text-bgdark dark:hover:fill-bgdark ${
           size === "lg"
             ? "py-2 px-3 text-base mr-4 my-2"
             : "py-1 px-2 text-xs mr-2 my-1"
         } bg-gray-300 dark:bg-carddark rounded inline-block shadow hover:shadow-md`}
+        variants={variants}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +36,7 @@ const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
             {count}
           </span>
         )}
-      </a>
+      </motion.a>
     </Link>
   );
 };
