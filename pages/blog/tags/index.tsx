@@ -27,7 +27,7 @@ const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
 
   const item = {
     hidden: { y: -100, opacity: 0 },
-    show: { y: 0, opacity: 1, transaction: { duration: 0.25 } },
+    show: { y: 0, opacity: 1 },
   };
   return (
     <>
