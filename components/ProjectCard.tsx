@@ -35,15 +35,9 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
     },
   };
 
-  const item = {
-    hidden: { x: right ? 100 : -100, opacity: 0 },
-    show: { x: 0, opacity: 1, transition: { duration: 1 } },
-  };
-
   return (
     <motion.div
       ref={elementRef}
-      // variants={item}
       initial="top"
       animate={`${isOnScreen && "visible"}`}
       variants={descVariants}
