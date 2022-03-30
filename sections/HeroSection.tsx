@@ -1,12 +1,47 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+
 import LinkButton from "../components/LinkButton";
+import useOnScreen from "hooks/useOnScreen";
 
 import profilePic from "../public/satnaing.png";
 
 const HeroSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isOnScreen = useOnScreen(sectionRef);
+
+  const variants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+        delay: 0.5,
+      },
+    },
+    right: {
+      x: 100,
+      opacity: 0,
+    },
+    left: {
+      x: -100,
+      opacity: 0,
+    },
+  };
+
   return (
-    <section className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse">
-      <div className="px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3">
+    <section
+      ref={sectionRef}
+      className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
+    >
+      <motion.div
+        initial="right"
+        animate={`${isOnScreen && "visible"}`}
+        variants={variants}
+        transition={{ duration: 0.5 }}
+        className="px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3"
+      >
         <Image
           src={profilePic}
           width={1548}
@@ -14,9 +49,14 @@ const HeroSection: React.FC = () => {
           priority
           alt="Sat Naing profile picture"
         />
-      </div>
+      </motion.div>
 
-      <div className="lg:basis-2/3">
+      <motion.div
+        initial="left"
+        animate={`${isOnScreen && "visible"}`}
+        variants={variants}
+        className="lg:basis-2/3"
+      >
         <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
           Hi my name is
         </span>
@@ -41,7 +81,7 @@ const HeroSection: React.FC = () => {
         <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
           Contact me!
         </LinkButton>
-      </div>
+      </motion.div>
       <a
         href="#whoami"
         className="group absolute link-outline animate-bounce hidden md:bottom-14 lg:bottom-16 left-1/2 transform -translate-x-1/2 md:flex items-center flex-col"
