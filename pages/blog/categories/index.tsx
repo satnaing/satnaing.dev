@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
@@ -17,6 +18,22 @@ type Props = {
 };
 
 const Blog: NextPage<Props> = ({ categories, posts }) => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.75 } },
+  };
+
   return (
     <>
       <AppHead title="Blog - Sat Naing" />
@@ -35,17 +52,33 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
                   <Link href={`/blog/categories/${slugify(category)}`}>
                     <a className="inline-block">
                       <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
-                        {category}
+                        <motion.span
+                          className="inline-block"
+                          animate={{ x: [-10, 0] }}
+                        >
+                          {category}
+                        </motion.span>
                       </h2>
                     </a>
                   </Link>
-                  <div className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
+                  <motion.div
+                    className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto"
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                  >
                     {posts.map(
                       (post, index) =>
                         post.category === category &&
-                        index < 6 && <BlogCardBox post={post} key={post.slug} />
+                        index < 6 && (
+                          <BlogCardBox
+                            post={post}
+                            key={post.slug}
+                            variants={item}
+                          />
+                        )
                     )}
-                  </div>
+                  </motion.div>
                 </div>
               ))}
             </section>
