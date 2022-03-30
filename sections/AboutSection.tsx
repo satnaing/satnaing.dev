@@ -1,15 +1,51 @@
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useTheme } from "next-themes";
 
 import useOnScreen from "../hooks/useOnScreen";
 
 const AboutSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isSecOnScreen = useOnScreen(sectionRef);
+
+  const eduRef = useRef<HTMLDivElement>(null);
+  const isEduOnScreen = useOnScreen(eduRef);
+
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
   const { theme } = useTheme();
+
+  const leftVariants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+    top: {
+      x: -100,
+      opacity: 0,
+    },
+  };
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        delayChildren: 0.5,
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { x: 100, opacity: 0 },
+    show: { x: 0, opacity: 1 },
+  };
+
   return (
-    <section id="whoami" className="section">
+    <section ref={sectionRef} id="whoami" className="section">
       <RoughNotationGroup show={isOnScreen}>
         <div className="text-center">
           <RoughNotation
@@ -24,7 +60,13 @@ const AboutSection: React.FC = () => {
           </RoughNotation>
         </div>
         <div className="md:flex md:space-x-8">
-          <div className="basis-1/2 xl:basis-3/5">
+          <motion.div
+            className="basis-1/2 xl:basis-3/5"
+            initial="top"
+            animate={`${isSecOnScreen && "visible"}`}
+            variants={leftVariants}
+            transition={{ duration: 0.75 }}
+          >
             <p className="my-2">
               Hello, my name's Sat Naing. I've graduated from{" "}
               <a href="https://www.napier.ac.uk/" className="link">
@@ -67,9 +109,15 @@ const AboutSection: React.FC = () => {
                 <li>CI/CD</li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="basis-1/2 xl:basis-2/5">
+          <motion.div
+            className="basis-1/2 xl:basis-2/5"
+            ref={eduRef}
+            variants={container}
+            initial="hidden"
+            animate={`${isEduOnScreen && "show"}`}
+          >
             <div className="text-center md:sr-only">
               <RoughNotation
                 type="underline"
@@ -85,7 +133,12 @@ const AboutSection: React.FC = () => {
               </RoughNotation>
             </div>
             {educationInfo.map((edu) => (
-              <div className="mb-4" key={edu.id}>
+              <motion.div
+                className="mb-4"
+                key={edu.id}
+                variants={item}
+                transition={{ duration: 0.75 }}
+              >
                 <h4 className="text-marrsgreen dark:text-carrigreen text-lg font-medium">
                   {edu.title}
                 </h4>
@@ -100,9 +153,9 @@ const AboutSection: React.FC = () => {
                     <li key={li}>{li}</li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </RoughNotationGroup>
     </section>
