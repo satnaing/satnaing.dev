@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
+
 import formatDatetime from "utils/formatDatetime";
 
 type Props = {
+  variants?: Variants;
   post: {
     slug: string;
     title: string;
@@ -13,13 +16,15 @@ type Props = {
 };
 
 const BlogCardBox: React.FC<Props> = ({
+  variants,
   post,
   fullWH = false,
   className = "",
 }) => {
   const { title, slug, excerpt, datetime } = post;
   return (
-    <div
+    <motion.div
+      variants={variants}
       title={title}
       className={`sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow hover:shadow-md ${
         fullWH ? "w-full" : "w-72 my-2"
@@ -62,7 +67,7 @@ const BlogCardBox: React.FC<Props> = ({
       >
         {excerpt}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
