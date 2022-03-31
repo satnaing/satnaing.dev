@@ -14,14 +14,11 @@ const HeroSection: React.FC = () => {
   const variants = {
     visible: {
       x: 0,
+      y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.75,
-        delay: 0.5,
-      },
     },
-    right: {
-      x: 100,
+    top: {
+      y: -30,
       opacity: 0,
     },
     left: {
@@ -36,10 +33,10 @@ const HeroSection: React.FC = () => {
       className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
     >
       <motion.div
-        initial="right"
+        initial="top"
         animate={`${isOnScreen && "visible"}`}
         variants={variants}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.25 }}
         className="px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3"
       >
         <Image
@@ -55,6 +52,7 @@ const HeroSection: React.FC = () => {
         initial="left"
         animate={`${isOnScreen && "visible"}`}
         variants={variants}
+        transition={{ duration: 0.25 }}
         className="lg:basis-2/3"
       >
         <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
