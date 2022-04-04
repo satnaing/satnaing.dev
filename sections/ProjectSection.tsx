@@ -1,25 +1,36 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
 
-import useOnScreen from "../hooks/useOnScreen";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
+import { useSection } from "context/section";
+import useOnScreen from "hooks/useOnScreen";
+import useScrollActive from "hooks/useScrollActive";
 
-import satnaingBlog from "../public/projects/satnaing-blog.png";
-import haruFashion from "../public/projects/haru-fashion.png";
-import haruApi from "../public/projects/haru-api.png";
-import tipCalculator from "../public/projects/tip-calculator.png";
+import satnaingBlog from "public/projects/satnaing-blog.png";
+import haruFashion from "public/projects/haru-fashion.png";
+import haruApi from "public/projects/haru-api.png";
+import tipCalculator from "public/projects/tip-calculator.png";
 
 const ProjectSection: React.FC = () => {
+  const { theme } = useTheme();
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const isSecOnScreen = useOnScreen(sectionRef);
 
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
-  const { theme } = useTheme();
 
+  // Set active link for project section
+  const projectSection = useScrollActive(sectionRef);
+  const { onSectionChange } = useSection();
+  useEffect(() => {
+    projectSection && onSectionChange!("projects");
+  }, [projectSection]);
+
+  // Animation variants
   const descVariants = {
     visible: {
       y: 0,

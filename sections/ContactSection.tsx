@@ -1,19 +1,30 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
 
-import useOnScreen from "../hooks/useOnScreen";
-import LinkButton from "../components/LinkButton";
+import LinkButton from "@/components/LinkButton";
+import { useSection } from "context/section";
+import useOnScreen from "hooks/useOnScreen";
+import useScrollActive from "hooks/useScrollActive";
 
 const ContactSection: React.FC = () => {
+  const { theme } = useTheme();
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const isSecOnScreen = useOnScreen(sectionRef);
 
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
-  const { theme } = useTheme();
 
+  // Set active link for contact section
+  const contactSection = useScrollActive(sectionRef);
+  const { onSectionChange } = useSection();
+  useEffect(() => {
+    contactSection && onSectionChange!("contact");
+  }, [contactSection]);
+
+  // Animation variants
   const descVariants = {
     visible: {
       x: 0,

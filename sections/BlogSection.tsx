@@ -1,25 +1,36 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import { RoughNotation } from "react-rough-notation";
 
 import BlogCardBox from "@/components/BlogCardBox";
-import useOnScreen from "../hooks/useOnScreen";
-import { MdxMeta } from "../pages/blog/posts/[slug]";
+import { useSection } from "context/section";
+import useOnScreen from "hooks/useOnScreen";
+import useScrollActive from "hooks/useScrollActive";
+import { MdxMeta } from "pages/blog/posts/[slug]";
 
 type Props = {
   posts: MdxMeta[];
 };
 
 const BlogSection: React.FC<Props> = ({ posts }) => {
+  const { theme } = useTheme();
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const isSecOnScreen = useOnScreen(sectionRef);
 
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
-  const { theme } = useTheme();
 
+  // Set active link for blog section
+  const blogSection = useScrollActive(sectionRef);
+  const { onSectionChange } = useSection();
+  useEffect(() => {
+    blogSection && onSectionChange!("blog");
+  }, [blogSection]);
+
+  // Animation variants
   const descVariants = {
     visible: {
       y: 0,

@@ -1,11 +1,15 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useTheme } from "next-themes";
 
-import useOnScreen from "../hooks/useOnScreen";
+import { useSection } from "context/section";
+import useOnScreen from "hooks/useOnScreen";
+import useScrollActive from "hooks/useScrollActive";
 
 const AboutSection: React.FC = () => {
+  const { theme } = useTheme();
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const isSecOnScreen = useOnScreen(sectionRef);
 
@@ -14,8 +18,15 @@ const AboutSection: React.FC = () => {
 
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
-  const { theme } = useTheme();
 
+  // Set active link for about section
+  const aboutSection = useScrollActive(sectionRef);
+  const { onSectionChange } = useSection();
+  useEffect(() => {
+    aboutSection ? onSectionChange!("who am i?") : onSectionChange!("");
+  }, [aboutSection]);
+
+  // Animation variants
   const leftVariants = {
     visible: {
       x: 0,
