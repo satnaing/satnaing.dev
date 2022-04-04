@@ -50,7 +50,7 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
               {categories.map((category) => (
                 <div key={category} className="my-4">
                   <Link href={`/blog/categories/${slugify(category)}`}>
-                    <a className="inline-block">
+                    <a className="inline-block link-outline">
                       <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
                         <motion.span
                           className="inline-block"
