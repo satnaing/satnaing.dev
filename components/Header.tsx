@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useTheme } from "next-themes";
-import useScrollListener from "../hooks/useScrollListener";
+
+import useScrollListener from "hooks/useScrollListener";
 import { useSection } from "context/section";
 
 const navLinks = [
@@ -51,14 +52,14 @@ const Header: React.FC = () => {
   const scroll = useScrollListener();
 
   // update classList of nav on scroll
-  // useEffect(() => {
-  //   const _classList = [];
+  useEffect(() => {
+    const _classList = [];
 
-  //   if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
-  //     _classList.push("transform -translate-y-full drop-shadow-none");
+    if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
+      _classList.push("transform -translate-y-full drop-shadow-none");
 
-  //   setNavClassList(_classList);
-  // }, [scroll.y, scroll.lastY]);
+    setNavClassList(_classList);
+  }, [scroll.y, scroll.lastY]);
 
   return (
     <header className="md:flex">
