@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
 import Head from "next/head";
 import { ProvideFilter } from "context/filter";
+import { ProvideSection } from "context/section";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider attribute="class">
         <ProvideFilter>
-          <Component {...pageProps} />
+          <ProvideSection>
+            <Component {...pageProps} />
+          </ProvideSection>
         </ProvideFilter>
       </ThemeProvider>
     </>
