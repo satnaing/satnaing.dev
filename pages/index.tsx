@@ -40,7 +40,7 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
           <Header />
-          <SocialLinks />
+          <SocialLinks page="index" />
           <main id="main">
             <HeroSection />
             <AboutSection />
