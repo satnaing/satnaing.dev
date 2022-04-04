@@ -10,7 +10,7 @@ type Props = {
 
 const Tag: React.FC<Props> = ({ tag, variants, size = "sm", count }) => {
   return (
-    <Link href={`/blog/tags/${tag}`} key={tag}>
+    <Link href={`/blog/tags/${tag}`} key={tag} passHref>
       <motion.a
         className={`link-outline group whitespace-nowrap dark:fill-bglight hover:bg-marrsgreen hover:text-bglight hover:fill-bglight dark:hover:bg-carrigreen dark:hover:text-bgdark dark:hover:fill-bgdark ${
           size === "lg"
