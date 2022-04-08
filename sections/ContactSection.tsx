@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
 
@@ -24,23 +23,6 @@ const ContactSection: React.FC = () => {
     contactSection && onSectionChange!("contact");
   }, [contactSection]);
 
-  // Animation variants
-  const descVariants = {
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { delay: 0.5, duration: 0.75 },
-    },
-    right: {
-      x: 50,
-      opacity: 0,
-    },
-    left: {
-      x: -50,
-      opacity: 0,
-    },
-  };
-
   return (
     <section
       ref={sectionRef}
@@ -59,26 +41,15 @@ const ContactSection: React.FC = () => {
         </RoughNotation>
       </div>
       <div className="mt-8 mb-20">
-        <motion.h3
-          className="font-medium text-lg mb-2 md:text-3xl"
-          ref={elementRef}
-          initial="right"
-          animate={`${isSecOnScreen && "visible"}`}
-          variants={descVariants}
-        >
+        <h3 className="font-medium text-lg mb-2 md:text-3xl" ref={elementRef}>
           Let's be awesome together!
-        </motion.h3>
-        <motion.p
-          className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose"
-          initial="left"
-          animate={`${isSecOnScreen && "visible"}`}
-          variants={descVariants}
-        >
+        </h3>
+        <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
           As a dev, I do love coding and always looking for new challenges.
           Thus, if you have some opportunities/challenges or just want to build
           awesome things together, don't hesitate to contact me! My inbox is
           always open.
-        </motion.p>
+        </p>
         <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
           Get in touch!
         </LinkButton>

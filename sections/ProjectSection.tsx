@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
@@ -30,18 +29,6 @@ const ProjectSection: React.FC = () => {
     projectSection && onSectionChange!("projects");
   }, [projectSection]);
 
-  // Animation variants
-  const descVariants = {
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-    top: {
-      y: -50,
-      opacity: 0,
-    },
-  };
-
   return (
     <section ref={sectionRef} id="projects" className="section">
       <div className="text-center">
@@ -55,17 +42,10 @@ const ProjectSection: React.FC = () => {
           <h2 className="section-heading">Featured Projects</h2>
         </RoughNotation>
       </div>
-      <motion.span
-        className="text-center block mb-4"
-        ref={elementRef}
-        initial="top"
-        animate={`${isSecOnScreen && "visible"}`}
-        variants={descVariants}
-        transition={{ duration: 0.75 }}
-      >
+      <span className="text-center block mb-4" ref={elementRef}>
         “Talk is cheap. Show me the code”? I got you. <br />
         Here are some of my projects you shouldn't misss
-      </motion.span>
+      </span>
       {projects.map((project, index) => (
         <ProjectCard key={project.title} index={index} project={project} />
       ))}

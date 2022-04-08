@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
 
 import useOnScreen from "hooks/useOnScreen";
 import LinkButton from "./LinkButton";
@@ -36,12 +35,8 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
   };
 
   return (
-    <motion.div
+    <div
       ref={elementRef}
-      initial="top"
-      animate={`${isOnScreen && "visible"}`}
-      variants={descVariants}
-      transition={{ delay: 0.5, duration: 0.75 }}
       className="my-10 md:mb-20 md:grid md:gap-x-8 md:grid-cols-2 md:grid-rows-4"
     >
       <div
@@ -119,7 +114,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
           </LinkButton>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

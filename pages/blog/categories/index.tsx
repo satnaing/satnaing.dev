@@ -1,6 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
@@ -52,33 +51,17 @@ const Blog: NextPage<Props> = ({ categories, posts }) => {
                   <Link href={`/blog/categories/${slugify(category)}`}>
                     <a className="inline-block link-outline">
                       <h2 className="text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
-                        <motion.span
-                          className="inline-block"
-                          animate={{ x: [-10, 0] }}
-                        >
-                          {category}
-                        </motion.span>
+                        <span className="inline-block">{category}</span>
                       </h2>
                     </a>
                   </Link>
-                  <motion.div
-                    className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto"
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                  >
+                  <div className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
                     {posts.map(
                       (post, index) =>
                         post.category === category &&
-                        index < 6 && (
-                          <BlogCardBox
-                            post={post}
-                            key={post.slug}
-                            variants={item}
-                          />
-                        )
+                        index < 6 && <BlogCardBox post={post} key={post.slug} />
                     )}
-                  </motion.div>
+                  </div>
                 </div>
               ))}
             </section>

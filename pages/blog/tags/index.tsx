@@ -1,5 +1,4 @@
 import type { GetStaticProps, NextPage } from "next";
-import { motion } from "framer-motion";
 
 import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
@@ -15,20 +14,6 @@ type Props = {
 };
 
 const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: -100, opacity: 0 },
-    show: { y: 0, opacity: 1 },
-  };
   return (
     <>
       <AppHead title="Blog - Sat Naing" />
@@ -40,18 +25,12 @@ const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
           <main id="main" className="blog-main">
             <section className="blog-section">
               <h1 className="text-3xl lg:text-4xl font-bold mb-4">Tags</h1>
-              <motion.div variants={container} initial="hidden" animate="show">
+              <div>
                 {tags &&
                   tags.map((tag: string) => (
-                    <Tag
-                      tag={tag}
-                      size="lg"
-                      count={tagCounts[tag]}
-                      key={tag}
-                      variants={item}
-                    />
+                    <Tag tag={tag} size="lg" count={tagCounts[tag]} key={tag} />
                   ))}
-              </motion.div>
+              </div>
             </section>
           </main>
           <Footer />

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useTheme } from "next-themes";
 
@@ -71,13 +70,7 @@ const AboutSection: React.FC = () => {
           </RoughNotation>
         </div>
         <div className="md:flex md:space-x-8">
-          <motion.div
-            className="basis-1/2 xl:basis-3/5"
-            initial="top"
-            animate={`${isSecOnScreen && "visible"}`}
-            variants={leftVariants}
-            transition={{ duration: 0.75 }}
-          >
+          <div className="basis-1/2 xl:basis-3/5">
             <p className="my-2">
               Hello, my name's Sat Naing. I've graduated from{" "}
               <a href="https://www.napier.ac.uk/" className="link">
@@ -120,15 +113,9 @@ const AboutSection: React.FC = () => {
                 <li>CI/CD</li>
               </ul>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="basis-1/2 xl:basis-2/5"
-            ref={eduRef}
-            variants={container}
-            initial="hidden"
-            animate={`${isEduOnScreen && "show"}`}
-          >
+          <div className="basis-1/2 xl:basis-2/5" ref={eduRef}>
             <div className="text-center md:sr-only">
               <RoughNotation
                 type="underline"
@@ -144,12 +131,7 @@ const AboutSection: React.FC = () => {
               </RoughNotation>
             </div>
             {educationInfo.map((edu) => (
-              <motion.div
-                className="mb-4"
-                key={edu.id}
-                variants={item}
-                transition={{ duration: 0.75 }}
-              >
+              <div className="mb-4" key={edu.id}>
                 <h4 className="text-marrsgreen dark:text-carrigreen text-lg font-medium">
                   {edu.title}
                 </h4>
@@ -164,9 +146,9 @@ const AboutSection: React.FC = () => {
                     <li key={li}>{li}</li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </RoughNotationGroup>
     </section>
