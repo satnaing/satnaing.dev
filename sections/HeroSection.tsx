@@ -1,29 +1,62 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 import LinkButton from "../components/LinkButton";
 
 import profilePic from "../public/satnaing.png";
 
-const variants = {
-  visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: 100 },
-};
-
-const imageVariants = {
-  animate: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
-  start: { opacity: 0, scale: 0.9 },
-};
-
 const HeroSection: React.FC = () => {
+  const sectionRef = useRef(null);
+  const q = gsap.utils.selector(sectionRef);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline({ defaults: { stagger: 0.5, duration: 1 } });
+    tl.fromTo(q(".text-animation"), { y: 100 }, { y: 0 });
+
+    gsap.fromTo(
+      q(".image-animation"),
+      { y: -100 },
+      {
+        scrollTrigger: {
+          trigger: q(".image-animation"),
+          // toggleActions: "start pause resume reverse",\
+          start: "top center",
+          scrub: true,
+          markers: true,
+        },
+        y: 100,
+        duration: 3,
+      }
+    );
+    // .fromTo(
+    //   q(".image-animation"),
+    //   { scale: 0.8, opacity: 0, x: 0 },
+    //   {
+    //     scale: 1,
+    //     opacity: 1,
+    //   },
+    //   0
+    // )
+
+    // ScrollTrigger.create({
+    //   trigger: q(".image-animation"),
+    //   start: "top top",
+    //   toggleActions: "restart none none none",
+    //   markers: true,
+    //   scrub: true,
+    // });
+  }, []);
+
   return (
-    <section className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse">
-      <motion.div
-        className="px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3"
-        initial="start"
-        animate="animate"
-        variants={imageVariants}
-      >
+    <section
+      ref={sectionRef}
+      className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
+    >
+      <div className="image-animation px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3">
         <Image
           src={profilePic}
           width={1548}
@@ -31,33 +64,21 @@ const HeroSection: React.FC = () => {
           priority
           alt="Sat Naing profile picture"
         />
-      </motion.div>
+      </div>
 
       <div className="lg:basis-2/3">
         <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
           Hi my name is
         </span>
         <div className="overflow-hidden">
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1"
-            initial="hidden"
-            animate="visible"
-            variants={variants}
-            transition={{ duration: 1 }}
-          >
+          <h1 className="text-animation text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
             Sat Naing
-          </motion.h1>
+          </h1>
         </div>
         <div className="overflow-hidden">
-          <motion.span
-            className="text-2xl md:text-3xl lg:text-5xl md:block md:my-3 text-marrsgreen dark:text-carrigreen font-medium"
-            initial="hidden"
-            animate="visible"
-            variants={variants}
-            transition={{ delay: 0.1, duration: 1 }}
-          >
+          <span className="text-animation text-2xl md:text-3xl lg:text-5xl md:block md:my-3 text-marrsgreen dark:text-carrigreen font-medium">
             A Full-stack Developer
-          </motion.span>
+          </span>
         </div>
         <div className="mt-2 my-4 md:mb-8">
           <p>
