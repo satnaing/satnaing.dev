@@ -1,7 +1,7 @@
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import LinkButton from "../components/LinkButton";
 
@@ -89,11 +89,11 @@ const HeroSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
+      className="relative mt-16 sm:mt-8 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
     >
-      <div className="image-animation select-none xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3">
-        <div className="relative w-80 h-80">
-          <div className="absolute pointer-events-none scale-90 mx-auto">
+      <div className="image-animation select-none mt-0 xs:mt-6 sm:mt-14 lg:mt-0 px-0 mx-auto lg:p-0 lg:basis-1/3">
+        <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
+          <div className="absolute pointer-events-none scale-90 xs:scale-95 mx-auto">
             <Image
               src={satNaing}
               width={2354}
@@ -102,7 +102,7 @@ const HeroSection: React.FC = () => {
               alt="Sat Naing profile picture"
             />
           </div>
-          <div className="laptop absolute top-20 left-0 scale-[.44] xs:scale-50 pointer-events-none">
+          <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
             <Image src={laptop} width={1117} height={772} alt="Laptop" />
           </div>
         </div>
