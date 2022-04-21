@@ -6,6 +6,8 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import LinkButton from "../components/LinkButton";
 
 import profilePic from "../public/satnaing.png";
+import satNaing from "../public/satnaing-illustration.png";
+import laptop from "../public/laptop-illustration.png";
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
@@ -17,38 +19,71 @@ const HeroSection: React.FC = () => {
     let tl = gsap.timeline({ defaults: { stagger: 0.5, duration: 1 } });
     tl.fromTo(q(".text-animation"), { y: 100 }, { y: 0 });
 
-    gsap.fromTo(
-      q(".image-animation"),
-      { y: -100 },
-      {
-        scrollTrigger: {
-          trigger: q(".image-animation"),
-          // toggleActions: "start pause resume reverse",\
-          start: "top center",
-          scrub: true,
-          markers: true,
-        },
-        y: 100,
-        duration: 3,
-      }
-    );
-    // .fromTo(
-    //   q(".image-animation"),
-    //   { scale: 0.8, opacity: 0, x: 0 },
-    //   {
-    //     scale: 1,
-    //     opacity: 1,
-    //   },
-    //   0
-    // )
+    let imgTl = gsap.timeline({ repeat: -1 });
+    let laptopTl = gsap.timeline({ repeat: -1 });
 
-    // ScrollTrigger.create({
-    //   trigger: q(".image-animation"),
-    //   start: "top top",
-    //   toggleActions: "restart none none none",
-    //   markers: true,
-    //   scrub: true,
-    // });
+    imgTl
+      .to(q(".image-animation"), 3, {
+        y: "-=30",
+        x: "+=20",
+        rotation: "-=2",
+        ease: "power1.easeInOut",
+      })
+      .to(q(".image-animation"), 2, {
+        y: "+=30",
+        x: "-=20",
+        rotation: "-=2",
+        ease: "power1.easeInOut",
+      })
+      .to(q(".image-animation"), 3, {
+        y: "-=20",
+        rotation: "+=2",
+        ease: "power1.easeInOut",
+      })
+      .to(q(".image-animation"), 3, {
+        y: "+=20",
+        rotation: "+=2",
+        ease: "power1.easeInOut",
+      });
+
+    laptopTl
+      .to(q(".laptop"), 3, {
+        y: "-=10",
+        x: "+=10",
+        rotation: "-=1",
+        ease: "Power1.easeInOut",
+      })
+      .to(q(".laptop"), 2, {
+        y: "+=10",
+        x: "-=10",
+        rotation: "-=1",
+        ease: "power1.easeInOut",
+      })
+      .to(q(".laptop"), 3, {
+        y: "-=10",
+        rotation: "+=1",
+        ease: "power1.easeInOut",
+      })
+      .to(q(".laptop"), 3, {
+        y: "+=10",
+        rotation: "+=1",
+        ease: "power1.easeInOut",
+      });
+    // gsap.fromTo(
+    //   q(".image-animation"),
+    //   { y: -100 },
+    //   {
+    //     scrollTrigger: {
+    //       trigger: q(".image-animation"),
+    //       // toggleActions: "start pause resume reverse",\
+    //       start: "top center",
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //     y: 100,
+    //     duration: 3,
+    //   }
+    // );
   }, []);
 
   return (
@@ -56,14 +91,21 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       className="relative mt-16 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-screen mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
     >
-      <div className="image-animation px-10 xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3">
-        <Image
-          src={profilePic}
-          width={1548}
-          height={1733}
-          priority
-          alt="Sat Naing profile picture"
-        />
+      <div className="image-animation select-none xs:px-28 sm:px-0 pb-4 mx-auto sm:w-2/5 lg:p-0 lg:basis-1/3">
+        <div className="relative w-80 h-80">
+          <div className="absolute pointer-events-none scale-90 mx-auto">
+            <Image
+              src={satNaing}
+              width={2354}
+              height={2747}
+              priority
+              alt="Sat Naing profile picture"
+            />
+          </div>
+          <div className="laptop absolute top-20 left-0 scale-[.44] xs:scale-50 pointer-events-none">
+            <Image src={laptop} width={1117} height={772} alt="Laptop" />
+          </div>
+        </div>
       </div>
 
       <div className="lg:basis-2/3">
