@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import gsap from "gsap";
 
 import useScrollListener from "hooks/useScrollListener";
 import { useSection } from "context/section";
@@ -51,6 +52,17 @@ const Header: React.FC = () => {
   const [navClassList, setNavClassList] = useState<any>([]);
   const scroll = useScrollListener();
 
+  const mainRef = useRef(null);
+  const q = gsap.utils.selector(mainRef);
+
+  useEffect(() => {
+    gsap.fromTo(
+      q(".main-nav"),
+      { y: -100 },
+      { y: 0, duration: 0.5, delay: 1, ease: "Power0.easeNone" }
+    );
+  }, []);
+
   // update classList of nav on scroll
   useEffect(() => {
     const _classList = [];
@@ -62,9 +74,9 @@ const Header: React.FC = () => {
   }, [scroll.y, scroll.lastY]);
 
   return (
-    <header className="md:flex">
+    <header className="md:flex" ref={mainRef}>
       <div
-        className={`bg-bglight dark:bg-bgdark z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
+        className={`main-nav bg-bglight dark:bg-bgdark z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
           " "
         )}`}
       >
