@@ -39,22 +39,26 @@ const ProjectSection: React.FC = () => {
 
     const tl = gsap.timeline();
 
-    tl.to(q(".project-title"), {
-      scrollTrigger: {
-        trigger: q(".project-title"),
-        start: "top 70%",
-        scrub: true,
-      },
-      y: -40,
-      duration: 3,
-    })
+    tl.fromTo(
+      q(".project-title"),
+      { y: 10 },
+      {
+        scrollTrigger: {
+          trigger: q(".project-title"),
+          start: "top 70%",
+          scrub: true,
+        },
+        y: 0,
+        duration: 3,
+      }
+    )
       .to(q(".project-desc"), {
         scrollTrigger: {
           trigger: q(".project-desc"),
           start: "top 80%",
           scrub: true,
         },
-        y: -60,
+        y: -10,
         duration: 3,
       })
       .to(q(".project-card-0"), {
@@ -108,7 +112,7 @@ const ProjectSection: React.FC = () => {
           scrub: true,
           // markers: true,
         },
-        y: -90,
+        y: -40,
         duration: 3,
       });
 
