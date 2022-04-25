@@ -17,7 +17,7 @@ type Props = {
 const ProjectCard: React.FC<Props> = ({ index, project }) => {
   const even = index % 2 === 0 ? true : false;
   return (
-    <div className={`md:basis-1/2 px-8 py-4`}>
+    <div className={`md:basis-1/2 md:px-8 py-2 md:py-4`}>
       <div className={`project-card project-card-${index}`}>
         <div className={`${project.bgColor} flex`}>{project.image}</div>
         <div className="flex items-center justify-between">
