@@ -30,7 +30,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
-                className="scale-150 sm:scale-125 opacity-75 hover:-rotate-12"
+                className="scale-150 sm:scale-125 opacity-75 hover:-rotate-12 fill-black dark:fill-bglight"
               >
                 <path
                   fillRule="evenodd"
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
             <a href={project.liveUrl} title={project.title}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7 scale-125 sm:scale-100 bg-cardlight hover:bg-gray-300 rounded-full p-1 hover:-rotate-12"
+                className="h-7 w-7 scale-125 sm:scale-100 bg-cardlight dark:bg-carddark hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-1 hover:-rotate-12"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -62,7 +62,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className={`mr-2 my-1 bg-[#E2EFEF] py-1 px-2 rounded`}
+              className={`mr-2 my-1 bg-[#E2EFEF] dark:bg-carddark py-1 px-2 rounded`}
             >
               {tag}
             </span>
