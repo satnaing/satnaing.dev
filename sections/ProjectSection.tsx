@@ -13,6 +13,9 @@ import haruFashion from "public/projects/haru-fashion.png";
 import haruApi from "public/projects/haru-api.png";
 import tipCalculator from "public/projects/tip-calculator.png";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
 
@@ -29,9 +32,106 @@ const ProjectSection: React.FC = () => {
     projectSection && onSectionChange!("projects");
   }, [projectSection]);
 
+  // Animations
+  const q = gsap.utils.selector(sectionRef);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline();
+
+    tl.to(q(".project-title"), {
+      scrollTrigger: {
+        trigger: q(".project-title"),
+        start: "top 70%",
+        scrub: true,
+      },
+      y: -40,
+      duration: 3,
+    })
+      .to(q(".project-desc"), {
+        scrollTrigger: {
+          trigger: q(".project-desc"),
+          start: "top 80%",
+          scrub: true,
+        },
+        y: -60,
+        duration: 3,
+      })
+      .to(q(".project-card-0"), {
+        scrollTrigger: {
+          trigger: q(".project-card-0"),
+          start: "top 60%",
+          scrub: true,
+          // markers: true,
+        },
+        y: -40,
+        duration: 3,
+      })
+      .fromTo(
+        q(".project-card-1"),
+        { y: 80 },
+        {
+          scrollTrigger: {
+            trigger: q(".project-card-1"),
+            start: "top 100%",
+            scrub: true,
+            // markers: true,
+          },
+          y: -60,
+          duration: 3,
+        }
+      )
+      .to(q(".project-card-3"), {
+        scrollTrigger: {
+          trigger: q(".project-card-3"),
+          start: "top 100%",
+          scrub: true,
+          // markers: true,
+        },
+        y: -120,
+        duration: 3,
+      })
+      .to(q(".project-card-2"), {
+        scrollTrigger: {
+          trigger: q(".project-card-2"),
+          start: "top bottom",
+          scrub: true,
+          // markers: true,
+        },
+        y: -80,
+        duration: 3,
+      })
+      .to(q(".others"), {
+        scrollTrigger: {
+          trigger: q(".others"),
+          start: "top bottom",
+          scrub: true,
+          // markers: true,
+        },
+        y: -90,
+        duration: 3,
+      });
+
+    // gsap.fromTo(
+    //   q(".project-card-1"),
+    //   { y: 70 },
+    //   {
+    //     scrollTrigger: {
+    //       trigger: q(".project-card-1"),
+    //       // toggleActions: "start pause resume reverse",\
+    //       start: "top 60%",
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //     y: -70,
+    //     duration: 3,
+    //   }
+    // );
+  }, []);
+
   return (
     <section ref={sectionRef} id="projects" className="section">
-      <div className="text-center">
+      <div className="project-title text-center">
         <RoughNotation
           type="underline"
           color={`${theme === "light" ? "rgb(0, 140, 140)" : "rgb(5 206 145)"}`}
@@ -42,14 +142,16 @@ const ProjectSection: React.FC = () => {
           <h2 className="section-heading">Featured Projects</h2>
         </RoughNotation>
       </div>
-      <span className="text-center block mb-4" ref={elementRef}>
+      <span className="project-desc text-center block mb-4" ref={elementRef}>
         “Talk is cheap. Show me the code”? I got you. <br />
         Here are some of my projects you shouldn't misss
       </span>
-      {projects.map((project, index) => (
-        <ProjectCard key={project.title} index={index} project={project} />
-      ))}
-      <div className="text-center">
+      <div className="flex flex-wrap">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.title} index={index} project={project} />
+        ))}
+      </div>
+      <div className="others text-center">
         Other projects can be explored in{" "}
         <a
           href="https://github.com/satnaing"
@@ -79,6 +181,7 @@ const projects = [
     tags: ["Forestry", "TailwindCSS", "TypeScript", "NextJS"],
     liveUrl: "https://satnaing.dev/blog/",
     codeUrl: "https://github.com/satnaing/my-portfolio",
+    bgColor: "bg-[#B4BEE0]",
   },
   {
     title: "Haru Fashion",
@@ -96,6 +199,7 @@ const projects = [
     tags: ["NextJS", "TypeScript", "TailwindCSS", "ContextAPI"],
     liveUrl: "https://haru-fashion.vercel.app/",
     codeUrl: "https://github.com/satnaing/haru-fashion",
+    bgColor: "bg-[#A6CECE]",
   },
   {
     title: "Haru API",
@@ -113,6 +217,7 @@ const projects = [
     tags: ["ExpressJS", "TypeScript", "PostgreSQL", "Prisma"],
     liveUrl: "https://satnaing.github.io/haru-api/",
     codeUrl: "https://github.com/satnaing/haru-api",
+    bgColor: "bg-[#C5E4E7]",
   },
   {
     title: "Tip Calculator",
@@ -130,6 +235,7 @@ const projects = [
     tags: ["React", "TypeScript", "Scss"],
     liveUrl: "https://splitter-sn.netlify.app/",
     codeUrl: "https://github.com/satnaing/tip-calculator",
+    bgColor: "bg-[#9FD0E3]",
   },
 ];
 
