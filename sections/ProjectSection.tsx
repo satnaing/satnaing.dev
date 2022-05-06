@@ -13,9 +13,6 @@ import haruFashion from "public/projects/haru-fashion.png";
 import haruApi from "public/projects/haru-api.png";
 import tipCalculator from "public/projects/tip-calculator.png";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
 
@@ -31,107 +28,6 @@ const ProjectSection: React.FC = () => {
   useEffect(() => {
     projectSection && onSectionChange!("projects");
   }, [projectSection]);
-
-  // Animations
-  const q = gsap.utils.selector(sectionRef);
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const tl = gsap.timeline();
-
-    tl.fromTo(
-      q(".project-title"),
-      { y: 10 },
-      {
-        scrollTrigger: {
-          trigger: q(".project-title"),
-          start: "top 70%",
-          scrub: true,
-        },
-        y: 0,
-        duration: 3,
-      }
-    )
-      .to(q(".project-desc"), {
-        scrollTrigger: {
-          trigger: q(".project-desc"),
-          start: "top 80%",
-          scrub: true,
-        },
-        y: -10,
-        duration: 3,
-      })
-      .to(q(".project-card-0"), {
-        scrollTrigger: {
-          trigger: q(".project-card-0"),
-          start: "top 60%",
-          scrub: true,
-          // markers: true,
-        },
-        y: -40,
-        duration: 3,
-      })
-      .fromTo(
-        q(".project-card-1"),
-        { y: 80 },
-        {
-          scrollTrigger: {
-            trigger: q(".project-card-1"),
-            start: "top 100%",
-            scrub: true,
-            // markers: true,
-          },
-          y: -60,
-          duration: 3,
-        }
-      )
-      .to(q(".project-card-3"), {
-        scrollTrigger: {
-          trigger: q(".project-card-3"),
-          start: "top 100%",
-          scrub: true,
-          // markers: true,
-        },
-        y: -120,
-        duration: 3,
-      })
-      .to(q(".project-card-2"), {
-        scrollTrigger: {
-          trigger: q(".project-card-2"),
-          start: "top bottom",
-          scrub: true,
-          // markers: true,
-        },
-        y: -80,
-        duration: 3,
-      })
-      .to(q(".others"), {
-        scrollTrigger: {
-          trigger: q(".others"),
-          start: "top bottom",
-          scrub: true,
-          // markers: true,
-        },
-        y: -40,
-        duration: 3,
-      });
-
-    // gsap.fromTo(
-    //   q(".project-card-1"),
-    //   { y: 70 },
-    //   {
-    //     scrollTrigger: {
-    //       trigger: q(".project-card-1"),
-    //       // toggleActions: "start pause resume reverse",\
-    //       start: "top 60%",
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //     y: -70,
-    //     duration: 3,
-    //   }
-    // );
-  }, []);
 
   return (
     <section ref={sectionRef} id="projects" className="section">
@@ -155,7 +51,7 @@ const ProjectSection: React.FC = () => {
           <ProjectCard key={project.title} index={index} project={project} />
         ))}
       </div>
-      <div className="others text-center">
+      <div className="others text-center mb-16">
         Other projects can be explored in{" "}
         <a
           href="https://github.com/satnaing"
@@ -175,10 +71,11 @@ const projects = [
     image: (
       <Image
         src={satnaingBlog}
-        width={1264}
-        height={685}
+        // width={1264}
+        // height={685}
+        layout="fill"
         alt="Sat Naing's Blog"
-        className="transition-transform duration-500 hover:scale-110"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
     desc: "My personal blog where I can write down my thoughts and experiences. Contents are written in markdown format. Git based Headless CMS called Forestry is used as a CMS.",
@@ -193,10 +90,11 @@ const projects = [
     image: (
       <Image
         src={haruFashion}
-        width={1440}
-        height={685}
+        // width={1440}
+        // height={685}
+        layout="fill"
         alt="Haru Fashion App"
-        className="transition-transform duration-500 hover:scale-110"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
     desc: "An ecommerce web application where users can browse various products, add to wishlist, add to cart, and make purchase. Available in English and Burmese languages.",
@@ -211,10 +109,11 @@ const projects = [
     image: (
       <Image
         src={haruApi}
-        width={2300}
-        height={1431}
+        // width={2300}
+        // height={1431}
+        layout="fill"
         alt="Haru API"
-        className="transition-transform duration-500 hover:scale-110"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
     desc: "A RESTful API developed for Haru fashion ecommerce project. Include CRUD operations, authentication, authorization, forgot/reset password and full-text search.",
@@ -229,10 +128,11 @@ const projects = [
     image: (
       <Image
         src={tipCalculator}
-        width={1440}
-        height={685}
+        // width={1440}
+        // height={685}
+        layout="fill"
         alt="Tip Calculator"
-        className="transition-transform duration-500 hover:scale-110"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
     desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user's amount to pay. This app is written in Scss and React with TypeScript.",
