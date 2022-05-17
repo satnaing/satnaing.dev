@@ -16,6 +16,15 @@ const HeroSection: React.FC = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.to(q(".bg-text"), {
+      scrollTrigger: {
+        trigger: q(".bg-text"),
+        scrub: true,
+        // pin: true,
+      },
+      y: 140,
+    });
+
     let tl = gsap.timeline({ defaults: { stagger: 0.5, duration: 0.5 } });
     tl.fromTo(q(".text-animation"), { y: 100 }, { y: 0, delay: 1.5 });
 
@@ -91,6 +100,10 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       className="relative mt-16 sm:mt-8 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-[769px] mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
     >
+      <span className="bg-text absolute left-1/2 -translate-x-2/4 top-1/2 -translate-y-1/2 rotate-12 text-gray-500 dark:text-gray-500 text-9xl scale-150 tracking-wide font-bold opacity-5 select-none pointer-events-none text-center">
+        PASSIONATE PROGRAMMER FREELANCER FULL-STACK DEVELOPER
+      </span>
+
       <div className="image-animation select-none mt-0 xs:mt-6 sm:mt-14 lg:mt-0 px-0 mx-auto lg:p-0 lg:basis-1/3">
         <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
           <div className="absolute pointer-events-none scale-90 xs:scale-95 mx-auto">
