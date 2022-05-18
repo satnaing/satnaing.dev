@@ -1,11 +1,10 @@
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
 
 import LinkButton from "../components/LinkButton";
 
-import profilePic from "../public/satnaing.png";
 import satNaing from "../public/satnaing-illustration.png";
 import laptop from "../public/laptop-illustration.png";
 
@@ -16,6 +15,7 @@ const HeroSection: React.FC = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // bg text parallax effect
     gsap.to(q(".bg-text"), {
       scrollTrigger: {
         trigger: q(".bg-text"),
@@ -24,29 +24,12 @@ const HeroSection: React.FC = () => {
       y: 350,
     });
 
-    // gsap.fromTo(
-    //   q(".bg-text"),
-    //   {
-    //     y: "-100%",
-    //     x: "-50%",
-    //   },
-    //   {
-    //     scrollTrigger: {
-    //       trigger: q(".bg-text"),
-    //       scrub: true,
-    //       markers: true,
-    //       // pin: true,
-    //     },
-    //     y: "20%",
-    //   }
-    // );
+    // text animation after initial load
+    let tl = gsap.timeline({ defaults: { stagger: 0.2, duration: 0.3 } });
+    tl.fromTo(q(".text-animation"), { y: 100 }, { y: 0, delay: 1 });
 
-    let tl = gsap.timeline({ defaults: { stagger: 0.5, duration: 0.5 } });
-    tl.fromTo(q(".text-animation"), { y: 100 }, { y: 0, delay: 1.5 });
-
+    // illustration floating effect
     let imgTl = gsap.timeline({ repeat: -1 });
-    let laptopTl = gsap.timeline({ repeat: -1 });
-
     imgTl
       .to(q(".image-animation"), 3, {
         y: "-=30",
@@ -71,6 +54,8 @@ const HeroSection: React.FC = () => {
         ease: "power1.easeInOut",
       });
 
+    // laptop floating effect
+    let laptopTl = gsap.timeline({ repeat: -1 });
     laptopTl
       .to(q(".laptop"), 3, {
         y: "-=10",
@@ -94,29 +79,13 @@ const HeroSection: React.FC = () => {
         rotation: "+=1",
         ease: "power1.easeInOut",
       });
-    // gsap.fromTo(
-    //   q(".image-animation"),
-    //   { y: -100 },
-    //   {
-    //     scrollTrigger: {
-    //       trigger: q(".image-animation"),
-    //       // toggleActions: "start pause resume reverse",\
-    //       start: "top center",
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //     y: 100,
-    //     duration: 3,
-    //   }
-    // );
-  }, []);
+  }, [q]);
 
   return (
     <section
       ref={sectionRef}
       className="relative mt-16 sm:mt-8 pt-8 sm:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-[769px] mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
     >
-      {/* <span className="bg-text absolute left-1/2 -translate-x-2/4 top-1/2 -translate-y-1/2 rotate-12 text-gray-500 dark:text-gray-500 text-9xl scale-150 tracking-wide font-bold opacity-5 select-none pointer-events-none text-center"> */}
       <span className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0">
         PASSIONATE PROGRAMMER FREELANCER FULL-STACK DEVELOPER
       </span>
@@ -138,7 +107,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="lg:basis-2/3 z-10">
+      <div className="lg:basis-2/3 z-10 relative">
         <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
           Hi my name is
         </span>
@@ -148,7 +117,7 @@ const HeroSection: React.FC = () => {
           </h1>
         </div>
         <div className="overflow-hidden">
-          <span className="text-animation text-2xl md:text-3xl lg:text-5xl md:block md:my-3 text-marrsgreen dark:text-carrigreen font-medium">
+          <span className="text-animation text-2xl md:text-3xl lg:text-5xl block md:my-3 text-marrsgreen dark:text-carrigreen font-medium">
             A Full-stack Developer
           </span>
         </div>
