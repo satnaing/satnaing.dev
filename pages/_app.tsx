@@ -15,7 +15,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     document.addEventListener("mousemove", (e) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
-      gsap.to(cursorRef.current, { x: mouseX, y: mouseY, delay: 0 });
+      gsap.to(cursorRef.current, {
+        x: mouseX,
+        y: mouseY,
+        opacity: 1,
+        delay: 0,
+      });
     });
   }, []);
   return (
@@ -25,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div
         ref={cursorRef}
-        className="w-12 h-12 pointer-events-none rounded-full border-2 border-marrsgreen dark:border-carrigreen z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
+        className="hidden lg:block w-12 h-12 opacity-0 pointer-events-none rounded-full border-2 border-marrsgreen dark:border-carrigreen z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
       />
       <ThemeProvider attribute="class">
         <ProvideFilter>
