@@ -85,6 +85,7 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const blogPosts = getAllPosts([
+    "coverImage",
     "slug",
     "title",
     "excerpt",
