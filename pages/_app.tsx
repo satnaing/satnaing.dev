@@ -22,6 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         delay: 0,
       });
     });
+
+    document.addEventListener("mouseleave", () => {
+      gsap.to(cursorRef.current, { opacity: 0 });
+    });
   }, []);
   return (
     <>
