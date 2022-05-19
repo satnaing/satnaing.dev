@@ -8,6 +8,17 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 import { MdxMeta } from "pages/blog/posts/[slug]";
+import BlogImageCard from "@/components/BlogImageCard";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 type Props = {
   posts: MdxMeta[];
@@ -30,8 +41,9 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
   }, [blogSection]);
 
   return (
+    // <div>
     <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
-      <section ref={sectionRef} id="blog" className="section">
+      <section ref={sectionRef} id="blog" className="section px-10">
         <div className="text-center">
           <RoughNotation
             type="underline"
@@ -51,16 +63,61 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
           as a documenting practice. Here are some of my recent blog posts.
         </div>
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:grid-rows-2 lg:grid-rows-1 gap-4 md:gap-6 justify-items-center mb-6">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            pagination={{
+              dynamicBullets: true,
+            }}
+            navigation
+            className="swiper-padding-mobile xs:swiper-padding"
+            breakpoints={{
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
             {posts.map((post, index) => (
-              <BlogCardBox
+              <SwiperSlide>
+                <BlogImageCard
+                  post={post}
+                  className={`${index > 3 ? "hidden lg:block" : ""}`}
+                  key={post.slug}
+                  fullWH
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:grid-rows-2 lg:grid-rows-1 gap-4 md:gap-6 justify-items-center mb-6">
+            {posts.map((post, index) => (
+              // <BlogCardBox
+              //   post={post}
+              //   className={`${index > 3 ? "hidden lg:block" : ""}`}
+              //   key={post.slug}
+              //   fullWH
+              // />
+              <BlogImageCard
                 post={post}
                 className={`${index > 3 ? "hidden lg:block" : ""}`}
                 key={post.slug}
                 fullWH
               />
             ))}
-          </div>
+          </div> */}
           <div className="mt-4 text-center">
             <Link href="/blog">
               <a className="link">

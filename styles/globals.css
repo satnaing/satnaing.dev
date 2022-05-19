@@ -32,3 +32,29 @@
     @apply py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto;
   }
 }
+
+@layer utilities {
+  .swiper-padding {
+    padding: 0 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .swiper-padding-mobile {
+    padding: 0 !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply dark:text-carrigreen;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(0 140 140) !important;
+}
+@media only screen and (max-width: 480px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
