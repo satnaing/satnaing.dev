@@ -1,11 +1,13 @@
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import formatDatetime from "utils/formatDatetime";
 
 type Props = {
   post: {
-    category: string;
     coverImage?: string;
     slug: string;
     title: string;
@@ -21,23 +23,62 @@ const BlogImageCard: React.FC<Props> = ({
   fullWH = false,
   className = "",
 }) => {
-  const { title, coverImage, slug, excerpt, category, datetime } = post;
+  const { title, coverImage, slug, excerpt, datetime } = post;
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Animations
+  const q = gsap.utils.selector(sectionRef);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: `70% bottom`,
+      },
+    });
+
+    tl.fromTo(
+      q(".blog-image"),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "Power3.easeInOut",
+        duration: 0.5,
+        stagger: 0.2,
+      }
+    )
+      .fromTo(q(".blog-title"), { y: 100 }, { y: 0, stagger: 0.2 }, "<25%")
+      .fromTo(
+        q(".blog-text"),
+        { opacity: 0 },
+        { opacity: 1, stagger: 0.2 },
+        "<10%"
+      )
+      .fromTo(
+        q(".project-tags"),
+        { y: -40 },
+        { y: 0, stagger: 0.1, ease: "Elastic.easeOut" },
+        "<25%"
+      );
+  }, []);
   return (
     <div
+      ref={sectionRef}
       title={title}
-      className={`group sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow hover:shadow-md ${
+      className={`sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow-md hover:shadow-xl ${
         fullWH ? "w-full" : "w-72 my-2"
       } ${className}`}
     >
-      <div className="relative w-full h-60 md:h-40 mb-3">
+      <div className="blog-image relative w-full h-60 md:h-40 mb-3">
         <Image src={coverImage!} layout="fill" className="object-contain" />
       </div>
-      {/* <div className="mb-2 text-sm border-l-4 border-marrsgreen dark:border-carrigreen pl-1">
-        {category}
-      </div> */}
-      <div className="mb-2">
+      <div className="mb-2 overflow-hidden">
         <Link href={`/blog/posts/${slug}`}>
-          <a className="link inline-block">
+          <a className="blog-title link inline-block">
             <h3
               className={`${
                 fullWH ? "text-lg sm:text-md" : "text-md"
@@ -66,15 +107,15 @@ const BlogImageCard: React.FC<Props> = ({
         {formatDatetime(datetime)}
       </div>
       <p
-        className={`dark:text-gray-300 ${
+        className={`blog-text dark:text-gray-300 ${
           fullWH ? "text-base sm:text-sm" : "text-sm w-60"
-        } overflow-hidden max-h-32`}
+        } overflow-hidden text-ellipsis max-h-28`}
       >
         {excerpt}
       </p>
-      {/* <Link href={`/blog/posts/${slug}`}>
+      <Link href={`/blog/posts/${slug}`}>
         <a className="link inline-block mt-2">Read more</a>
-      </Link> */}
+      </Link>
     </div>
   );
 };
