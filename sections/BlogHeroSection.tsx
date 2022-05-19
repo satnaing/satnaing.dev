@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { LanguageType, useFilter } from "context/filter";
 
@@ -9,39 +11,49 @@ const BlogHeroSection: React.FC = () => {
     onSearch!(e.target.value);
   };
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        duration: 0.25,
-        delayChildren: 0.25,
-        staggerChildren: 0.25,
-      },
-    },
-  };
+  const sectionRef = useRef(null);
+  const q = gsap.utils.selector(sectionRef);
 
-  const item = {
-    hidden: { y: -10, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.75 } },
-  };
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // text animation after initial load
+    gsap.fromTo(q(".main-header"), { y: 100 }, { y: 0, delay: 1.1 });
+
+    // intro animation
+    let tl = gsap.timeline({
+      defaults: { stagger: 0.1, duration: 0.2 },
+    });
+    tl.fromTo(
+      q(".intro-1"),
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, delay: 1.3 }
+    )
+      .fromTo(q(".intro-2"), { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
+      .fromTo(q(".intro-3"), { y: 30, opacity: 0 }, { y: 0, opacity: 1 });
+  }, [q]);
 
   return (
-    <section className="mt-16 py-4 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+    <section
+      ref={sectionRef}
+      className="mt-16 py-4 md:pt-16 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto"
+    >
       <div className="mt-10">
-        <h1 className="text-4xl lg:text-5xl font-bold">
-          Sat Naing's{" "}
-          <span className="text-marrsgreen dark:text-carrigreen">Blog</span>
-        </h1>
+        <div className="overflow-hidden py-1">
+          <h1 className="main-header text-4xl lg:text-5xl font-bold">
+            Sat Naing's{" "}
+            <span className="text-marrsgreen dark:text-carrigreen">Blog</span>
+          </h1>
+        </div>
         <div>
-          <p className="mt-4 mb-2">
+          <p className="intro-1 mt-4 mb-2">
             Hello, everyone! Welcome to my personal blog.
           </p>
-          <p>
+          <p className="intro-2">
             In this blog, I will be writing about my projects (what I do/how I
             did), my personal experiences, and some random stuffs.
           </p>
-          <p>
+          <p className="intro-3">
             You can follow me on my social media and{" "}
             <a href="https://github.com/satnaing" className="link">
               Github account
