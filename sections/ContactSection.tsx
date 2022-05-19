@@ -27,7 +27,7 @@ const ContactSection: React.FC = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="section min-h-[80vh] text-center"
+      className="section min-h-[700px] text-center"
     >
       <div className="text-center">
         <RoughNotation
@@ -47,8 +47,7 @@ const ContactSection: React.FC = () => {
         <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
           As a dev, I do love coding and always looking for new challenges.
           Thus, if you have some opportunities/challenges or just want to build
-          awesome things together, don't hesitate to contact me! My inbox is
-          always open.
+          awesome things together, don't hesitate to contact me!
         </p>
         <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
           Get in touch!
