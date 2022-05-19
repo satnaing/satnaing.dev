@@ -44,8 +44,11 @@
   }
 }
 
-.swiper-pagination-bullet-active {
-  @apply dark:bg-carrigreen;
+.swiper-pagination-bullet {
+  @apply dark:bg-gray-200;
+}
+.dark .swiper-pagination-bullet-active {
+  background-color: rgb(5 206 145) !important;
 }
 .swiper-pagination-bullet-active {
   background-color: rgb(0 140 140) !important;
