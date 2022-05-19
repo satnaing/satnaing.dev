@@ -12,11 +12,11 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
                 title={nav.text}
                 href={nav.url}
                 key={nav.url}
-                className={`rounded-full outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${
+                className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${
                   currentSection === nav.text.toLowerCase()
-                    ? "bg-marrsgreen dark:bg-carrigreen"
-                    : "opacity-50 focus-visible:opacity-100 hover:opacity-80"
-                } w-5 h-5 border-2 border-marrsgreen dark:border-gray-300`}
+                    ? "bg-marrsgreen dark:bg-carrigreen rotate-180"
+                    : "opacity-50 focus-visible:opacity-100 hover:opacity-80 hover:rotate-0"
+                } w-3 h-3 rotate-45 border-2 border-marrsgreen dark:border-carrigreen`}
               ></a>
             );
           })}
