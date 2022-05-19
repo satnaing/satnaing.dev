@@ -10,6 +10,7 @@ import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
 import { useFilter } from "context/filter";
+import Loader from "@/components/Loader";
 
 type Props = {
   posts: MdxMeta[];
@@ -20,6 +21,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
   return (
     <>
       <AppHead title="Blog - Sat Naing" />
+      <Loader>Sat Naing's Blog</Loader>
       <div className="bg-bglight dark:bg-bgdark min-h-screen">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
