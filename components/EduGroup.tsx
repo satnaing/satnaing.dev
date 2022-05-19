@@ -54,11 +54,11 @@ const EduGroup: React.FC<Props> = ({ edu }) => {
   return (
     <div className="edu-group mb-4" ref={sectionRef}>
       <div className="overflow-hidden">
-        <h4
+        <h3
           className={`edu-heading text-marrsgreen dark:text-carrigreen text-lg font-medium`}
         >
           {edu.title}
-        </h4>
+        </h3>
       </div>
       <div className="overflow-hidden">
         <span className={`edu-info text-slate-500 dark:text-slate-200 italic`}>
