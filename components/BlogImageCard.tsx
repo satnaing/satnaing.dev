@@ -68,7 +68,12 @@ const BlogImageCard: React.FC<Props> = ({
       } ${className}`}
     >
       <div className="blog-image relative w-full h-60 md:h-40 mb-3">
-        <Image src={coverImage!} layout="fill" className="object-contain" />
+        <Image
+          src={coverImage!}
+          layout="fill"
+          className="object-contain"
+          alt={title}
+        />
       </div>
       <div className="mb-2 overflow-hidden">
         <Link href={`/blog/posts/${slug}`}>
@@ -103,13 +108,13 @@ const BlogImageCard: React.FC<Props> = ({
       <p
         className={`blog-text dark:text-gray-300 ${
           fullWH ? "text-base sm:text-sm" : "text-sm w-60"
-        } overflow-hidden text-ellipsis max-h-28`}
+        } overflow-hidden text-ellipsis max-h-24`}
       >
         {excerpt}
       </p>
-      <Link href={`/blog/posts/${slug}`}>
+      {/* <Link href={`/blog/posts/${slug}`}>
         <a className="link inline-block mt-2">Read more</a>
-      </Link>
+      </Link> */}
     </div>
   );
 };
