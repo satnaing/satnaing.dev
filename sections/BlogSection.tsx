@@ -73,7 +73,7 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
             breakpoints={{
               480: {
                 slidesPerView: 1,
-                spaceBetween: 50,
+                spaceBetween: 20,
               },
               640: {
                 slidesPerView: 1,
@@ -88,11 +88,9 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
                 spaceBetween: 50,
               },
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {posts.map((post, index) => (
-              <SwiperSlide>
+              <SwiperSlide key={post.slug}>
                 <BlogImageCard
                   post={post}
                   className={`${index > 3 ? "hidden lg:block" : ""}`}
