@@ -57,12 +57,6 @@ const BlogImageCard: React.FC<Props> = ({
         { opacity: 0 },
         { opacity: 1, stagger: 0.2 },
         "<10%"
-      )
-      .fromTo(
-        q(".project-tags"),
-        { y: -40 },
-        { y: 0, stagger: 0.1, ease: "Elastic.easeOut" },
-        "<25%"
       );
   }, []);
   return (
