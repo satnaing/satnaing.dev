@@ -22,7 +22,7 @@ const BlogCardBox: React.FC<Props> = ({
   return (
     <div
       title={title}
-      className={`sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow hover:shadow-md ${
+      className={`blog-card-box sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow hover:shadow-md ${
         fullWH ? "w-full" : "w-72 my-2"
       } ${className}`}
     >
