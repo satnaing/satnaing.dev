@@ -35,15 +35,17 @@ const BlogHeader: React.FC = () => {
           <div className="flex">
             <nav className="hidden md:block">
               <ul className="flex">
-                {navLinks.map((navLink) => (
-                  <li key={navLink.url}>
-                    <Link href={navLink.url}>
-                      <a className="text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline">
-                        {navLink.text}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
+                {navLinks
+                  .filter((link, index) => index !== 0)
+                  .map((navLink) => (
+                    <li key={navLink.url}>
+                      <Link href={navLink.url}>
+                        <a className="text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline">
+                          {navLink.text}
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
               </ul>
             </nav>
             <button
@@ -94,6 +96,20 @@ const BlogHeader: React.FC = () => {
 };
 
 const navLinks = [
+  {
+    url: "/blog",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        className="dark:fill-textlight"
+      >
+        <path d="M12.71 2.29a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42A1 1 0 0 0 3 13h1v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h1a1 1 0 0 0 1-1 1 1 0 0 0-.29-.71zM6 20v-9.59l6-6 6 6V20z"></path>
+      </svg>
+    ),
+    text: "Home",
+  },
   {
     url: "/blog/categories",
     svg: (
