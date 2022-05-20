@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                 }`}
               >
                 {navLink.svg}
-                {navLink.text}
+                <span className="whitespace-nowrap">{navLink.text}</span>
               </a>
             </li>
           ))}
