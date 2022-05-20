@@ -21,6 +21,7 @@ export interface MdxMeta extends Meta {
   excerpt: string;
   slug: string;
   category: string;
+  coverImage?: string;
   tags?: string[];
   content: string;
   coverImageWidth?: string;
