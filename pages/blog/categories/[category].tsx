@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import gsap from "gsap";
 
 import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
@@ -9,6 +11,7 @@ import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
 import { MdxMeta } from "../posts/[slug]";
 import slugify, { unslugify } from "utils/slugify";
+import Loader from "@/components/Loader";
 
 type Props = {
   posts: MdxMeta[];
@@ -16,19 +19,40 @@ type Props = {
 };
 
 const Blog: NextPage<Props> = ({ posts, category }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Animations
+  const q = gsap.utils.selector(sectionRef);
+  useEffect(() => {
+    gsap.fromTo(
+      q(".category-title"),
+      { x: "-100%" },
+      {
+        x: 0,
+        ease: "back.out(1.7)",
+        // delay: 1.2,
+        duration: 0.7,
+      }
+    );
+  }, []);
   return (
     <>
       <AppHead title="Blog - Sat Naing" />
-      <div className="bg-bglight dark:bg-bgdark">
+      {/* <Loader>
+        <span className="capitalize">{unslugify(category)}</span>
+      </Loader> */}
+      <div ref={sectionRef} className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
           <BlogHeader />
           <SocialLinks />
           <main id="main" className="blog-main">
             <section className="blog-section">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium md:font-bold mb-0 md:mb-8 pl-2 md:pl-4 border-l-8 border-marrsgreen dark:border-carrigreen">
-                Category:{" "}
-                <span className="capitalize">{unslugify(category)}</span>
+              <h1 className="overflow-hidden py-1 text-2xl md:text-3xl lg:text-4xl font-medium md:font-bold mb-0 md:mb-8 pl-2 md:pl-4 border-l-8 border-marrsgreen dark:border-carrigreen">
+                <span className="category-title block">
+                  Category:{" "}
+                  <span className="capitalize">{unslugify(category)}</span>
+                </span>
               </h1>
               {posts.map((post) => (
                 <BlogCard post={post} key={post.slug} />
