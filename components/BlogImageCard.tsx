@@ -63,11 +63,11 @@ const BlogImageCard: React.FC<Props> = ({
     <div
       ref={sectionRef}
       title={title}
-      className={`sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow-md hover:shadow-xl ${
+      className={`sm:min-w-[17rem] transition hover:-translate-y-2 max-w-md bg-gray-100 dark:bg-carddark p-4 rounded shadow-md hover:shadow-xl ${
         fullWH ? "w-full" : "w-72 my-2"
       } ${className}`}
     >
-      <div className="blog-image relative w-full h-60 md:h-40 mb-3">
+      <div className="blog-image relative w-full h-48 md:h-40 mb-3">
         <Image
           src={coverImage!}
           layout="fill"
