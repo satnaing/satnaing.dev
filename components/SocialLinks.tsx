@@ -15,8 +15,8 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
                 className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${
                   currentSection === nav.text.toLowerCase()
                     ? "bg-marrsgreen dark:bg-carrigreen rotate-0"
-                    : "opacity-50 focus-visible:opacity-100 hover:opacity-80 hover:rotate-12"
-                } w-3 h-3 rotate-45 border-2 border-marrsgreen dark:border-carrigreen`}
+                    : "opacity-50 focus-visible:opacity-100 hover:opacity-80 rotate-45 hover:rotate-12"
+                } w-3 h-3 border-2 border-marrsgreen dark:border-carrigreen`}
               ></a>
             );
           })}
