@@ -10,7 +10,7 @@ const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
   return (
     <Link href={`/blog/tags/${tag}`} key={tag} passHref>
       <a
-        className={`link-outline group whitespace-nowrap dark:fill-bglight hover:bg-marrsgreen hover:text-bglight hover:fill-bglight dark:hover:bg-carrigreen dark:hover:text-bgdark dark:hover:fill-bgdark ${
+        className={`blog-tag link-outline group whitespace-nowrap dark:fill-bglight hover:bg-marrsgreen hover:text-bglight hover:fill-bglight dark:hover:bg-carrigreen dark:hover:text-bgdark dark:hover:fill-bgdark ${
           size === "lg"
             ? "py-2 px-3 text-base mr-4 my-2"
             : "py-1 px-2 text-xs mr-2 my-1"

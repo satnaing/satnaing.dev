@@ -1,4 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
@@ -7,6 +9,7 @@ import BlogHeader from "@/components/blog/BlogHeader";
 import Tag from "@/components/blog/Tag";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "utils/api";
+import Loader from "@/components/Loader";
 
 type Props = {
   tags: string[];
@@ -14,10 +17,32 @@ type Props = {
 };
 
 const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Animations
+  const q = gsap.utils.selector(sectionRef);
+  useEffect(() => {
+    gsap.utils.toArray(q(".blog-tag")).forEach((tag, i) => {
+      const initialDelay = 1.2;
+      const delayTime = i == 0 ? initialDelay : initialDelay + i * 0.1;
+      gsap.fromTo(
+        tag as any,
+        { y: -40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "back.out(1.7)",
+          delay: delayTime,
+        }
+      );
+    });
+  }, []);
+
   return (
     <>
       <AppHead title="Blog - Sat Naing" />
-      <div className="bg-bglight dark:bg-bgdark min-h-screen">
+      <Loader>Tags</Loader>
+      <div ref={sectionRef} className="bg-bglight dark:bg-bgdark min-h-screen">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
           <BlogHeader />
