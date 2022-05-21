@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
           </span>
         </div>
         <div className="mt-2 my-4 md:mb-8">
-          <p>I'm full-stack developer based in Yangon, Myanmar.</p>
+          <p>I'm a full-stack developer based in Yangon, Myanmar.</p>
           <p>
             I am passionate about writing codes and developing web applications
             to solve <span className="whitespace-nowrap">real-life</span>{" "}
