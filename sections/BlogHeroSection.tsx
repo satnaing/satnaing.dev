@@ -31,7 +31,7 @@ const BlogHeroSection: React.FC = () => {
     )
       .fromTo(q(".intro-2"), { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
       .fromTo(q(".intro-3"), { y: 30, opacity: 0 }, { y: 0, opacity: 1 });
-  }, [q]);
+  }, []);
 
   return (
     <section
