@@ -166,14 +166,12 @@ const AboutSection: React.FC = () => {
             </div>
 
             <div className="basis-3/5 lg:basis-1/2 xl:basis-2/5" ref={eduRef}>
-              {/* <div className="overflow-hidden"> */}
               <p className="about-intro my-2">
-                I have over 2 and a half years of experience working with web
+                I have over 2 and a half years of working experience in web
                 application development_ including both frontend and backend.
                 I'm currently working as a lead developer at a Singapore
                 company.
               </p>
-              {/* </div> */}
               <div className="edu-bg my-4">
                 Here is my education background.
               </div>
