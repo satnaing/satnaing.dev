@@ -65,12 +65,14 @@ npm run dev
 
 ## Inspiration and Credits
 
-Here are some inspiration and credits for the design of my portfolio. However I can guarantee that I wrote 100% of the code. These credits are just for ideas and design for my portfolio and blog website. I'll try my website to be as unique as possible in the future.
+Here are some inspiration and credits for the design of my portfolio. However I can guarantee that I wrote 100% of the code. These credits are just for ideas and design for my portfolio and blog website.
 
 - [Lee Robinson Website](https://leerob.io/)
 - [Papermod Hugo Theme](https://adityatelange.github.io/hugo-PaperMod/)
 - [Brittany Chiang Website](https://brittanychiang.com/)
 - [Max Böck Website](https://mxb.dev/)
+
+The digital art in the hero section was illustrated by a friend of mine ([Swann Fevian Kyaw](https://www.facebook.com/bon.zai.3910) [@ToonHa](https://www.facebook.com/ToonHa-102639465752883))
 
 ## Author
 
