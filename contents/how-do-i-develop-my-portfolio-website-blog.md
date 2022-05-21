@@ -97,7 +97,9 @@ Initially I used [Framer Motion](https://www.framer.com/motion/ "Framer Motion")
 
 ## Outro
 
-In conclusion, this project gives me a lot of experience and confidence about developing blog site (SSG). Now, I have gained git-based CMS knowledge and how it interacts with NextJS. I've also learned about SEO, dynamic sitemap generation and indexing Google procedures. I will make more cool projects in the future. So, stay tuned! ✌🏻
+In conclusion, this project gives me a lot of experience and confidence about developing blog site (SSG). Now, I have gained knowledge of git-based CMS and how it interacts with NextJS. I've also learned about SEO, dynamic sitemap generation and indexing Google procedures. I will make better projects in the future. So, stay tuned! ✌🏻
+
+And... last but not least, I would like to say 'thanks' to my friend [Swann Fevian Kyaw](https://www.facebook.com/bon.zai.3910 "Swann Fevian Kyaw's Facebook Account") (@[ToonHa](https://www.facebook.com/ToonHa-102639465752883 "ToonHa Facebook Page")) who has drawn a beautiful illustration for my hero section of the website. 
 
 **Project Links**
 
