@@ -5,12 +5,6 @@
 
 My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind CSS and GSAP is used for styling and animations. Blog contents are written in Markdown format. Light & Dark themes supported.
 
-## Demo
-
-<p align="center">
-<img width="600" alt="satnaing-dev-lighthouse-score" src="https://res.cloudinary.com/noezectz/image/upload/v1653108324/SatNaing/ezgif.com-gif-maker_2_hehtlm.gif">
-</p>
-
 ## Features
 
 - Responsive Design 📱💻
