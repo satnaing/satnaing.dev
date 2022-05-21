@@ -1,9 +1,11 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import useScrollListener from "../../hooks/useScrollListener";
 
 const BlogHeader: React.FC = () => {
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [navClassList, setNavClassList] = useState<any>([]);
   const scroll = useScrollListener();
@@ -40,7 +42,13 @@ const BlogHeader: React.FC = () => {
                   .map((navLink) => (
                     <li key={navLink.url}>
                       <Link href={navLink.url}>
-                        <a className="text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline">
+                        <a
+                          className={`text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline
+                          ${
+                            router.pathname === navLink.url &&
+                            "text-marrsgreen dark:text-carrigreen"
+                          }`}
+                        >
                           {navLink.text}
                         </a>
                       </Link>
@@ -82,7 +90,10 @@ const BlogHeader: React.FC = () => {
             <li key={navLink.url}>
               <a
                 href={navLink.url}
-                className="text-sm flex flex-col items-center w-[4.5rem]"
+                className={`text-sm flex flex-col items-center w-[4.5rem] ${
+                  router.pathname === navLink.url &&
+                  "text-marrsgreen dark:text-carrigreen fill-marrsgreen dark:fill-carrigreen"
+                } dark:fill-textlight`}
               >
                 {navLink.svg}
                 {navLink.text}
@@ -103,7 +114,7 @@ const navLinks = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        className="dark:fill-textlight"
+        className=""
       >
         <path d="M12.71 2.29a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42A1 1 0 0 0 3 13h1v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h1a1 1 0 0 0 1-1 1 1 0 0 0-.29-.71zM6 20v-9.59l6-6 6 6V20z"></path>
       </svg>
@@ -117,7 +128,7 @@ const navLinks = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        className="dark:fill-textlight"
+        className=""
       >
         <path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11-6h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path>
       </svg>
@@ -131,7 +142,7 @@ const navLinks = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        className="dark:fill-textlight"
+        className=""
       >
         <path d="M20 4H8.515a2 2 0 0 0-1.627.838l-4.701 6.581a.997.997 0 0 0 0 1.162l4.701 6.581A2 2 0 0 0 8.515 20H20c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 14H8.515l-4.286-6 4.286-6H20v12z"></path>
       </svg>
@@ -145,7 +156,7 @@ const navLinks = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        className="dark:fill-textlight"
+        className=""
       >
         <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
       </svg>
