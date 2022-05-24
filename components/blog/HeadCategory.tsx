@@ -24,7 +24,7 @@ const HeadCategory: React.FC<Props> = ({ category }) => {
         />
       </svg>{" "}
       <Link href={slug ? `/blog/categories/${slug}` : "uncategorized"}>
-        <a className="hover:text-marrsgreen dark:hover:text-carrigreen font-medium">
+        <a className="hover:text-marrsgreen dark:hover:text-carrigreen font-medium outline-marrsgreen dark:outline-carrigreen">
           {category ? category : "uncategorized"}
         </a>
       </Link>
