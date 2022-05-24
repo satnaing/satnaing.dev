@@ -56,7 +56,7 @@ const BlogCard: React.FC<Props> = ({ post }) => {
     <div ref={sectionRef} className="my-4 md:mt-0 md:mb-8">
       <div className="overflow-hidden">
         <Link href={`/blog/posts/${slug}`}>
-          <a className="blog-title link inline-block">
+          <a className="blog-title link inline-block outline-none dark:outline-none focus-within:underline">
             <h3 className="text-lg font-medium">{title}</h3>
           </a>
         </Link>
