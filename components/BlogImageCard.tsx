@@ -77,7 +77,7 @@ const BlogImageCard: React.FC<Props> = ({
       </div>
       <div className="mb-2 overflow-hidden">
         <Link href={`/blog/posts/${slug}`}>
-          <a className="blog-title link inline-block">
+          <a className="blog-title link inline-block outline-none dark:outline-none focus-within:underline">
             <h3
               className={`${
                 fullWH ? "text-lg sm:text-md" : "text-md"
