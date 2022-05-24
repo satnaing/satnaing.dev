@@ -108,7 +108,7 @@ const BlogImageCard: React.FC<Props> = ({
       <p
         className={`blog-text dark:text-gray-300 ${
           fullWH ? "text-base sm:text-sm" : "text-sm w-60"
-        } overflow-hidden text-ellipsis max-h-24`}
+        } overflow-hidden text-ellipsis line-clamp-4 leading-7 sm:leading-6`}
       >
         {excerpt}
       </p>
