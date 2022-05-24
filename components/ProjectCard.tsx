@@ -73,8 +73,12 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
             <h3 className=" text-marrsgreen dark:text-carrigreen text-lg my-1 font-medium">
               {project.title}
             </h3>
-            <div className="flex items-center space-x-5 sm:space-x-3 my-2 sm:my-0">
-              <a href={project.codeUrl} title="github">
+            <div className="flex items-center space-x-5 sm:space-x-3 my-2 sm:my-0 mr-[0.1rem]">
+              <a
+                href={project.codeUrl}
+                title="github"
+                className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-1 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -88,7 +92,11 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
                   ></path>
                 </svg>
               </a>
-              <a href={project.liveUrl} title={project.title}>
+              <a
+                href={project.liveUrl}
+                title={project.title}
+                className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-8 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7 scale-125 sm:scale-100 bg-cardlight dark:bg-carddark hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-1 hover:-rotate-12"
