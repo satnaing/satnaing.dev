@@ -14,6 +14,7 @@ import PostBody from "@/components/blog/PostBody";
 import Tag from "@/components/blog/Tag";
 import formatDatetime from "utils/formatDatetime";
 import HeadCategory from "@/components/blog/HeadCategory";
+import Comments from "@/components/blog/Comments";
 
 export interface MdxMeta extends Meta {
   title: string;
@@ -118,6 +119,8 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                   Share
                 </a>
               </div>
+
+              <Comments />
             </article>
           </main>
           <Footer />
