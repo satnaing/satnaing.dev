@@ -123,3 +123,4 @@ fields:
   description: Type of the post for OG
 pages:
 - contents/how-do-i-develop-my-portfolio-website-blog.md
+- contents/how-do-i-develop-my-terminal-portfolio-website-with-react.md
