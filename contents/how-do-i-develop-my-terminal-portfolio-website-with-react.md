@@ -11,7 +11,7 @@ tags:
 - TypeScript
 author: Sat Naing
 type: article
-coverImage: https://res.cloudinary.com/noezectz/image/upload/v1654692466/SatNaing/screely-1654692451828_ba0tlm.png
+coverImage: https://res.cloudinary.com/noezectz/image/upload/v1654754125/SatNaing/terminal-screenshot_gu3kkc.png
 title: How Do I Develop My Terminal Portfolio Website with React
 description: Sat Naing's React terminal portfolio website. Styled-components is used
   for styling; and multiple themes supported.
