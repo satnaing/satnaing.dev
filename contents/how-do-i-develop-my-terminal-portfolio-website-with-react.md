@@ -44,11 +44,11 @@ This project doesn’t need very complex state management. I just use ContextAPI
 
 Here’s a quick recap for the tech stack.
 
-* Frontend: ReactJS, TypeScript
-* Styling: Styled-Components
-* UI/UX: Figma
-* State Management: ContextAPI
-* Deployment: Vercel
+* Frontend: [ReactJS](https://reactjs.org/ "React Website"), [TypeScript](https://www.typescriptlang.org/ "TypeScript Website")
+* Styling: [Styled-Components](https://styled-components.com/ "Styled-Components Website")
+* UI/UX: [Figma](https://figma.com/ "Figma Website")
+* State Management: [ContextAPI](https://reactjs.org/docs/context.html "React ContextAPI")
+* Deployment: [Netlify](https://www.netlify.com/ "Netlify Website")
 
 ## Features
 
@@ -77,3 +77,12 @@ Users can go back to the previous commands or navigate the previously typed comm
 previously typed commands can be viewed by typing ‘history’ in the command line. All the command history and terminal screen can be wiped out by typing ‘clear’ or pressing ‘Ctrl + l’.
 
 ![](https://i.ibb.co/SJBy8Rr/terminal-clear.gif)
+
+## Outro
+
+This is a really fun project, and one special part of this project is I had to focus on logic rather than user-interface (even though this is kind of a frontend project).
+
+**Project Links**
+
+* Website: [https://terminal.satnaing.dev/](https://terminal.satnaing.dev/ "https://terminal.satnaing.dev/")
+* Repo: [https://github.com/satnaing/terminal-portfolio](https://github.com/satnaing/terminal-portfolio "https://github.com/satnaing/terminal-portfolio")
