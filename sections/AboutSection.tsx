@@ -9,7 +9,7 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import satNaing from "../public/satnaing-about.jpg";
+import satNaing from "../public/satnaing-profile.jpg";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 
@@ -135,11 +135,11 @@ const AboutSection: React.FC = () => {
                 <div className="profile-picture">
                   <Image
                     src={satNaing}
-                    width={1080}
-                    height={1348}
+                    width={3400}
+                    height={3579}
                     priority
                     alt="Sat Naing profile picture"
-                    className="drop-shadow-lg"
+                    className="drop-shadow-lg rounded-md"
                   />
                 </div>
 
