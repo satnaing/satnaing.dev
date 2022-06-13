@@ -132,7 +132,7 @@ const AboutSection: React.FC = () => {
                   <path d="M79.2202 0.959991L62.7802 17.32L46.3301 0.959991L29.8902 17.32L13.4501 0.959991L0.410156 13.94L0.400146 17.58L13.4501 4.58999L29.8902 20.95L46.3301 4.58999L62.7802 20.95L79.2202 4.58999L93.7302 19.02L95.5402 17.19L79.2202 0.959991Z" />
                 </svg>
 
-                <div className="profile-picture h-72 rounded-md shadow-2xl">
+                <div className="profile-picture h-72 rounded-md md:shadow-2xl">
                   <Image
                     src={satNaing}
                     width={3400}
