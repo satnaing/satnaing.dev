@@ -30,8 +30,8 @@ const Blog: NextPage<Props> = ({ categories, categorizedPosts }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
     gsap.utils.toArray(q(".category-title-text")).forEach((tag, i) => {
       const initialDelay = 1.2;
       const delayTime = i == 0 ? initialDelay : initialDelay + i * 0.2;

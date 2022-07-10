@@ -20,8 +20,8 @@ const Blog: NextPage<Props> = ({ posts, tag }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
     gsap.fromTo(
       q(".tag-title"),
       { x: "-100%" },
@@ -33,6 +33,7 @@ const Blog: NextPage<Props> = ({ posts, tag }) => {
       }
     );
   }, []);
+
   return (
     <>
       <AppHead title="Blog - Sat Naing" />

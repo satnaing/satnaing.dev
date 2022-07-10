@@ -57,7 +57,8 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      q(".main-nav"),
+      // q(".main-nav"),
+      mainRef.current,
       { y: -100 },
       { y: 0, duration: 0.5, delay: 1, ease: "Power0.easeNone" }
     );
@@ -74,8 +75,9 @@ const Header: React.FC = () => {
   }, [scroll.y, scroll.lastY]);
 
   return (
-    <header className="md:flex" ref={mainRef}>
+    <header className="md:flex">
       <div
+        ref={mainRef}
         className={`main-nav bg-bglight dark:bg-bgdark z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
           " "
         )}`}

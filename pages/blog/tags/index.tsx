@@ -20,8 +20,8 @@ const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
     gsap.utils.toArray(q(".blog-tag")).forEach((tag, i) => {
       const initialDelay = 1.2;
       const delayTime = i == 0 ? initialDelay : initialDelay + i * 0.1;

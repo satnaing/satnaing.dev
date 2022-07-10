@@ -15,8 +15,9 @@ const EduGroup: React.FC<Props> = ({ edu }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({

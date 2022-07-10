@@ -22,8 +22,9 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
   const even = index % 2 === 0 ? true : false;
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({
@@ -58,6 +59,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
         "<25%"
       );
   }, []);
+
   return (
     <div ref={sectionRef} className={`md:basis-1/2 md:px-8 py-2 md:py-4`}>
       <div className={`project-card project-card-${index}`}>

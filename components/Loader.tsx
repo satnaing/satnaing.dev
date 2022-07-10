@@ -3,9 +3,10 @@ import gsap from "gsap";
 
 const Loader: React.FC = ({ children }) => {
   const loadingRef = useRef(null);
-  const q = gsap.utils.selector(loadingRef);
 
   useEffect(() => {
+    const q = gsap.utils.selector(loadingRef);
+
     const tl = gsap.timeline({ defaults: { duration: 0.7 } });
     tl.fromTo(q(".loading-text"), { y: 120 }, { y: -10 });
     tl.to(q(".white-bg"), { y: "-100%" }).to(

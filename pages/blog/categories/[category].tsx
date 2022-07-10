@@ -22,8 +22,8 @@ const Blog: NextPage<Props> = ({ posts, category }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
     gsap.fromTo(
       q(".category-title"),
       { x: "-100%" },
