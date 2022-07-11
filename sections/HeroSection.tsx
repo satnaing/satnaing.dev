@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "../components/LinkButton";
 
-import satNaing from "../public/satnaing-illustration.png";
-import laptop from "../public/laptop-illustration.png";
+import satNaing from "../public/satnaing-illustration.webp";
+import laptop from "../public/laptop-illustration.webp";
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
