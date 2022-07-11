@@ -110,7 +110,7 @@ const AboutSection: React.FC = () => {
             <RoughNotation
               type="underline"
               color={`${
-                theme === "light" ? "rgb(0, 140, 140)" : "rgb(5 206 145)"
+                theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
               }`}
               strokeWidth={2}
               order={1}
