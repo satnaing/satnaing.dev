@@ -1,6 +1,12 @@
-const Footer: React.FC = () => {
+type Props = {
+  noPadding?: boolean;
+};
+
+const Footer: React.FC<Props> = ({ noPadding = false }) => {
   return (
-    <footer className="pb-24 md:pb-4 text-center">
+    <footer
+      className={`${noPadding ? "pb-4" : "pb-24"} md:pb-4 text-center mt-auto`}
+    >
       <div className="flex justify-center space-x-12 mb-4">
         {socialLinks.map((social) => (
           <a
