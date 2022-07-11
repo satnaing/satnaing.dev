@@ -19,7 +19,7 @@ type Props = {
   blogPosts: MdxMeta[];
 };
 
-const meta = {
+export const meta = {
   description:
     "Sat Naing is a full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
   author: "Sat Naing",
