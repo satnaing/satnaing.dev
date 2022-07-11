@@ -20,8 +20,8 @@ module.exports = {
       colors: {
         bglight: "#F9FAFB",
         marrslight: "#1C9A9A",
-        marrsgreen: "#008C8C",
-        marrsdark: "#005757",
+        marrsgreen: "#007A7A",
+        marrsdark: "#004D4D",
         cardlight: "#EFF3F3",
 
         // bgdark: "#2D2D2D",
