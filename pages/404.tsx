@@ -21,10 +21,10 @@ const Home: NextPage = () => {
               404
             </h1>
             <div className="text-lg xs:text-2xl my-2">
-              Page Not Found :'&#40;
+              Page Not Found :&apos;&#40;
             </div>
             <div className="max-w-xs text-center mb-10">
-              It seems the page you're looking for does not exist, or there
+              It seems the page you&apos;re looking for does not exist, or there
               might be a typo in the URL.
             </div>
             <LinkButton href="/" outline>
