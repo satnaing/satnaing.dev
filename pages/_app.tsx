@@ -1,12 +1,13 @@
+import { useEffect, useRef } from "react";
+import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
-import "../styles/globals.css";
-import Head from "next/head";
 import { ProvideFilter } from "context/filter";
 import { ProvideSection } from "context/section";
 
+import "../styles/globals.css";
+
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
