@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import LinkButton from "@/components/LinkButton";
 
 import { meta } from "pages";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -27,9 +28,16 @@ const Home: NextPage = () => {
               It seems the page you&apos;re looking for does not exist, or there
               might be a typo in the URL.
             </div>
-            <LinkButton href="/" outline>
-              Go to Home Page
-            </LinkButton>
+            <div className="flex space-x-4">
+              <LinkButton href="/" outline>
+                Go back Home
+              </LinkButton>
+              <Link href="/blog">
+                <a className="link flex items-center px-4 text-xl hover:underline">
+                  Go to Blog
+                </a>
+              </Link>
+            </div>
           </div>
           <Footer noPadding />
         </div>
