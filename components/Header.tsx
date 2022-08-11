@@ -135,7 +135,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      <nav className="fixed md:hidden bottom-4 z-30 left-1/2 transform -translate-x-1/2 bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg">
+      <nav className="fixed glassmorphism md:hidden bottom-4 z-30 left-1/2 transform -translate-x-1/2 bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg">
         <ul className="flex justify-evenly items-center py-1">
           {navLinks.map((navLink) => (
             <li key={navLink.url}>
