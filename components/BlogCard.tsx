@@ -20,37 +20,38 @@ const BlogCard: React.FC<Props> = ({ post }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
-  const q = gsap.utils.selector(sectionRef);
+  // useEffect(() => {
+  //   const q = gsap.utils.selector(sectionRef);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: `70% bottom`,
-      },
-    });
+  //   const tl = gsap.timeline({
+  //     // defaults: { stagger: 0.2, duration: 0.2 },
+  //     scrollTrigger: {
+  //       trigger: sectionRef.current,
+  //       start: `70% bottom`,
+  //     },
+  //   });
 
-    tl.fromTo(
-      q(".blog-title"),
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        ease: "Power3.easeInOut",
-        duration: 0.5,
-        stagger: 0.2,
-      }
-    )
-      .fromTo(q(".blog-datetime"), { y: 100 }, { y: 0, stagger: 0.2 }, "<25%")
-      .fromTo(
-        q(".blog-excerpt"),
-        { opacity: 0 },
-        { opacity: 1, stagger: 0.2, duration: 1.5 },
-        "<10%"
-      );
-  }, [q]);
+  //   tl.fromTo(
+  //     q(".blog-title"),
+  //     { opacity: 0, y: 50 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       ease: "Power3.easeInOut",
+  //       duration: 0.5,
+  //       stagger: 0.2,
+  //     }
+  //   )
+  //     .fromTo(q(".blog-datetime"), { y: 100 }, { y: 0, stagger: 0.2 }, "<25%")
+  //     .fromTo(
+  //       q(".blog-excerpt"),
+  //       { opacity: 0 },
+  //       { opacity: 1, stagger: 0.2, duration: 1.5 },
+  //       "<10%"
+  //     );
+  // }, []);
 
   return (
     <div ref={sectionRef} className="my-4 md:mt-0 md:mb-8">
