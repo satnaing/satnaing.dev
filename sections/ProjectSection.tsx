@@ -18,7 +18,6 @@ const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
 
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isSecOnScreen = useOnScreen(sectionRef);
 
   const elementRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(elementRef);
@@ -72,8 +71,6 @@ const projects = [
     image: (
       <Image
         src={satnaingBlog}
-        // width={1264}
-        // height={685}
         layout="fill"
         alt="Sat Naing's Blog"
         className="transition-transform duration-500 hover:scale-110 object-cover"
@@ -91,8 +88,6 @@ const projects = [
     image: (
       <Image
         src={haruFashion}
-        // width={1440}
-        // height={685}
         layout="fill"
         alt="Haru Fashion App"
         className="transition-transform duration-500 hover:scale-110 object-cover"
@@ -110,8 +105,6 @@ const projects = [
     image: (
       <Image
         src={haruApi}
-        // width={2300}
-        // height={1431}
         layout="fill"
         alt="Haru API"
         className="transition-transform duration-500 hover:scale-110 object-cover"
@@ -146,8 +139,6 @@ const projects = [
   //   image: (
   //     <Image
   //       src={tipCalculator}
-  //       // width={1440}
-  //       // height={685}
   //       layout="fill"
   //       alt="Tip Calculator"
   //       className="transition-transform duration-500 hover:scale-110 object-cover"
