@@ -12,6 +12,7 @@ import satnaingBlog from "public/projects/satnaing-blog.png";
 import haruFashion from "public/projects/haru-fashion.png";
 import haruApi from "public/projects/haru-api.png";
 import tipCalculator from "public/projects/tip-calculator.png";
+import astroPaper from "public/projects/astro-paper.png";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
@@ -123,24 +124,41 @@ const projects = [
     bgColor: "bg-[#C5E4E7]",
   },
   {
-    title: "Tip Calculator",
+    title: "AstroPaper",
     type: "Frontend",
     image: (
       <Image
-        src={tipCalculator}
-        // width={1440}
-        // height={685}
+        src={astroPaper}
         layout="fill"
-        alt="Tip Calculator"
+        alt="AstroPaper"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user's amount to pay. This app is written in Scss and React with TypeScript.",
-    tags: ["React", "TypeScript", "Scss"],
+    desc: "A minimal, responsive and SEO-friendly blog theme for Astro. This theme is written is Astro, TypeScript and React. This theme includes fuzzy-search, pagination etc.",
+    tags: ["Astro", "TypeScript", "React", "TailwindCSS"],
     liveUrl: "https://splitter-sn.netlify.app/",
     codeUrl: "https://github.com/satnaing/tip-calculator",
     bgColor: "bg-[#9FD0E3]",
   },
+  // {
+  //   title: "Tip Calculator",
+  //   type: "Frontend",
+  //   image: (
+  //     <Image
+  //       src={tipCalculator}
+  //       // width={1440}
+  //       // height={685}
+  //       layout="fill"
+  //       alt="Tip Calculator"
+  //       className="transition-transform duration-500 hover:scale-110 object-cover"
+  //     />
+  //   ),
+  //   desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user's amount to pay. This app is written in Scss and React with TypeScript.",
+  //   tags: ["React", "TypeScript", "Scss"],
+  //   liveUrl: "https://splitter-sn.netlify.app/",
+  //   codeUrl: "https://github.com/satnaing/tip-calculator",
+  //   bgColor: "bg-[#9FD0E3]",
+  // },
 ];
 
 export default ProjectSection;
