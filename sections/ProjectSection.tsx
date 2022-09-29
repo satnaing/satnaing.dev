@@ -129,8 +129,8 @@ const projects = [
     ),
     desc: "A minimal, responsive and SEO-friendly blog theme for Astro. This theme is written is Astro, TypeScript and React. This theme includes fuzzy-search, pagination etc.",
     tags: ["Astro", "TypeScript", "React", "TailwindCSS"],
-    liveUrl: "https://splitter-sn.netlify.app/",
-    codeUrl: "https://github.com/satnaing/tip-calculator",
+    liveUrl: "https://astro-paper.pages.dev/",
+    codeUrl: "https://github.com/satnaing/astro-paper",
     bgColor: "bg-[#9FD0E3]",
   },
   // {
