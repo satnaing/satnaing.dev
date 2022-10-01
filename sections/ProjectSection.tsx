@@ -11,7 +11,6 @@ import useScrollActive from "hooks/useScrollActive";
 import satnaingBlog from "public/projects/satnaing-blog.png";
 import haruFashion from "public/projects/haru-fashion.png";
 import haruApi from "public/projects/haru-api.png";
-import tipCalculator from "public/projects/tip-calculator.png";
 import astroPaper from "public/projects/astro-paper.png";
 
 const ProjectSection: React.FC = () => {
@@ -133,23 +132,6 @@ const projects = [
     codeUrl: "https://github.com/satnaing/astro-paper",
     bgColor: "bg-[#9FD0E3]",
   },
-  // {
-  //   title: "Tip Calculator",
-  //   type: "Frontend",
-  //   image: (
-  //     <Image
-  //       src={tipCalculator}
-  //       layout="fill"
-  //       alt="Tip Calculator"
-  //       className="transition-transform duration-500 hover:scale-110 object-cover"
-  //     />
-  //   ),
-  //   desc: "A Progressive Web App (PWA) that can calculate the tip amount and each user's amount to pay. This app is written in Scss and React with TypeScript.",
-  //   tags: ["React", "TypeScript", "Scss"],
-  //   liveUrl: "https://splitter-sn.netlify.app/",
-  //   codeUrl: "https://github.com/satnaing/tip-calculator",
-  //   bgColor: "bg-[#9FD0E3]",
-  // },
 ];
 
 export default ProjectSection;
