@@ -8,7 +8,7 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import satnaingBlog from "public/projects/satnaing-blog.png";
+import terminalPortfolio from "public/projects/terminal-portfolio.png";
 import haruFashion from "public/projects/haru-fashion.png";
 import haruApi from "public/projects/haru-api.png";
 import astroPaper from "public/projects/astro-paper.png";
@@ -65,20 +65,20 @@ const ProjectSection: React.FC = () => {
 
 const projects = [
   {
-    title: "Sat Naing's Blog",
+    title: "Terminal Portfolio",
     type: "Frontend",
     image: (
       <Image
-        src={satnaingBlog}
+        src={terminalPortfolio}
         layout="fill"
-        alt="Sat Naing's Blog"
+        alt="Terminal Portfolio"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "My personal blog where I can write down my thoughts and experiences. Contents are written in markdown format. Git based Headless CMS called Forestry is used as a CMS.",
-    tags: ["Forestry", "TailwindCSS", "TypeScript", "NextJS"],
-    liveUrl: "https://satnaing.dev/blog/",
-    codeUrl: "https://github.com/satnaing/my-portfolio",
+    desc: "My perfolio website in terminal version developed with React and TypeScript. In this project, styled-components library is used for styling and multiple themes supported.",
+    tags: ["React", "TypeScript", "Styled-Components"],
+    liveUrl: "https://terminal.satnaing.dev/",
+    codeUrl: "https://github.com/satnaing/terminal-portfolio",
     bgColor: "bg-[#B4BEE0]",
   },
   {
