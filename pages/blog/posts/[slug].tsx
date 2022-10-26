@@ -80,10 +80,11 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                   <Image
                     src={post.coverImage}
                     alt={post.coverImageAlt || "Picture"}
-                    layout="responsive"
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto" }}
                     priority
-                    width={post.coverImageWidth || 1200}
-                    height={post.coverImageHeight || 700}
+                    width={Number(post.coverImageWidth) || 1200}
+                    height={Number(post.coverImageHeight) || 700}
                   />
                 </div>
               )}

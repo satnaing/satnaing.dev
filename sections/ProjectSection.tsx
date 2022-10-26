@@ -70,7 +70,8 @@ const projects = [
     image: (
       <Image
         src={terminalPortfolio}
-        layout="fill"
+        sizes="100vw"
+        fill
         alt="Terminal Portfolio"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
@@ -87,7 +88,8 @@ const projects = [
     image: (
       <Image
         src={haruFashion}
-        layout="fill"
+        sizes="100vw"
+        fill
         alt="Haru Fashion App"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
@@ -104,7 +106,8 @@ const projects = [
     image: (
       <Image
         src={haruApi}
-        layout="fill"
+        sizes="100vw"
+        fill
         alt="Haru API"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
@@ -121,7 +124,8 @@ const projects = [
     image: (
       <Image
         src={astroPaper}
-        layout="fill"
+        sizes="100vw"
+        fill
         alt="AstroPaper"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />

@@ -70,7 +70,8 @@ const BlogImageCard: React.FC<Props> = ({
       <div className="blog-image relative w-full h-48 md:h-40 mb-3">
         <Image
           src={coverImage!}
-          layout="fill"
+          sizes="100vw"
+          fill
           className="object-contain"
           alt={title}
         />
@@ -78,8 +79,8 @@ const BlogImageCard: React.FC<Props> = ({
       <div className="mb-2 overflow-hidden">
         <Link
           href={`/blog/posts/${slug}`}
-          className="blog-title link inline-block outline-none dark:outline-none focus-within:underline">
-
+          className="blog-title link inline-block outline-none dark:outline-none focus-within:underline"
+        >
           <h3
             className={`${
               fullWH ? "text-lg sm:text-md" : "text-md"
@@ -87,7 +88,6 @@ const BlogImageCard: React.FC<Props> = ({
           >
             {title}
           </h3>
-
         </Link>
       </div>
       <div className="italic text-sm mb-1 text-carddark dark:text-gray-300 flex items-center">
