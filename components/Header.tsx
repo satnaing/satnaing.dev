@@ -83,11 +83,11 @@ const Header: React.FC = () => {
         )}`}
       >
         <div className="w-full h-full mx-auto max-w-6xl flex items-center justify-between">
-          <Link href="/">
-            <a className="text-xl sm:text-2xl md:hover:text-marrsgreen dark:md:hover:text-carrigreen focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen">
-              SatNaing
-              <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
-            </a>
+          <Link
+            href="/"
+            className="text-xl sm:text-2xl md:hover:text-marrsgreen dark:md:hover:text-carrigreen focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen">
+            SatNaing<span className="text-marrsgreen dark:text-carrigreen">.dev</span>
+
           </Link>
           <div className="flex">
             <nav className="hidden md:block">

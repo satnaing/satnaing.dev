@@ -28,11 +28,11 @@ const BlogHeader: React.FC = () => {
         )}`}
       >
         <div className="w-full h-full mx-auto max-w-6xl flex items-center justify-between">
-          <Link href="/blog">
-            <a className="after:content-['blog'] after:bg-bgdark dark:after:bg-bglight after:text-textlight dark:after:text-bgdark after:text-base after:px-2 after:inline-block after:rotate-12 after:absolute after:-right-12 hover:after:rotate-0 relative text-xl sm:text-2xl hover:text-marrsgreen dark:hover:text-carrigreen focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen">
-              SatNaing
-              <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
-            </a>
+          <Link
+            href="/blog"
+            className="after:content-['blog'] after:bg-bgdark dark:after:bg-bglight after:text-textlight dark:after:text-bgdark after:text-base after:px-2 after:inline-block after:rotate-12 after:absolute after:-right-12 hover:after:rotate-0 relative text-xl sm:text-2xl hover:text-marrsgreen dark:hover:text-carrigreen focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen">
+            SatNaing<span className="text-marrsgreen dark:text-carrigreen">.dev</span>
+
           </Link>
           <div className="flex">
             <nav className="hidden md:block">
@@ -41,16 +41,16 @@ const BlogHeader: React.FC = () => {
                   .filter((link, index) => index !== 0)
                   .map((navLink) => (
                     <li key={navLink.url}>
-                      <Link href={navLink.url}>
-                        <a
-                          className={`text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline
-                          ${
-                            router.pathname === navLink.url &&
-                            "text-marrsgreen dark:text-carrigreen"
-                          }`}
-                        >
-                          {navLink.text}
-                        </a>
+                      <Link
+                        href={navLink.url}
+                        className={`text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline
+                        ${
+                          router.pathname === navLink.url &&
+                          "text-marrsgreen dark:text-carrigreen"
+                        }`}>
+
+                        {navLink.text}
+
                       </Link>
                     </li>
                   ))}
