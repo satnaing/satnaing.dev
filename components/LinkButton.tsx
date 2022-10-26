@@ -3,6 +3,7 @@ type Props = {
   targetBlank?: boolean;
   outline?: boolean;
   className?: string;
+  children: React.ReactNode;
 };
 
 const LinkButton: React.FC<Props> = ({
