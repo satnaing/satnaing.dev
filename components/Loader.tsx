@@ -1,7 +1,11 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const Loader: React.FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Loader: React.FC<Props> = ({ children }) => {
   const loadingRef = useRef(null);
 
   useEffect(() => {
