@@ -4,24 +4,26 @@ coverImageWidth: "1200"
 coverImageHeight: "700"
 datetime: 2022-06-09T03:42:51Z
 tags:
-- JavaScript
-- ReactJS
-- ContextAPI
-- Styled-Components
-- TypeScript
+  - JavaScript
+  - ReactJS
+  - ContextAPI
+  - Styled-Components
+  - TypeScript
 author: Sat Naing
 type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1654754125/SatNaing/terminal-screenshot_gu3kkc.png
 title: How Do I Develop My Terminal Portfolio Website with React
-description: Sat Naing's React terminal portfolio website. Styled-components is used
+description:
+  Sat Naing's React terminal portfolio website. Styled-components is used
   for styling; and multiple themes supported.
-excerpt: Developing a terminal-like website using ReactJS, TypeScript and Styled-Components.
+excerpt:
+  Developing a terminal-like website using ReactJS, TypeScript and Styled-Components.
   Includes features like autocomplete, multiple themes, command hints etc.
 slug: how-do-i-develop-my-terminal-portfolio-website-with-react
 featured: true
 category: How Do I
-
 ---
+
 Developing a terminal-like website using ReactJS, TypeScript and Styled-Components. Includes features like autocomplete, multiple themes, command hints etc.
 
 ## Intro
@@ -32,9 +34,9 @@ Recently, I've developed and published my portfolio + a blog. I’m glad I got s
 
 This project is a frontend project without any backend codes. The UI/UX part is designed in Figma. For the frontend user-interface, I chose React over pain JavaScript and NextJS. Why?
 
-* Firstly, I want to write declarative code. Managing HTML DOM using JavaScript imperatively is really tedious.
-* Secondly, because it is React!!! It is fast, and reliable.
-* Lastly, I don’t need much of the SEO features, routing and image optimization provided by NextJS.
+- Firstly, I want to write declarative code. Managing HTML DOM using JavaScript imperatively is really tedious.
+- Secondly, because it is React!!! It is fast, and reliable.
+- Lastly, I don’t need much of the SEO features, routing and image optimization provided by NextJS.
 
 And of course there's TypeScript for type checking.
 
@@ -44,11 +46,11 @@ This project doesn’t need very complex state management. I just use ContextAPI
 
 Here’s a quick recap for the tech stack.
 
-* Frontend: [ReactJS](https://reactjs.org/ "React Website"), [TypeScript](https://www.typescriptlang.org/ "TypeScript Website")
-* Styling: [Styled-Components](https://styled-components.com/ "Styled-Components Website")
-* UI/UX: [Figma](https://figma.com/ "Figma Website")
-* State Management: [ContextAPI](https://reactjs.org/docs/context.html "React ContextAPI")
-* Deployment: [Netlify](https://www.netlify.com/ "Netlify Website")
+- Frontend: [ReactJS](https://reactjs.org/ "React Website"), [TypeScript](https://www.typescriptlang.org/ "TypeScript Website")
+- Styling: [Styled-Components](https://styled-components.com/ "Styled-Components Website")
+- UI/UX: [Figma](https://figma.com/ "Figma Website")
+- State Management: [ContextAPI](https://reactjs.org/docs/context.html "React ContextAPI")
+- Deployment: [Netlify](https://www.netlify.com/ "Netlify Website")
 
 ## Features
 
@@ -58,31 +60,31 @@ Here are some features of the project.
 
 Users can change multiple themes. At the time of writing this post, there are 5 themes; and more themes will probably be added in the future. The selected theme is saved in local storage so that the theme won’t change on page refresh.
 
-![](https://i.ibb.co/fSTCnWB/terminal-portfolio-multiple-themes.gif)
+![Setting different theme](https://i.ibb.co/fSTCnWB/terminal-portfolio-multiple-themes.gif)
 
 ### Command-line Completion
 
 To look and feel as close to the actual terminal as possible, I put a command-line completion feature which auto fills in partially typed commands by simply pressing ‘Tab’ or ‘Ctrl + i’.
 
-![](https://i.ibb.co/CQTGGLF/terminal-autocomplete.gif)
+![Demonstrating command-line completion](https://i.ibb.co/CQTGGLF/terminal-autocomplete.gif)
 
 ### Previous Commands
 
 Users can go back to the previous commands or navigate the previously typed commands by pressing Up & Down Arrows.
 
-![](https://i.ibb.co/vD1pSRv/terminal-up-down.gif)
+![Going back to previous commands with UP Arrow](https://i.ibb.co/vD1pSRv/terminal-up-down.gif)
 
 ### View/Clear Command History
 
 previously typed commands can be viewed by typing ‘history’ in the command line. All the command history and terminal screen can be wiped out by typing ‘clear’ or pressing ‘Ctrl + l’.
 
-![](https://i.ibb.co/SJBy8Rr/terminal-clear.gif)
+![Clearing the terminal with 'clear' or 'Ctrl + L' command](https://i.ibb.co/SJBy8Rr/terminal-clear.gif)
 
 ## Outro
 
 This is a really fun project, and one special part of this project is I had to focus on logic rather than user-interface (even though this is kind of a frontend project).
 
-**Project Links**
+## Project Links
 
-* Website: [https://terminal.satnaing.dev/](https://terminal.satnaing.dev/ "https://terminal.satnaing.dev/")
-* Repo: [https://github.com/satnaing/terminal-portfolio](https://github.com/satnaing/terminal-portfolio "https://github.com/satnaing/terminal-portfolio")
+- Website: [https://terminal.satnaing.dev/](https://terminal.satnaing.dev/ "https://terminal.satnaing.dev/")
+- Repo: [https://github.com/satnaing/terminal-portfolio](https://github.com/satnaing/terminal-portfolio "https://github.com/satnaing/terminal-portfolio")
