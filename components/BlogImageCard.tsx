@@ -63,7 +63,7 @@ const BlogImageCard: React.FC<Props> = ({
     <div
       ref={sectionRef}
       title={title}
-      className={`sm:min-w-[17rem] transition hover:-translate-y-2 max-w-md bg-gray-100 dark:bg-carddark p-4 rounded shadow-md hover:shadow-xl ${
+      className={`sm:min-w-[17rem] transition translate-y-2 hover:-translate-y-0 max-w-md bg-gray-100 dark:bg-carddark p-4 rounded shadow-md hover:shadow-xl ${
         fullWH ? "w-full" : "w-72 my-2"
       } ${className}`}
     >
@@ -76,7 +76,7 @@ const BlogImageCard: React.FC<Props> = ({
           alt={title}
         />
       </div>
-      <div className="mb-2 overflow-hidden">
+      <div className="mb-2 overflow-hidden h-14">
         <Link
           href={`/blog/posts/${slug}`}
           className="blog-title link inline-block outline-none dark:outline-none focus-within:underline"
@@ -84,7 +84,7 @@ const BlogImageCard: React.FC<Props> = ({
           <h3
             className={`${
               fullWH ? "text-lg sm:text-md" : "text-md"
-            } font-medium`}
+            } font-medium line-clamp-2`}
           >
             {title}
           </h3>
