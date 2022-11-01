@@ -4,25 +4,27 @@ coverImageWidth: "1200"
 coverImageHeight: "700"
 datetime: 2022-03-25T16:55:12.000+00:00
 tags:
-- NextJS
-- TailwindCSS
-- HeadlessCMS
-- Blog
+  - NextJS
+  - TailwindCSS
+  - HeadlessCMS
+  - Blog
 author: Sat Naing
 type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1653050141/SatNaing/blog_at_cafe_ei1wf4.jpg
 title: How Do I Develop My Portfolio Website & Blog
-description: My experience about developing my first portfolio website and a blog
+description:
+  My experience about developing my first portfolio website and a blog
   using NextJS and a headless CMS.
-excerpt: My journey about planning, designing and developing my very first portfolio
+excerpt:
+  My journey about planning, designing and developing my very first portfolio
   website and my personal blog. Thoughts about my motivation for this project and
   experiences.
 slug: how-do-i-develop-my-portfolio-and-blog
 featured: true
 category: How Do I
 language: English
-
 ---
+
 My experience about developing my first portfolio website and a blog using NextJS and a headless CMS.
 
 ## Motivation
@@ -45,11 +47,11 @@ Images and assets are uploaded and stored in [Cloudinary](https://cloudinary.com
 
 In conclusion, these are the tech stack I've used for this project.
 
-* Front-end: NextJS (TypeScript)
-* Styling: TailwindCSS
-* Animations: GSAP
-* CMS: Forestry Headless CMS
-* Deployment: Vercel
+- Front-end: NextJS (TypeScript)
+- Styling: TailwindCSS
+- Animations: GSAP
+- CMS: Forestry Headless CMS
+- Deployment: Vercel
 
 ## Features
 
@@ -99,10 +101,10 @@ Initially I used [Framer Motion](https://www.framer.com/motion/ "Framer Motion")
 
 In conclusion, this project gives me a lot of experience and confidence about developing blog site (SSG). Now, I have gained knowledge of git-based CMS and how it interacts with NextJS. I've also learned about SEO, dynamic sitemap generation and indexing Google procedures. I will make better projects in the future. So, stay tuned! ✌🏻
 
-And... last but not least, I would like to say 'thanks' to my friend [Swann Fevian Kyaw](https://www.facebook.com/bon.zai.3910 "Swann Fevian Kyaw's Facebook Account") (@[ToonHa](https://www.facebook.com/ToonHa-102639465752883 "ToonHa Facebook Page")) who has drawn a beautiful illustration for my hero section of the website. 
+And... last but not least, I would like to say 'thanks' to my friend [Swann Fevian Kyaw](https://www.facebook.com/bon.zai.3910 "Swann Fevian Kyaw's Facebook Account") (@[ToonHa](https://www.facebook.com/ToonHa-102639465752883 "ToonHa Facebook Page")) who has drawn a beautiful illustration for my hero section of the website.
 
-**Project Links**
+## Project Links
 
-* Website: [https://satnaing.dev/](https://satnaing.dev/ "https://satnaing.dev/")
-* Blog: [https://satnaing.dev/blog](https://satnaing.dev/blog "https://satnaing.dev/blog")
-* Repo: [https://github.com/satnaing/my-portfolio](https://github.com/satnaing/my-portfolio "https://github.com/satnaing/my-portfolio")
+- Website: [https://satnaing.dev/](https://satnaing.dev/ "https://satnaing.dev/")
+- Blog: [https://satnaing.dev/blog](https://satnaing.dev/blog "https://satnaing.dev/blog")
+- Repo: [https://github.com/satnaing/my-portfolio](https://github.com/satnaing/my-portfolio "https://github.com/satnaing/my-portfolio")
