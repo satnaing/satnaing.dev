@@ -130,7 +130,7 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "A minimal, responsive and SEO-friendly blog theme for Astro. This theme is written is Astro, TypeScript and React. This theme includes fuzzy-search, pagination etc.",
+    desc: "A minimal, responsive and SEO-friendly blog theme for Astro. This theme is developed with Astro, TypeScript and React. This theme includes fuzzy-search, pagination etc.",
     tags: ["Astro", "TypeScript", "React", "TailwindCSS"],
     liveUrl: "https://astro-paper.pages.dev/",
     codeUrl: "https://github.com/satnaing/astro-paper",
