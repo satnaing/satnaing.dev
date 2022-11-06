@@ -4,11 +4,32 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth overflow-y-scroll;
   }
 
   body {
     @apply font-sans;
+  }
+
+  /* ===== Custom Scrollbar ===== */
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-bglight dark:bg-bgdark;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#d5d5d5] dark:bg-carddark;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#b7b7b7] dark:bg-[#17222b];
   }
 }
 
