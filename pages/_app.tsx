@@ -25,9 +25,17 @@ function MyApp({ Component, pageProps }: AppProps) {
       });
     });
 
-    document.addEventListener("mouseleave", () => {
+    const hideCursor = () => {
       gsap.to(cursorRef.current, { opacity: 0 });
-    });
+    };
+
+    const showCursor = () => {
+      gsap.to(cursorRef.current, { opacity: 1 });
+    };
+
+    document.addEventListener("mouseleave", hideCursor);
+    document.addEventListener("mousedown", hideCursor);
+    document.addEventListener("mouseup", showCursor);
   }, []);
   return (
     <>
