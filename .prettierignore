@@ -2,6 +2,7 @@
 /*
 
 # Except these files & folders
+!/app
 !/components
 !/contents
 !/context

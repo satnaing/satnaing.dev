@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  experimental: {
+    appDir: true,
+  },
   async redirects() {
     return [
       {
@@ -18,9 +21,9 @@ module.exports = {
   images: {
     domains: ["res.cloudinary.com"],
   },
-  compiler: {
-    removeConsole: true,
-  },
+  // compiler: {
+  //   removeConsole: true,
+  // },
 };
 
 // const nextConfig = {
