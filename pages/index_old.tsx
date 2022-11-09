@@ -13,7 +13,7 @@ import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
 
 import { getAllPosts } from "utils/api";
-import { MdxMeta } from "../pages/blog/posts/[slug]";
+import { MdxMeta } from "./blog/posts/[slug]";
 
 type Props = {
   blogPosts: MdxMeta[];

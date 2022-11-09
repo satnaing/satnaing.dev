@@ -4,7 +4,7 @@ import AppHead from "@/components/AppHead";
 import Footer from "@/components/Footer";
 import LinkButton from "@/components/LinkButton";
 
-import { meta } from "pages";
+import { meta } from "pages/index_old";
 import Link from "next/link";
 
 const Home: NextPage = () => {
