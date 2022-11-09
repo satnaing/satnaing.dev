@@ -61,45 +61,46 @@ const Blog: NextPage<Props> = ({ categories, categorizedPosts }) => {
     });
   }, []);
 
-  return <>
-    <AppHead title="Blog - Sat Naing" />
-    <Loader>Categories</Loader>
-    <div ref={sectionRef} className="bg-bglight dark:bg-bgdark">
-      <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
-        <SkipToMain />
-        <BlogHeader />
-        <SocialLinks />
-        <main id="main" className="blog-main">
-          <section className="blog-section">
-            <h1 className="text-3xl lg:text-4xl font-bold mb-4">
-              Categories
-            </h1>
-            {categories.map((category) => (
-              <div key={category} className="my-4">
-                <Link
-                  href={`/blog/categories/${slugify(category)}`}
-                  className="inline-block link-outline">
-
-                  <h2 className="category-title overflow-hidden text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
-                    <span className="category-title-text inline-block">
-                      {category}
-                    </span>
-                  </h2>
-
-                </Link>
-                <div className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
-                  {categorizedPosts[category].map((post: any) => (
-                    <BlogCardBox post={post} key={post.slug} />
-                  ))}
+  return (
+    <>
+      <AppHead title="Blog - Sat Naing" />
+      <Loader>Categories</Loader>
+      <div ref={sectionRef} className="bg-bglight dark:bg-bgdark">
+        <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
+          <SkipToMain />
+          <BlogHeader />
+          <SocialLinks />
+          <main id="main" className="blog-main">
+            <section className="blog-section">
+              <h1 className="text-3xl lg:text-4xl font-bold mb-4">
+                Categories
+              </h1>
+              {categories.map((category) => (
+                <div key={category} className="my-4">
+                  <Link
+                    href={`/blog/categories/${slugify(category)}`}
+                    className="inline-block link-outline"
+                  >
+                    <h2 className="category-title overflow-hidden text-xl font-medium pl-2 border-l-4 hover:text-marrsgreen dark:hover:text-carrigreen border-marrsgreen dark:border-carrigreen">
+                      <span className="category-title-text inline-block">
+                        {category}
+                      </span>
+                    </h2>
+                  </Link>
+                  <div className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
+                    {categorizedPosts[category].map((post: any) => (
+                      <BlogCardBox post={post} key={post.slug} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </section>
-        </main>
-        <Footer />
+              ))}
+            </section>
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
-  </>;
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

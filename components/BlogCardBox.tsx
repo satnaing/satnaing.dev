@@ -28,7 +28,6 @@ const BlogCardBox: React.FC<Props> = ({
     >
       <div className="mb-2">
         <Link href={`/blog/posts/${slug}`} className="link inline-block">
-
           <h3
             className={`${
               fullWH ? "text-lg sm:text-md" : "text-md"
@@ -36,7 +35,6 @@ const BlogCardBox: React.FC<Props> = ({
           >
             {title}
           </h3>
-
         </Link>
       </div>
       <div className="italic text-sm mb-1 text-carddark dark:text-gray-300 flex items-center">

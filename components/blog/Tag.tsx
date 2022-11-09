@@ -8,7 +8,7 @@ type Props = {
 
 const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
   return (
-    (<Link
+    <Link
       href={`/blog/tags/${tag}`}
       key={tag}
       passHref
@@ -16,8 +16,8 @@ const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
         size === "lg"
           ? "py-2 px-3 text-base mr-4 my-2"
           : "py-1 px-2 text-xs mr-2 my-1"
-      } bg-gray-300 dark:bg-carddark rounded inline-block shadow hover:shadow-md cursor-pointer`}>
-
+      } bg-gray-300 dark:bg-carddark rounded inline-block shadow hover:shadow-md cursor-pointer`}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -35,8 +35,7 @@ const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
           {count}
         </span>
       )}
-
-    </Link>)
+    </Link>
   );
 };
 
