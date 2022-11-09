@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth overflow-y-scroll;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
+  /* ===== Custom Scrollbar ===== */
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-bglight dark:bg-bgdark;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#d5d5d5] dark:bg-carddark;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#b7b7b7] dark:bg-[#17222b];
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-11 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-6xl mx-auto lg:min-h-[768px];
+  }
+  .section-heading {
+    @apply text-2xl md:text-3xl xl:text-4xl inline-block my-6 font-medium;
+  }
+  .link-outline {
+    @apply outline-marrsgreen dark:outline-carrigreen;
+  }
+  .link {
+    @apply outline-marrsgreen dark:outline-carrigreen text-marrsdark hover:text-marrsgreen dark:text-carrilight dark:hover:text-carrigreen;
+  }
+  .blog-main {
+    @apply mb-20 mt-16 min-h-[70vh];
+  }
+  .blog-section {
+    @apply py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto;
+  }
+  .glassmorphism {
+    @apply bg-clip-padding backdrop-filter backdrop-blur-xl !bg-opacity-50 dark:!bg-opacity-60;
+  }
+}
+
+@layer utilities {
+  .swiper-padding {
+    padding: 0 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .swiper-padding-mobile {
+    padding: 0 !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  @apply dark:bg-gray-200;
+}
+.dark .swiper-pagination-bullet-active {
+  background-color: rgb(5 206 145) !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(0 140 140) !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply dark:text-carrigreen;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(0 140 140) !important;
+}
+@media only screen and (max-width: 480px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
