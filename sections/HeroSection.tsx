@@ -1,12 +1,9 @@
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "../components/LinkButton";
 
-import satNaing from "../public/satnaing-illustration.webp";
-import laptop from "../public/laptop-illustration.webp";
 import ProfileIllustration from "@/components/ProfileIllustration";
 import LaptopIllustration from "@/components/LaptopIllustration";
 
@@ -96,17 +93,9 @@ const HeroSection: React.FC = () => {
         <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
           <div className="absolute pointer-events-none scale-90 xs:scale-95 mx-auto">
             <ProfileIllustration />
-            {/* <Image
-              src={satNaing}
-              width={2354}
-              height={2747}
-              priority
-              alt="Sat Naing profile picture"
-            /> */}
           </div>
           <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
             <LaptopIllustration />
-            {/* <Image src={laptop} width={1117} height={772} alt="Laptop" /> */}
           </div>
         </div>
       </div>
