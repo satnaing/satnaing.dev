@@ -125,7 +125,7 @@ const socialLinks = [
 const navLinks = [
   {
     url: "#",
-    text: "",
+    text: "Welcome",
   },
   {
     url: "#whoami",
