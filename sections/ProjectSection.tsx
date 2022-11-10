@@ -8,10 +8,10 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import terminalPortfolio from "public/projects/terminal-portfolio.png";
-import haruFashion from "public/projects/haru-fashion.png";
-import haruApi from "public/projects/haru-api.png";
-import astroPaper from "public/projects/astro-paper.png";
+import terminalPortfolio from "public/projects/terminal-portfolio.webp";
+import haruFashion from "public/projects/haru-fashion.webp";
+import haruApi from "public/projects/haru-api.webp";
+import astroPaper from "public/projects/astro-paper.webp";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
