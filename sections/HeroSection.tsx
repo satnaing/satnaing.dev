@@ -95,14 +95,14 @@ const HeroSection: React.FC = () => {
           <div className="absolute pointer-events-none scale-90 xs:scale-95 mx-auto">
             <Image
               src={satNaing}
-              width={2354}
-              height={2747}
+              width={1177}
+              height={1374}
               priority
               alt="Sat Naing profile picture"
             />
           </div>
           <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
-            <Image src={laptop} width={1117} height={772} alt="Laptop" />
+            <Image src={laptop} width={559} height={386} alt="Laptop" />
           </div>
         </div>
       </div>
