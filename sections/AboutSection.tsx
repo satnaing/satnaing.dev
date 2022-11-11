@@ -119,9 +119,9 @@ const AboutSection: React.FC = () => {
               <h2 className="section-heading">Who am I?</h2>
             </RoughNotation>
           </div>
-          <div className="md:flex md:space-x-8">
-            <div className="basis-2/5 lg:basis-1/2 xl:basis-3/5 flex justify-center items-center">
-              <div className="relative w-72 h-72">
+          <div className="md:grid grid-rows-5 lg:grid-rows-6 grid-cols-5">
+            <div className="col-start-1 col-end-3 row-start-1 row-end-4 lg:row-end-7 lg:col-start-1 lg:col-end-3 flex justify-center items-center py-4 lg:mb-[20%]">
+              <div className="relative w-72">
                 <svg
                   width="96"
                   height="21"
@@ -132,7 +132,7 @@ const AboutSection: React.FC = () => {
                   <path d="M79.2202 0.959991L62.7802 17.32L46.3301 0.959991L29.8902 17.32L13.4501 0.959991L0.410156 13.94L0.400146 17.58L13.4501 4.58999L29.8902 20.95L46.3301 4.58999L62.7802 20.95L79.2202 4.58999L93.7302 19.02L95.5402 17.19L79.2202 0.959991Z" />
                 </svg>
 
-                <div className="profile-picture h-72 overflow-hidden md:overflow-visible rounded-md md:shadow-2xl">
+                <div className="profile-picture overflow-hidden md:overflow-visible rounded-md md:shadow-2xl">
                   <Image
                     src={satNaing}
                     width={1700}
@@ -165,16 +165,17 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="basis-3/5 lg:basis-1/2 xl:basis-2/5" ref={eduRef}>
-              <p className="about-intro my-2">
-                I have over 2 and a half years of working experience in web
-                application development_ including both frontend and backend.
-                I'm currently working as a lead developer at a Singapore
-                company.
-              </p>
-              <div className="edu-bg my-4">
-                Here is my education background.
-              </div>
+            <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
+              I have over 2 and a half years of working experience in web
+              application development_ including both frontend and backend. I'm
+              currently working as a lead developer at a Singapore company.
+            </p>
+
+            <div
+              className="col-start-3 col-end-6 row-start-1 row-end-6 lg:row-start-2 lg:row-end-7 md:ml-8 place-content-end"
+              ref={eduRef}
+            >
+              <p className="edu-bg my-4">Here is my education background.</p>
               {educationInfo.map((edu) => (
                 <EduGroup edu={edu} key={edu.id} />
               ))}
