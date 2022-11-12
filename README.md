@@ -28,7 +28,7 @@ My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind
 ## Lighthouse Score
 
 <p align="center">
-<img width="760" alt="satnaing-dev-lighthouse-score" src="https://user-images.githubusercontent.com/53733092/159957822-7082e459-11e9-4616-8f1e-49d0881f7cbb.png">
+<img width="710" alt="Sat Naing Portfolio Website Lighthouse Score" src="public/lighthouse-result.svg">
 </p>
 
 ## Running Locally
@@ -42,7 +42,7 @@ git clone https://github.com/satnaing/my-portfolio.git
 Go to the project directory
 
 ```bash
-cd my-portfolio
+cd satnaing.dev
 ```
 
 Remove remote origin
