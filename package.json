@@ -1,6 +1,6 @@
 {
-  "name": "my-portfolio",
-  "version": "2.1.0",
+  "name": "satnaing.dev",
+  "version": "2.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
