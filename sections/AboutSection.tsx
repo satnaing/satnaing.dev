@@ -166,9 +166,9 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-              I have over 2 and a half years of working experience in web
-              application development_ including both frontend and backend. I'm
-              currently working as a lead developer at a Singapore company.
+              I have almost 3 years of working experience in web application
+              development_ including both frontend and backend. I'm currently
+              working as a lead developer at a Singapore company.
             </p>
 
             <div
