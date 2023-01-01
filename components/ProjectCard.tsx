@@ -78,7 +78,8 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
             <div className="flex items-center space-x-5 sm:space-x-3 my-2 sm:my-0 mr-[0.1rem]">
               <a
                 href={project.codeUrl}
-                title="github"
+                title={`See '${project.title}' on Github`}
+                target="_blank"
                 className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-1 rounded-full"
               >
                 <svg
@@ -96,7 +97,8 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
               </a>
               <a
                 href={project.liveUrl}
-                title={project.title}
+                title={`See live demo of '${project.title}'`}
+                target="_blank"
                 className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-8 rounded-full"
               >
                 <svg
@@ -120,18 +122,19 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
         <div className="overflow-hidden">
           <p className="project-desc">{project.desc}</p>
         </div>
-        <div
+        <ul
+          aria-label={`Tech Stack used in ${project.title}`}
           className={`flex flex-wrap mt-2 mb-4 md:mt-2 md:mb-6 text-sm overflow-hidden`}
         >
           {project.tags.map((tag) => (
-            <span
+            <li
               key={tag}
               className={`project-tags mr-2 my-1 bg-[#E2EFEF] dark:bg-carddark py-1 px-2 rounded`}
             >
               {tag}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
