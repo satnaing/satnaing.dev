@@ -86,7 +86,10 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       className="relative mt-16 sm:mt-8 pt-8 lg:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-[769px] mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
     >
-      <span className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0">
+      <span
+        aria-hidden="true"
+        className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0"
+      >
         PASSIONATE PROGRAMMER FREELANCER FULL-STACK DEVELOPER
       </span>
 
@@ -98,11 +101,19 @@ const HeroSection: React.FC = () => {
               width={1177}
               height={1374}
               priority
-              alt="Sat Naing profile picture"
+              id="character-illustration"
+              aria-label="Sat Naing character illustration levitating with a Macbook"
+              alt="Sat Naing character illustration"
             />
           </div>
           <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
-            <Image src={laptop} width={559} height={386} alt="Laptop" />
+            <Image
+              src={laptop}
+              width={559}
+              height={386}
+              aria-hidden="true"
+              alt="Laptop illustration"
+            />
           </div>
         </div>
       </div>
