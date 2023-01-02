@@ -12,7 +12,7 @@ category: Random
 author: Sat Naing
 type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1647791837/SatNaing/tip-calculator_mkdj8a.png
-coverImageAlt: tip calculator
+coverImageAlt: Tip calculator website on a laptop and a mobile device
 coverImageWidth: "2725"
 coverImageHeight: "1400"
 ogImage: "/assets/blog/hello-world/cover.jpg"
