@@ -80,6 +80,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
                 href={project.codeUrl}
                 title={`See '${project.title}' on Github`}
                 target="_blank"
+                rel="noreferrer"
                 className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-1 rounded-full"
               >
                 <svg
@@ -99,6 +100,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
                 href={project.liveUrl}
                 title={`See live demo of '${project.title}'`}
                 target="_blank"
+                rel="noreferrer"
                 className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-8 rounded-full"
               >
                 <svg
