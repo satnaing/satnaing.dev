@@ -55,7 +55,7 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
         </div>
         <div className="text-center mb-8" ref={elementRef}>
           I write blog posts about what I've done and what I'm doing{" "}
-          <br className="hidden sm:block" />
+          <br className="hidden sm:block" aria-hidden="true" />
           as a documenting practice. Here are some of my recent blog posts.
         </div>
         <div>
@@ -64,6 +64,7 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
             pagination={{
               dynamicBullets: true,
             }}
+            wrapperTag="ul"
             navigation
             className="swiper-padding-mobile xs:swiper-padding"
             breakpoints={{
@@ -84,7 +85,7 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
             }}
           >
             {posts.map((post, index) => (
-              <SwiperSlide key={post.slug}>
+              <SwiperSlide key={post.slug} tag="li">
                 <BlogImageCard
                   post={post}
                   className={`${index > 3 ? "hidden lg:block" : ""}`}
