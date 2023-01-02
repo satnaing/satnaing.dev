@@ -114,9 +114,6 @@ const BlogImageCard: React.FC<Props> = ({
       >
         {excerpt}
       </p>
-      {/* <Link href={`/blog/posts/${slug}`}>
-        <a className="link inline-block mt-2">Read more</a>
-      </Link> */}
     </div>
   );
 };
