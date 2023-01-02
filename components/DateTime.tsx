@@ -18,7 +18,7 @@ const DateTime = ({ datetime }: { datetime: string }) => {
     });
     setFormattedDate(modifiedDate);
     setFormattedTime(modifiedTime);
-  }, []);
+  }, [datetime]);
 
   return (
     <div>
