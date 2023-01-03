@@ -21,7 +21,6 @@ const BlogCardBox: React.FC<Props> = ({
   const { title, slug, excerpt, datetime } = post;
   return (
     <div
-      title={title}
       className={`blog-card-box sm:min-w-[17rem] bg-gray-100 dark:bg-carddark p-4 rounded shadow hover:shadow-md ${
         fullWH ? "w-full" : "w-72 my-2"
       } ${className}`}
@@ -44,6 +43,7 @@ const BlogCardBox: React.FC<Props> = ({
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
           strokeWidth={2}
         >
           <path
