@@ -56,15 +56,15 @@ const BlogHeroSection: React.FC = () => {
           <p className="intro-3">
             You can follow me on my social media and{" "}
             <a href="https://github.com/satnaing" className="link">
-              Github account
+              Github account.
             </a>
-            .
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 inline-block ml-1 fill-yellow-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
               strokeWidth={0}
             >
               <path
@@ -110,6 +110,7 @@ const BlogHeroSection: React.FC = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
             strokeWidth={2}
           >
             <path
