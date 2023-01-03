@@ -76,30 +76,32 @@ const BlogHeroSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <label htmlFor="search" className="sr-only">
-        Search
-      </label>
-      <div className="bg-cardlight dark:bg-carddark shadow-md p-3 pl-4 flex justify-center items-center rounded my-4">
+      <label className="relative block my-4">
         <input
-          id="search"
-          type="search"
-          placeholder="Search posts"
-          autoComplete="off"
-          value={searchText}
+          className="placeholder:italic placeholder:text-opacity-75 py-3 pr-14 pl-5 
+                    block bg-cardlight dark:bg-carddark w-full rounded shadow-md
+                    border border-cardlight dark:border-carddark border-opacity-40 
+                    focus:outline-none focus:border-marrslight focus:dark:border-carrilight"
+          placeholder="Search for anything..."
+          type="text"
+          name="search"
+          defaultValue={searchText}
           onChange={handleSearch}
-          className="basis-11/12 bg-cardlight dark:bg-carddark focus-visible:outline-none"
+          autoComplete="off"
+          autoFocus
         />
-        <div className="basis-1/12 flex justify-center items-center">
+        <span className="absolute inset-y-0 right-0 flex items-center pr-5 opacity-80">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
+            aria-hidden="true"
             className="fill-marrsgreen dark:fill-carrigreen"
           >
             <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
           </svg>
-        </div>
-      </div>
+        </span>
+      </label>
       <div className="flex items-center my-4 md:my-6">
         <label htmlFor="language" className="mr-2 flex items-center gap-x-2">
           <svg
