@@ -50,12 +50,14 @@ const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
           <main id="main" className="blog-main">
             <section className="blog-section">
               <h1 className="text-3xl lg:text-4xl font-bold mb-4">Tags</h1>
-              <div>
+              <ul>
                 {tags &&
                   tags.map((tag: string) => (
-                    <Tag tag={tag} size="lg" count={tagCounts[tag]} key={tag} />
+                    <li className="inline-block" key={tag}>
+                      <Tag tag={tag} size="lg" count={tagCounts[tag]} />
+                    </li>
                   ))}
-              </div>
+              </ul>
             </section>
           </main>
           <Footer />
