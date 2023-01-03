@@ -54,9 +54,11 @@ const Blog: NextPage<Props> = ({ posts, category }) => {
                   <span className="capitalize">{unslugify(category)}</span>
                 </span>
               </h1>
-              {posts.map((post) => (
-                <BlogCard post={post} key={post.slug} />
-              ))}
+              <ul>
+                {posts.map((post) => (
+                  <BlogCard post={post} key={post.slug} />
+                ))}
+              </ul>
             </section>
           </main>
           <Footer />
