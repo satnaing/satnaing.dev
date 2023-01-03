@@ -59,7 +59,9 @@ const BlogHeader: React.FC = () => {
             <button
               type="button"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="change theme"
+              title="Toggles light & dark theme"
+              aria-label={theme === "dark" ? "light" : "dark"}
+              aria-live="polite"
               className="w-8 h-8 rounded-lg flex justify-center items-center link-outline"
             >
               <svg
