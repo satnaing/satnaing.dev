@@ -17,7 +17,7 @@ type Props = {
 const BlogCard: React.FC<Props> = ({ post }) => {
   const { title, slug, excerpt, datetime } = post;
 
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLLIElement>(null);
 
   // Animations
   // useEffect(() => {
@@ -54,7 +54,7 @@ const BlogCard: React.FC<Props> = ({ post }) => {
   // }, []);
 
   return (
-    <div ref={sectionRef} className="my-4 md:mt-0 md:mb-8">
+    <li ref={sectionRef} className="my-4 md:mt-0 md:mb-8">
       <div className="overflow-hidden">
         <Link
           href={`/blog/posts/${slug}`}
@@ -84,7 +84,7 @@ const BlogCard: React.FC<Props> = ({ post }) => {
         </div>
       </div>
       <p className="blog-excerpt dark:text-gray-300">{excerpt}</p>
-    </div>
+    </li>
   );
 };
 
