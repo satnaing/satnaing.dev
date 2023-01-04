@@ -58,8 +58,8 @@ const Header: React.FC = () => {
   useEffect(() => {
     gsap.fromTo(
       mainRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, delay: 1, ease: "Power0.easeNone" }
+      { top: -120 },
+      { top: 0, duration: 0.7, delay: 1, ease: "Power0.easeNone" }
     );
   }, []);
 
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
     const _classList = [];
 
     if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
-      _classList.push("transform -translate-y-full shadow-none");
+      _classList.push("!shadow-md");
 
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
     <header className="md:flex">
       <div
         ref={mainRef}
-        className={`main-nav lower-glassmorphism bg-bglight dark:bg-bgdark z-30 top-0 shadow-md fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
+        className={`main-nav lower-glassmorphism bg-bglight dark:bg-bgdark z-30 top-0 shadow-sm fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
           " "
         )}`}
       >
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
           </Link>
           <nav className="flex items-center">
-            <div className="glassmorphism md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none fixed md:static bottom-[calc(-100vh+5rem)] z-30 left-1/2 md:left-auto transform -translate-x-1/2 md:transform-none bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg md:drop-shadow-none">
+            <div className="glassmorphism md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none fixed md:static bottom-4 z-30 left-1/2 md:left-auto transform -translate-x-1/2 md:transform-none bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg md:drop-shadow-none">
               <ul className="flex justify-evenly items-center py-1">
                 {navLinks.map((navLink) => (
                   <li key={navLink.url}>
