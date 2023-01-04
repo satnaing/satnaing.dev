@@ -55,6 +55,9 @@
   .glassmorphism {
     @apply bg-clip-padding backdrop-filter backdrop-blur-xl !bg-opacity-50 dark:!bg-opacity-60;
   }
+  .lower-glassmorphism {
+    @apply !bg-opacity-50 dark:!bg-opacity-60 after:!backdrop-blur-xl after:w-full after:h-full after:absolute after:top-0 after:left-0 after:-z-10;
+  }
 }
 
 @layer utilities {
