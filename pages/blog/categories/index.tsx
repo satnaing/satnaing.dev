@@ -87,11 +87,11 @@ const Blog: NextPage<Props> = ({ categories, categorizedPosts }) => {
                       </span>
                     </h2>
                   </Link>
-                  <div className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
+                  <ul className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
                     {categorizedPosts[category].map((post: any) => (
                       <BlogCardBox post={post} key={post.slug} />
                     ))}
-                  </div>
+                  </ul>
                 </div>
               ))}
             </section>

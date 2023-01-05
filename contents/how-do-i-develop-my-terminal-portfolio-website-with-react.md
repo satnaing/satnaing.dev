@@ -1,5 +1,4 @@
 ---
-coverImageAlt: Picture
 coverImageWidth: "1200"
 coverImageHeight: "700"
 datetime: 2022-06-09T03:42:51Z
@@ -12,6 +11,7 @@ tags:
 author: Sat Naing
 type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1654754125/SatNaing/terminal-screenshot_gu3kkc.png
+coverImageAlt: Screenshot of Terminal Portfolio Website
 title: How Do I Develop My Terminal Portfolio Website with React
 description:
   Sat Naing's React terminal portfolio website. Styled-components is used

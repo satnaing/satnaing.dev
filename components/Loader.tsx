@@ -21,7 +21,7 @@ const Loader: React.FC<Props> = ({ children }) => {
   }, []);
 
   return (
-    <div ref={loadingRef}>
+    <div ref={loadingRef} aria-hidden="true">
       <div className="white-bg fixed top-0 left-0 w-full h-screen bg-[#f0f5fa] dark:bg-[#0e141a] z-[9999] flex justify-center items-center">
         <div className="overflow-hidden">
           <span className="loading-text inline-block text-bgdark dark:text-bglight text-4xl sm:text-5xl lg:text-7xl tracking-widest">

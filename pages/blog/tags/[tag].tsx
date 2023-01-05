@@ -47,9 +47,11 @@ const Blog: NextPage<Props> = ({ posts, tag }) => {
               <h1 className="overflow-hidden py-1 text-2xl md:text-3xl lg:text-4xl font-medium md:font-bold mb-0 md:mb-8 pl-2 md:pl-4 border-l-8 border-marrsgreen dark:border-carrigreen">
                 <span className="tag-title block">Tag: {tag}</span>
               </h1>
-              {posts.map((post) => (
-                <BlogCard post={post} key={post.slug} />
-              ))}
+              <ul>
+                {posts.map((post) => (
+                  <BlogCard post={post} key={post.slug} />
+                ))}
+              </ul>
             </section>
           </main>
           <Footer />

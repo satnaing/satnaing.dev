@@ -53,23 +53,30 @@ const Header: React.FC = () => {
   const scroll = useScrollListener();
 
   const mainRef = useRef(null);
-  const q = gsap.utils.selector(mainRef);
+  const themeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     gsap.fromTo(
-      // q(".main-nav"),
       mainRef.current,
-      { y: -100 },
-      { y: 0, duration: 0.5, delay: 1, ease: "Power0.easeNone" }
+      { top: -120 },
+      { top: 0, duration: 0.7, delay: 1, ease: "Power0.easeNone" }
     );
   }, []);
+
+  // update theme button aria-label according to theme value
+  useEffect(() => {
+    const themeBtn = themeBtnRef.current;
+    if (themeBtn) {
+      themeBtn.ariaLabel = theme ?? "light";
+    }
+  }, [theme]);
 
   // update classList of nav on scroll
   useEffect(() => {
     const _classList = [];
 
     if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
-      _classList.push("transform -translate-y-full drop-shadow-none");
+      _classList.push("!shadow-md");
 
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
@@ -78,7 +85,7 @@ const Header: React.FC = () => {
     <header className="md:flex">
       <div
         ref={mainRef}
-        className={`main-nav glassmorphism bg-bglight dark:bg-bgdark z-30 top-0 drop-shadow-md fixed transition-transform duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
+        className={`main-nav lower-glassmorphism bg-bglight dark:bg-bgdark z-30 top-0 shadow-sm fixed duration-400 px-4 sm:px-8 h-16 w-full ${navClassList.join(
           " "
         )}`}
       >
@@ -90,29 +97,33 @@ const Header: React.FC = () => {
             SatNaing
             <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
           </Link>
-          <div className="flex">
-            <nav className="hidden md:block">
-              <ul className="flex">
+          <nav className="flex items-center">
+            <div className="glassmorphism md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none fixed md:static bottom-4 z-30 left-1/2 md:left-auto transform -translate-x-1/2 md:transform-none bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg md:drop-shadow-none">
+              <ul className="flex justify-evenly items-center py-1">
                 {navLinks.map((navLink) => (
                   <li key={navLink.url}>
                     <a
                       href={navLink.url}
-                      className={`text-lg flex flex-col items-center mr-6 hover:text-marrsgreen dark:hover:text-carrigreen link-outline ${
+                      className={`text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline ${
                         currentSection === navLink.text.toLocaleLowerCase() &&
-                        "text-marrsgreen dark:text-carrigreen"
+                        "text-marrsgreen dark:text-carrigreen fill-marrsgreen dark:fill-carrigreen"
                       }`}
                     >
-                      {navLink.text}
+                      <span className="md:hidden">{navLink.svg}</span>
+                      <span className="whitespace-nowrap">{navLink.text}</span>
                     </a>
                   </li>
                 ))}
               </ul>
-            </nav>
+            </div>
             <button
               type="button"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="change theme"
-              className="w-8 h-8 rounded-lg flex justify-center items-center link-outline"
+              title="Toggles light & dark theme"
+              ref={themeBtnRef}
+              // aria-label={theme === "dark" ? "dark" : "light"}
+              aria-live="polite"
+              className="w-8 h-8 ml-1 rounded-lg flex justify-center items-center link-outline"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,28 +143,9 @@ const Header: React.FC = () => {
                 <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path>
               </svg>
             </button>
-          </div>
+          </nav>
         </div>
       </div>
-
-      <nav className="fixed glassmorphism md:hidden bottom-4 z-30 left-1/2 transform -translate-x-1/2 bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg">
-        <ul className="flex justify-evenly items-center py-1">
-          {navLinks.map((navLink) => (
-            <li key={navLink.url}>
-              <a
-                href={navLink.url}
-                className={`text-sm flex flex-col items-center w-[4.5rem] dark:fill-textlight ${
-                  currentSection === navLink.text.toLocaleLowerCase() &&
-                  "text-marrsgreen dark:text-carrigreen fill-marrsgreen dark:fill-carrigreen"
-                }`}
-              >
-                {navLink.svg}
-                <span className="whitespace-nowrap">{navLink.text}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </header>
   );
 };

@@ -12,7 +12,7 @@ import markdownToHtml from "utils/markdownToHtml";
 import { getAllPosts, getPostBySlug } from "utils/api";
 import PostBody from "@/components/blog/PostBody";
 import Tag from "@/components/blog/Tag";
-import formatDatetime from "utils/formatDatetime";
+import DateTime from "@/components/DateTime";
 import HeadCategory from "@/components/blog/HeadCategory";
 
 export interface MdxMeta extends Meta {
@@ -65,7 +65,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                 {post.title}
               </h1>
               <div className="mt-2 mb-1 italic text-marrsdark dark:text-carrigreen">
-                {formatDatetime(post.datetime)}
+                <DateTime datetime={post.datetime} />
               </div>
               <HeadCategory category={post.category} />
               {post.tags && (

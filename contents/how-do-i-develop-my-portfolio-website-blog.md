@@ -1,5 +1,4 @@
 ---
-coverImageAlt: Sat Naing Portfolio website & Blog
 coverImageWidth: "1200"
 coverImageHeight: "700"
 datetime: 2022-03-25T16:55:12.000+00:00
@@ -11,6 +10,7 @@ tags:
 author: Sat Naing
 type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1653050141/SatNaing/blog_at_cafe_ei1wf4.jpg
+coverImageAlt: Macbook at a cafe
 title: How Do I Develop My Portfolio Website & Blog
 description:
   My experience about developing my first portfolio website and a blog

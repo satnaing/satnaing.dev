@@ -126,6 +126,7 @@ const AboutSection: React.FC = () => {
                   width="96"
                   height="21"
                   viewBox="0 0 96 21"
+                  aria-hidden="true"
                   className="img-svg hidden lg:block fill-marrsgreen dark:fill-carrigreen absolute -top-14 -left-14"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -147,6 +148,7 @@ const AboutSection: React.FC = () => {
                   width="15"
                   height="14"
                   viewBox="0 0 15 14"
+                  aria-hidden="true"
                   className="img-svg hidden lg:block fill-marrsgreen dark:fill-carrigreen absolute bottom-8 -right-12"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -157,6 +159,7 @@ const AboutSection: React.FC = () => {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                   className="img-svg hidden lg:block fill-[#FF9D00] absolute -bottom-10 right-6 scale-150"
                   xmlns="http://www.w3.org/2000/svg"
                 >

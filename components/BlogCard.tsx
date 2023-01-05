@@ -3,7 +3,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import formatDatetime from "utils/formatDatetime";
+import DateTime from "@/components/DateTime";
 
 type Props = {
   post: {
@@ -17,7 +17,7 @@ type Props = {
 const BlogCard: React.FC<Props> = ({ post }) => {
   const { title, slug, excerpt, datetime } = post;
 
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLLIElement>(null);
 
   // Animations
   // useEffect(() => {
@@ -54,7 +54,7 @@ const BlogCard: React.FC<Props> = ({ post }) => {
   // }, []);
 
   return (
-    <div ref={sectionRef} className="my-4 md:mt-0 md:mb-8">
+    <li ref={sectionRef} className="my-4 md:mt-0 md:mb-8">
       <div className="overflow-hidden">
         <Link
           href={`/blog/posts/${slug}`}
@@ -71,6 +71,7 @@ const BlogCard: React.FC<Props> = ({ post }) => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
             strokeWidth={2}
           >
             <path
@@ -79,11 +80,11 @@ const BlogCard: React.FC<Props> = ({ post }) => {
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
-          {formatDatetime(datetime)}
+          <DateTime datetime={datetime} />
         </div>
       </div>
       <p className="blog-excerpt dark:text-gray-300">{excerpt}</p>
-    </div>
+    </li>
   );
 };
 
