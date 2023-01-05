@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
@@ -9,6 +9,15 @@ const BlogHeader: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const [navClassList, setNavClassList] = useState<any>([]);
   const scroll = useScrollListener();
+  const themeBtnRef = useRef<HTMLButtonElement>(null);
+
+  // update theme button aria-label according to theme value
+  useEffect(() => {
+    const themeBtn = themeBtnRef.current;
+    if (themeBtn) {
+      themeBtn.ariaLabel = theme ?? "light";
+    }
+  }, [theme]);
 
   // update classList of nav on scroll
   useEffect(() => {
@@ -60,9 +69,9 @@ const BlogHeader: React.FC = () => {
             </div>
             <button
               type="button"
+              ref={themeBtnRef}
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               title="Toggles light & dark theme"
-              aria-label={theme === "dark" ? "dark" : "light"}
               aria-live="polite"
               className="w-8 h-8 rounded-lg flex justify-center items-center link-outline"
             >
