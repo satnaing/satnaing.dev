@@ -31,7 +31,10 @@ const Tag: React.FC<Props> = ({ tag, size = "sm", count }) => {
       </svg>
       {tag}
       {count && (
-        <span className="ml-2 inline-block bg-marrslight dark:bg-carrilight group-hover:bg-marrsdark dark:group-hover:bg-carridark dark:text-bgdark text-sm p-1 min-w-[1.75rem] text-center rounded-full">
+        <span
+          aria-label={`: ${count} article${count > 1 ? "s" : ""}`}
+          className="ml-2 inline-block bg-marrslight dark:bg-carrilight group-hover:bg-marrsdark dark:group-hover:bg-carridark dark:text-bgdark text-sm p-1 min-w-[1.75rem] text-center rounded-full"
+        >
           {count}
         </span>
       )}
