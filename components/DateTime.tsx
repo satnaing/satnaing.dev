@@ -21,7 +21,7 @@ const DateTime = ({ datetime }: { datetime: string }) => {
   }, [datetime]);
 
   return (
-    <div>
+    <div className="relative">
       <span className="sr-only">Posted on: </span>
       {formattedDate} <span aria-hidden="true">|</span>
       <span className="sr-only">&nbsp;at&nbsp;</span> {formattedTime}
