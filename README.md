@@ -36,7 +36,7 @@ My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind
 Clone the project
 
 ```bash
-git clone https://github.com/satnaing/my-portfolio.git
+git clone https://github.com/satnaing/satnaing.dev.git
 ```
 
 Go to the project directory
