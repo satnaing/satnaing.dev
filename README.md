@@ -42,7 +42,7 @@ git clone https://github.com/satnaing/my-portfolio.git
 Go to the project directory
 
 ```bash
-cd satnaing.dev
+cd my-portfolio
 ```
 
 Remove remote origin
