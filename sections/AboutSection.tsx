@@ -169,16 +169,18 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-              I have almost 3 years of working experience in web application
-              development_ including both frontend and backend. I'm currently
-              working as a lead developer at a Singapore company.
+              With 3 years of comprehensive experience in web application
+              development, I have honed my skills in both frontend and backend
+              development. In addition to my hands-on experience in web
+              development, my education has also played a critical role in
+              providing a strong foundation for my career.
             </p>
 
             <div
               className="col-start-3 col-end-6 row-start-1 row-end-6 lg:row-start-2 lg:row-end-7 md:ml-8 place-content-end"
               ref={eduRef}
             >
-              <p className="edu-bg my-4">Here is my education background.</p>
+              <p className="edu-bg my-4">Here is my educational background.</p>
               {educationInfo.map((edu) => (
                 <EduGroup edu={edu} key={edu.id} />
               ))}
