@@ -133,14 +133,16 @@ const HeroSection: React.FC = () => {
           </span>
         </div>
         <div className="mt-2 my-4 md:mb-8">
-          <p>I'm a full-stack developer based in Yangon, Myanmar.</p>
-          <p>
-            I am passionate about writing codes and developing web applications
-            to solve <span className="whitespace-nowrap">real-life</span>{" "}
-            challenges.
+          <p className="mb-1">
+            I am a Full-Stack Developer with a passion for delivering
+            exceptional results.
           </p>
-          I usually craft front-end with React, NextJS; and I build back-end
-          especially using PHP, NodeJS & Express.
+          <p>
+            With my expertise in React and NextJS on the frontend, and PHP,
+            CodeIgniter, NodeJS, and Express on the backend, I bring a unique
+            combination of technical skills and creative problem-solving to
+            every project I work on.
+          </p>
         </div>
         <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
           Contact me!
