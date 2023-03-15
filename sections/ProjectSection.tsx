@@ -76,7 +76,7 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "My perfolio website in terminal version developed with React and TypeScript. In this project, styled-components library is used for styling and multiple themes supported.",
+    desc: "My portfolio website in terminal version developed with React and TypeScript. In this project, styled-components library is used for styling and multiple themes supported.",
     tags: ["React", "TypeScript", "Styled-Components"],
     liveUrl: "https://terminal.satnaing.dev/",
     codeUrl: "https://github.com/satnaing/terminal-portfolio",
