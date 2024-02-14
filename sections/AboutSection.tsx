@@ -17,9 +17,9 @@ const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isSecOnScreen = useOnScreen(sectionRef);
 
-  const q = gsap.utils.selector(sectionRef);
-
   useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
     gsap.registerPlugin(ScrollTrigger);
 
     // profile-picture
@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
   const { onSectionChange } = useSection();
   useEffect(() => {
     aboutSection ? onSectionChange!("who am i?") : onSectionChange!("");
-  }, [aboutSection]);
+  }, [aboutSection, onSectionChange]);
 
   return (
     <div
@@ -169,9 +169,9 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-              With 3 years of comprehensive experience in web application
-              development, I have honed my skills in both frontend and backend
-              development. In addition to my hands-on experience in web
+              With 4+ years of comprehensive experience in web application
+              development, I have polished my skills in both frontend and
+              backend development. In addition to my hands-on experience in web
               development, my education has also played a critical role in
               providing a strong foundation for my career.
             </p>
