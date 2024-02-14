@@ -12,6 +12,8 @@ import terminalPortfolio from "public/projects/terminal-portfolio.webp";
 import haruFashion from "public/projects/haru-fashion.webp";
 import haruApi from "public/projects/haru-api.webp";
 import astroPaper from "public/projects/astro-paper.webp";
+import nextBookstore from "public/projects/next-bookstore.webp";
+import shadcnAdmin from "public/projects/shadcn-admin.webp";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
@@ -26,7 +28,7 @@ const ProjectSection: React.FC = () => {
   const { onSectionChange } = useSection();
   useEffect(() => {
     projectSection && onSectionChange!("projects");
-  }, [projectSection]);
+  }, [onSectionChange, projectSection]);
 
   return (
     <section ref={sectionRef} id="projects" className="section">
@@ -65,6 +67,25 @@ const ProjectSection: React.FC = () => {
 
 const projects = [
   {
+    title: "AstroPaper",
+    type: "Frontend",
+    image: (
+      <Image
+        src={astroPaper}
+        sizes="100vw"
+        fill
+        alt="AstroPaper"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "A minimal, accessible and SEO-friendly Astro blog theme. One of the most starred blog templates built with Astro.",
+    tags: ["Astro", "TypeScript", "React", "TailwindCSS"],
+    liveUrl: "https://astro-paper.pages.dev/",
+    codeUrl: "https://github.com/satnaing/astro-paper",
+    bgColor: "bg-[#9FD0E3]",
+    githubApi: "https://api.github.com/repos/satnaing/astro-paper",
+  },
+  {
     title: "Terminal Portfolio",
     type: "Frontend",
     image: (
@@ -76,11 +97,12 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "My portfolio website in terminal version developed with React and TypeScript. In this project, styled-components library is used for styling and multiple themes supported.",
+    desc: "My portfolio website in terminal version developed with React and TypeScript. ",
     tags: ["React", "TypeScript", "Styled-Components"],
     liveUrl: "https://terminal.satnaing.dev/",
     codeUrl: "https://github.com/satnaing/terminal-portfolio",
     bgColor: "bg-[#B4BEE0]",
+    githubApi: "https://api.github.com/repos/satnaing/terminal-portfolio",
   },
   {
     title: "Haru Fashion",
@@ -99,6 +121,7 @@ const projects = [
     liveUrl: "https://haru-fashion.vercel.app/",
     codeUrl: "https://github.com/satnaing/haru-fashion",
     bgColor: "bg-[#A6CECE]",
+    githubApi: "https://api.github.com/repos/satnaing/haru-fashion",
   },
   {
     title: "Haru API",
@@ -117,24 +140,45 @@ const projects = [
     liveUrl: "https://satnaing.github.io/haru-api/",
     codeUrl: "https://github.com/satnaing/haru-api",
     bgColor: "bg-[#C5E4E7]",
+    githubApi: "https://api.github.com/repos/satnaing/haru-api",
   },
   {
-    title: "AstroPaper",
-    type: "Frontend",
+    title: "Next Bookstore",
+    type: "Frontend + HeadlessCMS",
     image: (
       <Image
-        src={astroPaper}
+        src={nextBookstore}
         sizes="100vw"
         fill
-        alt="AstroPaper"
+        alt="Next Bookstore"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "A minimal, responsive and SEO-friendly blog theme for Astro. This theme is developed with Astro, TypeScript and React. This theme includes fuzzy-search, pagination etc.",
-    tags: ["Astro", "TypeScript", "React", "TailwindCSS"],
-    liveUrl: "https://astro-paper.pages.dev/",
-    codeUrl: "https://github.com/satnaing/astro-paper",
-    bgColor: "bg-[#9FD0E3]",
+    desc: "An online bookstore developed using NextJS 13 with appDir and StrapiCMS.",
+    tags: ["NextJS", "Radix UI ", "TailwindCSS", "TanstackQuery", "StrapiCMS"],
+    liveUrl: "https://nextbookstore.vercel.app/",
+    codeUrl: "https://github.com/satnaing/next-bookstore",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi: "https://api.github.com/repos/satnaing/next-bookstore",
+  },
+  {
+    title: "Shadcn Admin",
+    type: "Backend",
+    image: (
+      <Image
+        src={shadcnAdmin}
+        sizes="100vw"
+        fill
+        alt="Shadcn Admin"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Admin Dashboard UI built with Shadcn and Vite. Built with responsiveness and accessibility in mind.",
+    tags: ["ShadcnUI", "Vite", "React Router", "TypeScript"],
+    liveUrl: "https://shadcn-admin.netlify.app/",
+    codeUrl: "https://github.com/satnaing/shadcn-admin",
+    bgColor: "bg-[#FBFBFB]",
+    githubApi: "https://api.github.com/repos/satnaing/shadcn-admin",
   },
 ];
 
